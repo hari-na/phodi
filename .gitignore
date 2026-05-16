@@ -16,3 +16,4 @@ __pycache__/
 .claude/
 public/audio/
 tsconfig.tsbuildinfo
+models/

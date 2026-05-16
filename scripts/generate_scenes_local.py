@@ -45,14 +45,26 @@ try:
 except (AttributeError, OSError):
     pass
 
+# Load HF_TOKEN from scripts/.env if present so FLUX.1 schnell (gated repo)
+# can authenticate without the user running `huggingface-cli login`.
+try:
+    from dotenv import load_dotenv  # type: ignore
+    load_dotenv(Path(__file__).resolve().parent / ".env")
+except ImportError:
+    pass
+import os as _os
+if _os.environ.get("HF_TOKEN") and not _os.environ.get("HUGGING_FACE_HUB_TOKEN"):
+    _os.environ["HUGGING_FACE_HUB_TOKEN"] = _os.environ["HF_TOKEN"]
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
 SCENES_OUT = REPO_ROOT / "public" / "scenes"
 CATALOG_PATH = REPO_ROOT / "src" / "lib" / "scenes.ts"
 
-# Style suffix appended to every prompt to enforce a cohesive look.
-# Tuned for FLUX — it follows prose-style cinematography prompts well.
-STYLE = (
+# Style suffixes per model. FLUX has a 256-token T5 budget and reads
+# prose. SDXL Turbo has a 77-token CLIP budget — leads must be style
+# keywords, not cinematography boilerplate.
+STYLE_FLUX = (
     " Cinematic establishing shot, no people in frame, oil painting"
     " aesthetic, painterly brushwork, warm-dark colour palette, deep"
     " shadows, soft focus, atmospheric haze, golden hour light quality"
@@ -60,7 +72,42 @@ STYLE = (
     " logos. No watermark."
 )
 
-WIDTH, HEIGHT = 1280, 720
+# For SDXL Turbo — leads with painterly keywords so they survive the
+# 77-token truncation. Negative motifs (no people, no text) implicit.
+STYLE_SDXL = (
+    ", oil painting, painterly brushwork, atmospheric, cinematic,"
+    " warm-dark palette, deep shadows, soft focus, no people, by"
+    " Jeremy Mann, by Lars Lerin"
+)
+
+# For DreamShaper XL Lightning — painterly fine-tune of SDXL, supports
+# higher CFG so style prompts have real influence. Leads with painterly
+# keywords for safety even though the model's bias is already painterly.
+# Bangalore-locality anchors live in each chapter's `note` field; the
+# style suffix only carries painterly + Indian-tropical-urban cues that
+# apply everywhere in the arc.
+STYLE_DREAMSHAPER = (
+    ", Bangalore India, South Indian tropical urban setting, oil"
+    " painting, painterly brushwork, atmospheric, cinematic lighting,"
+    " warm-dark colour palette, deep shadows, soft focus,"
+    " brushstroke texture, gouache, moody, by Atey Ghailan, by Sparth,"
+    " concept art, illustration, no text, no logos, no watermark"
+)
+
+# Comic style suffix — bold black ink, cel-shaded, flat warm colours,
+# graphic-novel aesthetic. Same DreamShaper model, different style cues.
+# References to Sean Murphy / Mike Mignola / Tomer Hanuka push the model
+# toward moody noir graphic novel territory.
+STYLE_DREAMSHAPER_COMIC = (
+    ", Bangalore India, South Indian tropical urban setting, graphic"
+    " novel illustration, bold black ink outlines, cel-shaded,"
+    " flat colours, dramatic panel composition, atmospheric noir,"
+    " warm-dark palette, deep ink shadows, by Sean Murphy, by Mike"
+    " Mignola, by Tomer Hanuka, comic book art, no text, no speech"
+    " bubbles, no logos, no watermark"
+)
+
+WIDTH, HEIGHT = 1024, 576
 
 
 def parse_catalog(path: Path) -> list[tuple[str, str]]:
@@ -73,9 +120,23 @@ def parse_catalog(path: Path) -> list[tuple[str, str]]:
     return [(cid, note) for cid, note in pattern.findall(text)]
 
 
-def build_prompt(note: str) -> str:
-    """Compose the final image-gen prompt from the scene note + style."""
-    return note.strip().rstrip(".") + "." + STYLE
+def build_prompt(note: str, model: str = "flux", style_variant: str = "painterly") -> str:
+    """Compose the final image-gen prompt from the scene note + style.
+
+    `style_variant` only affects DreamShaper — painterly (default) gives
+    oil-painting concept-art; comic gives graphic-novel ink illustration.
+    """
+    if model == "flux":
+        style = STYLE_FLUX
+    elif model == "dreamshaper":
+        style = (
+            STYLE_DREAMSHAPER_COMIC
+            if style_variant == "comic"
+            else STYLE_DREAMSHAPER
+        )
+    else:
+        style = STYLE_SDXL
+    return note.strip().rstrip(".") + style
 
 
 def load_flux_pipeline():
@@ -140,6 +201,67 @@ def load_sdxl_turbo_pipeline():
     return pipe
 
 
+def load_dreamshaper_pipeline():
+    """Load DreamShaper XL Lightning from local Civitai-downloaded safetensors.
+
+    Painterly fine-tune of SDXL Lightning. Supports CFG > 1, so style prompts
+    have real influence. Uses DPM++ SDE Karras (the sampler the model is
+    named for / trained on).
+
+    Note: `from_single_file` insists on fetching SDXL base 1.0 config files
+    from HF, which is unreliable. Instead we load SDXL Turbo's working
+    pipeline as the architectural scaffold (it's already cached), then
+    swap in DreamShaper's UNet and VAE weights via diffusers' built-in
+    LDM-to-diffusers converters. Text encoders stay from SDXL Turbo
+    (architecturally compatible).
+    """
+    import torch
+    from diffusers import (
+        StableDiffusionXLPipeline,
+        DPMSolverSinglestepScheduler,
+    )
+    from diffusers.loaders.single_file_utils import (
+        convert_ldm_unet_checkpoint,
+        convert_ldm_vae_checkpoint,
+    )
+    from safetensors.torch import load_file
+
+    path = REPO_ROOT / "models" / "dreamshaper-xl-lightning.safetensors"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Expected DreamShaper at {path}. "
+            "Download from Civitai first (see README in scripts/)."
+        )
+
+    print(f"  loading SDXL Turbo as scaffold (cached)...")
+    pipe = StableDiffusionXLPipeline.from_pretrained(
+        "stabilityai/sdxl-turbo",
+        torch_dtype=torch.float16,
+        variant="fp16",
+        local_files_only=True,
+    )
+
+    print(f"  loading {path.name} weights...")
+    state_dict = load_file(str(path))
+
+    print(f"  converting UNet weights LDM → diffusers...")
+    unet_converted = convert_ldm_unet_checkpoint(state_dict, pipe.unet.config)
+    pipe.unet.load_state_dict(unet_converted, strict=False)
+
+    print(f"  converting VAE weights LDM → diffusers...")
+    vae_converted = convert_ldm_vae_checkpoint(state_dict, pipe.vae.config)
+    pipe.vae.load_state_dict(vae_converted, strict=False)
+
+    print(f"  setting DPM++ SDE Karras scheduler...")
+    pipe.scheduler = DPMSolverSinglestepScheduler.from_config(
+        pipe.scheduler.config,
+        use_karras_sigmas=True,
+    )
+    pipe.to("cuda")
+    pipe.enable_attention_slicing()
+    return pipe
+
+
 def generate_one(pipe, prompt: str, model: str, seed: int) -> "Image":
     import torch
 
@@ -150,6 +272,16 @@ def generate_one(pipe, prompt: str, model: str, seed: int) -> "Image":
             prompt=prompt,
             num_inference_steps=4,
             guidance_scale=0.0,
+            height=HEIGHT,
+            width=WIDTH,
+            generator=generator,
+        )
+    elif model == "dreamshaper":
+        # DreamShaper XL Lightning: 6 steps, low CFG works
+        result = pipe(
+            prompt=prompt,
+            num_inference_steps=6,
+            guidance_scale=2.0,
             height=HEIGHT,
             width=WIDTH,
             generator=generator,
@@ -170,7 +302,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--model",
-        choices=["flux", "sdxl-turbo"],
+        choices=["flux", "sdxl-turbo", "dreamshaper"],
         default="flux",
         help="Model to use (default: flux — highest quality)",
     )
@@ -189,9 +321,17 @@ def main() -> None:
         default=42,
         help="Random seed (default: 42 — change to vary the same prompt)",
     )
+    parser.add_argument(
+        "--style",
+        choices=["painterly", "comic"],
+        default="painterly",
+        help="Visual style variant (default: painterly oil/concept art)",
+    )
     args = parser.parse_args()
 
-    SCENES_OUT.mkdir(parents=True, exist_ok=True)
+    # Each style writes to its own subdirectory so we can ship both.
+    out_dir = SCENES_OUT / args.style
+    out_dir.mkdir(parents=True, exist_ok=True)
     catalog = parse_catalog(CATALOG_PATH)
     if args.only:
         catalog = [(c, n) for c, n in catalog if c == args.only]
@@ -199,7 +339,8 @@ def main() -> None:
             print(f"No catalog entry matches {args.only!r}", file=sys.stderr)
             sys.exit(1)
 
-    print(f"Model: {args.model}")
+    print(f"Model: {args.model}, style: {args.style}")
+    print(f"Output: {out_dir.relative_to(REPO_ROOT)}")
     print(f"Scenes to generate: {len(catalog)}")
     print()
 
@@ -207,22 +348,23 @@ def main() -> None:
     pipe = None
 
     for chapter_id, note in catalog:
-        out = SCENES_OUT / f"{chapter_id}.jpg"
+        out = out_dir / f"{chapter_id}.jpg"
         if out.exists() and not args.force:
             print(f"  skip {chapter_id} (exists)")
             continue
 
         if pipe is None:
             t0 = time.time()
-            pipe = (
-                load_flux_pipeline()
-                if args.model == "flux"
-                else load_sdxl_turbo_pipeline()
-            )
+            if args.model == "flux":
+                pipe = load_flux_pipeline()
+            elif args.model == "dreamshaper":
+                pipe = load_dreamshaper_pipeline()
+            else:
+                pipe = load_sdxl_turbo_pipeline()
             print(f"  pipeline ready in {time.time() - t0:.1f}s")
             print()
 
-        prompt = build_prompt(note)
+        prompt = build_prompt(note, args.model, args.style)
         print(f"  synth {chapter_id}")
         print(f"    prompt: {prompt[:140]}...")
 

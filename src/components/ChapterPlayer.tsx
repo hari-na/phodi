@@ -18,12 +18,17 @@ import {
 } from "./Phonetic";
 import { AudioButton } from "./AudioButton";
 import { SceneBackground } from "./SceneBackground";
+import { AmbientPlayer } from "./AmbientPlayer";
+import { CharacterPortrait } from "./CharacterPortrait";
+import { StyleToggle } from "./StyleToggle";
 import {
   hintTierForDay,
+  loadArtStyle,
   loadProfile,
   loadRun,
   netFluency,
   recordChapterRun,
+  type ArtStylePreference,
   type PlayerProfile,
   type RunState,
 } from "@/lib/player";
@@ -48,10 +53,17 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
   const [profile, setProfile] = useState<PlayerProfile | null>(null);
   const [runBeforeChapter, setRunBeforeChapter] = useState<RunState | null>(null);
   const [finalRun, setFinalRun] = useState<RunState | null>(null);
+  const [artStyle, setArtStyle] = useState<ArtStylePreference>("painterly");
 
   useEffect(() => {
     setProfile(loadProfile());
     setRunBeforeChapter(loadRun());
+    setArtStyle(loadArtStyle());
+    function onStorage(e: StorageEvent) {
+      if (e.key === "phodi.artStyle.v1") setArtStyle(loadArtStyle());
+    }
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
   }, []);
 
   const profilesById = useMemo(() => {
@@ -121,15 +133,19 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
   return (
     <PhoneticProvider dict={dict}>
       <SceneBackground chapterId={chapter.id} layout="full" />
+      <AmbientPlayer chapterId={chapter.id} />
       <main className="relative z-10 mx-auto max-w-2xl px-6 py-10">
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between gap-3">
           <Link
             href={`/${langCode}`}
             className="text-xs uppercase tracking-[0.2em] text-cream-dim hover:text-accent"
           >
             ← Exit
           </Link>
-          <p className="text-xs text-cream-dim">Day {chapter.day}</p>
+          <div className="flex items-center gap-3">
+            <StyleToggle />
+            <p className="text-xs text-cream-dim">Day {chapter.day}</p>
+          </div>
         </div>
 
         <div className="mb-8 h-1 w-full overflow-hidden rounded-full bg-ink-soft">
@@ -178,6 +194,7 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
               onReveal={() => revealBeatMeaning(beatIdx)}
               onAdvance={advance}
               playerName={playerName}
+              artStyle={artStyle}
             />
           )}
           {!done && beat?.kind === "choice" && (
@@ -221,6 +238,7 @@ function NpcBeatView({
   onReveal,
   onAdvance,
   playerName,
+  artStyle,
 }: {
   beat: NpcLine;
   profile?: VoiceProfile;
@@ -229,15 +247,19 @@ function NpcBeatView({
   onReveal: () => void;
   onAdvance: () => void;
   playerName: string;
+  artStyle: ArtStylePreference;
 }) {
   const showEnglish = tier === 1 || revealed;
   return (
     <div className="flex flex-col gap-6">
-      {profile && (
-        <p className="text-xs uppercase tracking-[0.2em] text-accent">
-          {profile.name}
-        </p>
-      )}
+      <div className="flex items-center gap-3">
+        <CharacterPortrait speakerId={beat.speakerId} style={artStyle} size="md" />
+        {profile && (
+          <p className="text-xs uppercase tracking-[0.2em] text-accent">
+            {profile.name}
+          </p>
+        )}
+      </div>
       {beat.beat && (
         <p className="text-xs italic text-cream-dim">— {withName(beat.beat, playerName)}</p>
       )}

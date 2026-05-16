@@ -14,12 +14,32 @@
 
 export type KnownLanguage = "ta" | "ml" | "hi" | "te" | "en";
 export type LoveInterestPreference = "anika" | "anik" | "skip";
+export type ArtStylePreference = "painterly" | "comic";
 
 export interface PlayerProfile {
   name: string;
   knownLanguages: KnownLanguage[];
   loveInterest: LoveInterestPreference;
+  artStyle?: ArtStylePreference;
   createdAtISO: string;
+}
+
+const ART_STYLE_KEY = "phodi.artStyle.v1";
+
+/** Live art-style preference. Lives outside the profile so it can be toggled
+ *  mid-game without touching the rest of the profile. Falls back to the
+ *  profile's stored style if no live override is set. */
+export function loadArtStyle(): ArtStylePreference {
+  if (typeof window === "undefined") return "painterly";
+  const override = window.localStorage.getItem(ART_STYLE_KEY);
+  if (override === "painterly" || override === "comic") return override;
+  const profile = loadProfile();
+  return profile?.artStyle ?? "painterly";
+}
+
+export function saveArtStyle(style: ArtStylePreference) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(ART_STYLE_KEY, style);
 }
 
 export interface ChapterRunRecord {
