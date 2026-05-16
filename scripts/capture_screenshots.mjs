@@ -316,6 +316,41 @@ const shots = [
       await sleep(500);
     },
   },
+  // Dual-style showcase shots — Day 1 painterly and comic side-by-side
+  // demonstrating the real generated scene + portrait + style toggle.
+  {
+    name: "21-day-01-painterly.png",
+    url: "/kn/chapter/kn-day-01-airport",
+    setup: async (page) => {
+      await page.evaluate(() =>
+        window.localStorage.setItem("phodi.artStyle.v1", "painterly")
+      );
+      await page.reload({ waitUntil: "networkidle" });
+      // Skip past initial chapter intro by clicking Continue once
+      await sleep(800);
+      const cont = page.getByRole("button", { name: /Continue/ });
+      if (await cont.isVisible().catch(() => false)) {
+        await cont.click();
+        await sleep(400);
+      }
+    },
+  },
+  {
+    name: "22-day-01-comic.png",
+    url: "/kn/chapter/kn-day-01-airport",
+    setup: async (page) => {
+      await page.evaluate(() =>
+        window.localStorage.setItem("phodi.artStyle.v1", "comic")
+      );
+      await page.reload({ waitUntil: "networkidle" });
+      await sleep(800);
+      const cont = page.getByRole("button", { name: /Continue/ });
+      if (await cont.isVisible().catch(() => false)) {
+        await cont.click();
+        await sleep(400);
+      }
+    },
+  },
 ];
 
 async function main() {
