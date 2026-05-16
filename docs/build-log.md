@@ -81,6 +81,46 @@ you push back with ಮೀಟರ್ ಹಾಕಿ.
 hook. Cultural-appropriateness scoring (Vibes) is the wedge no learning
 app currently does. This is the PM Engineer signal that lands.
 
+## Milestone 11 — Onboarding, persistent state, hint tiers, multi-ending
+**Shipped:** Four player-facing systems on top of the now-complete 30
+chapters. The game goes from "playable demo" to "complete shippable
+product."
+
+1. **Onboarding (`/onboarding`)** — three-step setup: name (used in
+   the game), languages already spoken (will drive bridge-hint
+   localisation), and love-interest preference (woman / man / skip).
+   Stored in `localStorage` under `phodi.player.v1`.
+2. **Onboarding gate (`OnboardingGate`)** — client wrapper in
+   `app/layout.tsx` that redirects first-time visitors to `/onboarding`
+   and skips itself once a profile exists.
+3. **Cross-chapter state (`lib/player.ts`)** — every completed chapter
+   writes `{ fluency, vibes, hintCost, flags }` to `phodi.run.v1`.
+   `recordChapterRun()` updates running totals. The chapter intro
+   shows "Coming in: X fluency · Y vibes" so accumulated state is
+   visible. Replaying a chapter cleanly subtracts the prior run.
+4. **Hint tier toggle** — Days 1-10 (tier 1) show English meanings
+   by default. Days 11-20 (tier 2) and 21-30 (tier 3) hide the English
+   behind a "Show meaning · −2 fluency" button per beat. Tap costs
+   Fluency, never points back. The chapter intro tells the player what
+   tier they're in.
+5. **Day 30 ending tree** — the final scorecard reads the entire run
+   (`netFluency + totalVibes`, flag set) and picks one of six ending
+   variants: "You belong here now" (best path), "You belong here now"
+   (good path), "You stayed" (medium), "You'll figure it out" (good
+   unsure / soft unsure), "You went home" (good leave / bittersweet
+   leave). Uses the player's chosen name throughout.
+
+Also: `[your name]` and `[you]` placeholders in choice text are now
+substituted with the profile's name at render time, so introductions
+on Days 16-17 are actually personalised.
+
+**Screenshots:** `00-onboarding.png`, `00b-onboarding-language.png`.
+
+**Why it matters:** the game now has a real beginning (onboarding),
+a real middle (30 chapters with persisting state), and a real end
+(an ending screen calibrated to how you played). It's not a demo any
+more.
+
 ## Milestone 10 — All 30 chapters of Act 1 (entire story shipped)
 **Shipped:** The complete playable story. Days 5-30 hand-crafted to
 match the editorial voice of Days 1-4. Ten new voice profiles

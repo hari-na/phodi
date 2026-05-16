@@ -1,0 +1,201 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
+import {
+  saveProfile,
+  type KnownLanguage,
+  type LoveInterestPreference,
+} from "@/lib/player";
+
+const LANG_OPTIONS: Array<{ code: KnownLanguage; label: string; native: string }> = [
+  { code: "ta", label: "Tamil", native: "தமிழ்" },
+  { code: "ml", label: "Malayalam", native: "മലയാളം" },
+  { code: "hi", label: "Hindi", native: "हिन्दी" },
+  { code: "te", label: "Telugu", native: "తెలుగు" },
+  { code: "en", label: "Just English", native: "English" },
+];
+
+const LOVE_OPTIONS: Array<{
+  value: LoveInterestPreference;
+  label: string;
+  hint: string;
+}> = [
+  { value: "anika", label: "A woman", hint: "Anika. Architect. Kannadiga. Amused at your accent." },
+  { value: "anik", label: "A man", hint: "Anik. Architect. Kannadiga. Amused at your accent. (Same beats, different pronouns.)" },
+  { value: "skip", label: "Skip the romance", hint: "Day 16 onwards plays as friendship instead." },
+];
+
+export default function OnboardingPage() {
+  const router = useRouter();
+  const [step, setStep] = useState(0);
+  const [name, setName] = useState("");
+  const [languages, setLanguages] = useState<KnownLanguage[]>([]);
+  const [loveInterest, setLoveInterest] = useState<LoveInterestPreference | null>(null);
+
+  function toggleLanguage(code: KnownLanguage) {
+    setLanguages((langs) =>
+      langs.includes(code) ? langs.filter((l) => l !== code) : [...langs, code]
+    );
+  }
+
+  function finish() {
+    saveProfile({
+      name: name.trim() || "You",
+      knownLanguages: languages.length > 0 ? languages : ["en"],
+      loveInterest: loveInterest ?? "anika",
+      createdAtISO: new Date().toISOString(),
+    });
+    router.push("/kn");
+  }
+
+  const canNext =
+    step === 0 ? name.trim().length > 0 :
+    step === 1 ? languages.length > 0 :
+    step === 2 ? loveInterest !== null :
+    true;
+
+  return (
+    <main className="mx-auto flex min-h-screen max-w-xl flex-col px-6 py-16">
+      <p className="text-xs uppercase tracking-[0.2em] text-cream-dim">
+        Phodi · Setup
+      </p>
+
+      <div className="mt-3 mb-12 flex items-center gap-1">
+        {[0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className={cn(
+              "h-1 flex-1 rounded-full transition-colors",
+              i <= step ? "bg-accent" : "bg-ink-soft"
+            )}
+          />
+        ))}
+      </div>
+
+      {step === 0 && (
+        <section className="flex flex-col gap-6">
+          <h1 className="serif text-4xl text-cream">What should the city call you?</h1>
+          <p className="text-cream-muted">
+            Auto drivers, watchmen, chai stalls, your future in-laws — they'll
+            all use this. First name is enough.
+          </p>
+          <input
+            autoFocus
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && canNext) setStep(1);
+            }}
+            placeholder="Your name"
+            className="mt-2 rounded-md border border-cream/15 bg-ink-soft px-5 py-4 text-2xl text-cream placeholder:text-cream-dim/50 focus:border-accent/60 focus:outline-none"
+          />
+        </section>
+      )}
+
+      {step === 1 && (
+        <section className="flex flex-col gap-6">
+          <h1 className="serif text-4xl text-cream">What do you already speak?</h1>
+          <p className="text-cream-muted">
+            If you know Tamil or Malayalam, your Kannada lessons will bridge
+            from there. Pick all that apply.
+          </p>
+          <div className="mt-2 space-y-2">
+            {LANG_OPTIONS.map((opt) => {
+              const selected = languages.includes(opt.code);
+              return (
+                <button
+                  key={opt.code}
+                  onClick={() => toggleLanguage(opt.code)}
+                  className={cn(
+                    "w-full rounded-md border px-5 py-4 text-left transition",
+                    selected
+                      ? "border-accent/60 bg-accent/10"
+                      : "border-cream/10 bg-ink-soft hover:border-cream/30"
+                  )}
+                >
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-lg text-cream">{opt.label}</span>
+                    <span className="font-kn text-sm text-cream-muted">
+                      {opt.native}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {step === 2 && (
+        <section className="flex flex-col gap-6">
+          <h1 className="serif text-4xl text-cream">Who do you want to fall for?</h1>
+          <p className="text-cream-muted">
+            On Day 16 you'll meet someone at a Church Street bookstore. Same
+            story either way — pick what feels right.
+          </p>
+          <div className="mt-2 space-y-2">
+            {LOVE_OPTIONS.map((opt) => {
+              const selected = loveInterest === opt.value;
+              return (
+                <button
+                  key={opt.value}
+                  onClick={() => setLoveInterest(opt.value)}
+                  className={cn(
+                    "w-full rounded-md border px-5 py-4 text-left transition",
+                    selected
+                      ? "border-accent/60 bg-accent/10"
+                      : "border-cream/10 bg-ink-soft hover:border-cream/30"
+                  )}
+                >
+                  <p className="text-lg text-cream">{opt.label}</p>
+                  <p className="mt-1 text-sm text-cream-muted">{opt.hint}</p>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      <div className="mt-12 flex items-center justify-between">
+        <button
+          onClick={() => setStep((s) => Math.max(0, s - 1))}
+          disabled={step === 0}
+          className={cn(
+            "text-sm text-cream-dim transition",
+            step === 0 ? "opacity-30" : "hover:text-cream"
+          )}
+        >
+          ← Back
+        </button>
+
+        {step < 2 ? (
+          <button
+            disabled={!canNext}
+            onClick={() => setStep(step + 1)}
+            className={cn(
+              "rounded-md bg-accent px-6 py-3 text-sm font-medium text-ink transition",
+              !canNext && "cursor-not-allowed opacity-40",
+              canNext && "hover:bg-accent-deep"
+            )}
+          >
+            Next →
+          </button>
+        ) : (
+          <button
+            disabled={!canNext}
+            onClick={finish}
+            className={cn(
+              "rounded-md bg-accent px-6 py-3 text-sm font-medium text-ink transition",
+              !canNext && "cursor-not-allowed opacity-40",
+              canNext && "hover:bg-accent-deep"
+            )}
+          >
+            Start Day 1 →
+          </button>
+        )}
+      </div>
+    </main>
+  );
+}

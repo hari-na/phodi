@@ -28,9 +28,56 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const shots = [
   {
+    name: "00-onboarding.png",
+    url: "/onboarding",
+    setup: async (page) => {
+      await page.evaluate(() => {
+        // Clear only lesson progress, leave the player profile intact
+        window.localStorage.removeItem("phodi.progress.v1");
+        window.localStorage.removeItem("phodi.run.v1");
+      });
+      await page.reload({ waitUntil: "networkidle" });
+      await sleep(500);
+    },
+  },
+  {
+    name: "00b-onboarding-language.png",
+    url: "/onboarding",
+    setup: async (page) => {
+      await page.evaluate(() => {
+        // Clear only lesson progress, leave the player profile intact
+        window.localStorage.removeItem("phodi.progress.v1");
+        window.localStorage.removeItem("phodi.run.v1");
+      });
+      await page.reload({ waitUntil: "networkidle" });
+      await sleep(400);
+      await page.fill("input", "Hari");
+      await sleep(150);
+      await page.getByRole("button", { name: /^Next/ }).click();
+      await sleep(400);
+    },
+  },
+  {
     name: "01-home.png",
     url: "/",
-    setup: async () => {},
+    setup: async (page) => {
+      // Seed a profile so the onboarding gate lets us through to /
+      await page.evaluate(() =>
+        window.localStorage.setItem(
+          "phodi.player.v1",
+          JSON.stringify({
+            name: "Hari",
+            knownLanguages: ["ta"],
+            loveInterest: "anika",
+            createdAtISO: new Date().toISOString(),
+          })
+        )
+      );
+      await page.goto((process.env.PHODI_BASE_URL || "http://localhost:3001") + "/", {
+        waitUntil: "networkidle",
+      });
+      await sleep(500);
+    },
   },
   {
     name: "02-course-overview.png",
@@ -41,7 +88,11 @@ const shots = [
     name: "03-lesson-intro.png",
     url: "/kn/lesson/kn-001-greetings",
     setup: async (page) => {
-      await page.evaluate(() => window.localStorage.clear());
+      await page.evaluate(() => {
+        // Clear only lesson progress, leave the player profile intact
+        window.localStorage.removeItem("phodi.progress.v1");
+        window.localStorage.removeItem("phodi.run.v1");
+      });
       await page.reload();
       await sleep(500);
     },
@@ -50,7 +101,11 @@ const shots = [
     name: "04-vocab-card-dravidian-bridges.png",
     url: "/kn/lesson/kn-001-greetings",
     setup: async (page) => {
-      await page.evaluate(() => window.localStorage.clear());
+      await page.evaluate(() => {
+        // Clear only lesson progress, leave the player profile intact
+        window.localStorage.removeItem("phodi.progress.v1");
+        window.localStorage.removeItem("phodi.run.v1");
+      });
       await page.reload();
       await sleep(500);
       // Click "Start"
@@ -62,7 +117,11 @@ const shots = [
     name: "05-mc-with-ruby-phonetic.png",
     url: "/kn/lesson/kn-001-greetings",
     setup: async (page) => {
-      await page.evaluate(() => window.localStorage.clear());
+      await page.evaluate(() => {
+        // Clear only lesson progress, leave the player profile intact
+        window.localStorage.removeItem("phodi.progress.v1");
+        window.localStorage.removeItem("phodi.run.v1");
+      });
       await page.reload();
       await sleep(500);
       await page.getByRole("button", { name: /Start/i }).click();
@@ -81,7 +140,11 @@ const shots = [
     name: "06-mc-kannada-options-with-translit.png",
     url: "/kn/lesson/kn-001-greetings",
     setup: async (page) => {
-      await page.evaluate(() => window.localStorage.clear());
+      await page.evaluate(() => {
+        // Clear only lesson progress, leave the player profile intact
+        window.localStorage.removeItem("phodi.progress.v1");
+        window.localStorage.removeItem("phodi.run.v1");
+      });
       await page.reload();
       await sleep(500);
       await page.getByRole("button", { name: /Start/i }).click();
@@ -266,6 +329,21 @@ async function main() {
     colorScheme: "dark",
   });
   const page = await context.newPage();
+
+  // Seed a default profile so non-onboarding shots aren't bounced to /onboarding.
+  // Onboarding-specific shots clear and re-seed within their own setup.
+  await page.goto(BASE, { waitUntil: "networkidle" });
+  await page.evaluate(() => {
+    window.localStorage.setItem(
+      "phodi.player.v1",
+      JSON.stringify({
+        name: "Hari",
+        knownLanguages: ["ta"],
+        loveInterest: "anika",
+        createdAtISO: new Date().toISOString(),
+      })
+    );
+  });
 
   for (const shot of shots) {
     const url = `${BASE}${shot.url}`;
