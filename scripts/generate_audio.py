@@ -97,7 +97,9 @@ def synthesize_sarvam(text: str, voice: str, locale: str, key: str) -> bytes:
         "target_language_code": locale,
         "speaker": voice,
         "model": "bulbul:v2",
-        "speech_sample_rate": 22050,
+        # Sarvam expects sample rate as a string, not an int.
+        "speech_sample_rate": "22050",
+        "output_audio_codec": "wav",
         "enable_preprocessing": True,
         "pace": 0.9,
     }
