@@ -1,0 +1,145 @@
+{
+  "id": "kn-day-23-phone-call-home",
+  "day": 23,
+  "language": "kn",
+  "title": "The Phone Call Home",
+  "titleNative": "ಮನೆಯವರ ಕರೆ",
+  "setting": "Monday night. 10:30pm. You're at your kitchen table writing a code-review comment. Your phone lights up. AMMA. You answer in your mother tongue — the language of every meal, every fight, every birthday — and you don't even think about it. After you hang up, you sit there a long moment.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "mom",
+      "native": "Hi kanna. ate already? You sound tired.",
+      "translit": "(in your mother tongue, soft and unhurried)",
+      "en": "Hi, child. Have you eaten? You sound tired.",
+      "emotion": "warm",
+      "beat": "your mother's voice — the one that knows what you sound like at every age",
+      "audio": "/audio/kn/chapters/kn-day-23-phone-call-home/mom-warm-ae7beb3c8e.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You smile. You answer:",
+      "choices": [
+        {
+          "en": "Yeah Amma, ate. Tired but okay. Got a new project at work today.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Yeah, just finishing up. Long day.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        },
+        {
+          "en": "I was going to call you, I swear.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 3
+          },
+          "setFlag": "warmth_with_mom"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "mom",
+      "native": "Your father planted three new roses today. He's been asking when you'll come home for a weekend. The new flat is nice? Cook is good?",
+      "translit": "(she's not the type to push, but she's keeping a list)",
+      "en": "Your father planted three new roses today. He's been asking when you'll visit. Is the new flat nice? Is the cook good?",
+      "emotion": "warm",
+      "beat": "the careful checklist of a mother who can't visit",
+      "audio": "/audio/kn/chapters/kn-day-23-phone-call-home/mom-warm-afd269ed5d.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "en": "Flat's great Amma, you'd like it. Cook is excellent. Met her daughter today — she's doing well in school.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 3
+          },
+          "setFlag": "shared_about_cook"
+        },
+        {
+          "en": "All fine. Hectic. Promise I'll send pictures.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        },
+        {
+          "en": "Yeah. Yeah. All good.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "mom",
+      "native": "Met someone, da?",
+      "translit": "(quiet, casual, the way she asks everything important)",
+      "en": "Met someone, dear?",
+      "emotion": "amused",
+      "beat": "the question lands like she's been holding it for two weeks",
+      "audio": "/audio/kn/chapters/kn-day-23-phone-call-home/mom-amused-a23d949d86.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You sit back. You say:",
+      "choices": [
+        {
+          "en": "Maybe. Met someone last week. Anika. She's — she's good, Amma. I'll tell you more soon.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 4
+          },
+          "setFlag": "told_mom_about_anika"
+        },
+        {
+          "en": "Working too much for that, Amma.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        },
+        {
+          "en": "Amma. Stop.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "mom",
+      "native": "Okay okay. Don't keep too many secrets. Sleep early — you sound tired. I'll call Sunday.",
+      "translit": "(she's not going to push tonight. she just wanted to know.)",
+      "en": "Okay okay. Don't keep too many secrets. Sleep early — you sound tired. I'll call Sunday.",
+      "emotion": "warm",
+      "beat": "she hangs up before you can argue about anything",
+      "audio": "/audio/kn/chapters/kn-day-23-phone-call-home/mom-warm-c24cfc3219.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "narrator",
+      "native": "You set the phone down. You realise for the last twenty minutes you'd been switching to English from a language you'd already started thinking in. Kannada. The shift wasn't loud. It just happened.",
+      "translit": "(the drift you didn't see coming)",
+      "en": "You set the phone down. You realise for the last twenty minutes you'd been switching to English from a language you'd already started thinking in. Kannada. The shift wasn't loud. It just happened.",
+      "emotion": "hushed",
+      "beat": "the chapter's only line of true narrator. no choice after. the realisation is the chapter.",
+      "audio": "/audio/kn/chapters/kn-day-23-phone-call-home/narrator-hushed-e5e009710c.wav"
+    }
+  ]
+}

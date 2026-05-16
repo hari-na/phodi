@@ -1,0 +1,132 @@
+{
+  "id": "kn-day-10-sunday-market",
+  "day": 10,
+  "language": "kn",
+  "title": "The Sunday Market",
+  "titleNative": "ಭಾನುವಾರದ ಸಂತೆ",
+  "setting": "7am. BTM 2nd Stage Sunday market. The road is half-blocked with tarp-roofed stalls. You stop in front of one with the best-looking tomatoes you've ever seen. The vendor aunty looks at you — once, top to bottom — then at her granddaughter, who hasn't looked up from her phone.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "vendor_aunty",
+      "native": "ಬೇಕಾ ಸಾರ್? Tomato fresh. Kilo ಅರವತ್ತು ರೂಪಾಯಿ.",
+      "translit": "bēkā sār? tomato fresh. kilo aravattu rūpāyi.",
+      "en": "Want some, sir? Tomatoes fresh. Sixty rupees a kilo.",
+      "emotion": "neutral",
+      "beat": "the price she gives the office-bag people",
+      "audio": "/audio/kn/chapters/kn-day-10-sunday-market/vendor_aunty-neutral-601f76b9b5.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You look at the tomatoes. You say:",
+      "choices": [
+        {
+          "native": "ಅರವತ್ತು ಸ್ವಲ್ಪ ಜಾಸ್ತಿ ಆಂಟಿ. ನಲವತ್ತು ಮಾಡಿ.",
+          "translit": "aravattu svalpa jāsti aunty. nalavattu māḍi.",
+          "en": "Sixty's a bit much, aunty. Make it forty.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 2
+          },
+          "setFlag": "bargained"
+        },
+        {
+          "native": "ಒಂದು kilo ಕೊಡಿ.",
+          "translit": "ondu kilo koḍi.",
+          "en": "One kilo, please.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 0
+          }
+        },
+        {
+          "en": "Sixty? Forget it.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -2
+          },
+          "setFlag": "rude_at_market"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "vendor_aunty",
+      "native": "ಅಯ್ಯೋ ಸಾರ್, ನಲವತ್ತು ಗೆ ಎಲ್ಲಿ ಸಿಗುತ್ತೆ? ಐವತ್ತು ಮಾಡಿ. ಫೈನಲ್.",
+      "translit": "ayyō sār, nalavattu-ge elli sigutte? aivattu māḍi. final.",
+      "en": "Aiyyo sir, where will you get them for forty? Make it fifty. Final.",
+      "emotion": "annoyed",
+      "beat": "already weighing them out, knowing how this ends",
+      "audio": "/audio/kn/chapters/kn-day-10-sunday-market/vendor_aunty-annoyed-6440483b21.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಸರಿ. ಐವತ್ತು. ಒಂದು kilo. ಮತ್ತೆ ನಾಲ್ಕು ಮೆಣಸಿನಕಾಯಿ.",
+          "translit": "sari. aivattu. ondu kilo. matte nālku meṇasinakāyi.",
+          "en": "Okay. Fifty. One kilo. And four chillies.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 2
+          },
+          "setFlag": "first_market_buy"
+        },
+        {
+          "native": "ಸರಿ ಆಂಟಿ. ಐವತ್ತು.",
+          "translit": "sari aunty. aivattu.",
+          "en": "Okay aunty. Fifty.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "vendor_aunty",
+      "native": "ಮೆಣಸಿನಕಾಯಿ free ಸಾರ್. ಮುಂದಿನ ವಾರ ಬರ್ರೀ, ಬೇರೆ ಒಳ್ಳೆ ಬೆಲೆ ಕೊಡ್ತೀನಿ.",
+      "translit": "meṇasinakāyi free sār. mundina vāra barrī, bēre oḷḷe bele koḍtīni.",
+      "en": "Chillies on the house, sir. Come next week, I'll give you a better price.",
+      "emotion": "warm",
+      "beat": "the granddaughter looks up — first time since you arrived",
+      "audio": "/audio/kn/chapters/kn-day-10-sunday-market/vendor_aunty-warm-94e1a17381.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "vendor_aunty",
+      "native": "ನೀವು ಹೊಸದಾಗಿ ಬಂದಿದ್ದೀರಾ ಸಾರ್? ಮುಖ ನೋಡಿ ಗೊತ್ತಾಗುತ್ತೆ.",
+      "translit": "nīvu hosadāgi bandiddīrā sār? mukha nōḍi gottāgutte.",
+      "en": "You're new, aren't you, sir? It shows on the face.",
+      "emotion": "amused",
+      "beat": "tying up the bag, not looking up — but smiling",
+      "audio": "/audio/kn/chapters/kn-day-10-sunday-market/vendor_aunty-amused-8397f191ea.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You laugh. You say:",
+      "choices": [
+        {
+          "native": "ಹೌದು ಆಂಟಿ! Two weeks ಆಯ್ತು. ಪ್ರತಿ ಭಾನುವಾರ ಬರ್ತೀನಿ.",
+          "translit": "haudu aunty! two weeks āytu. prati bhānuvāra bartīni.",
+          "en": "Yes aunty! Two weeks now. I'll come every Sunday.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "market_regular"
+        },
+        {
+          "en": "Yeah, just moved.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    }
+  ]
+}

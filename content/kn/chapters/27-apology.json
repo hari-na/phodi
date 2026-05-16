@@ -1,0 +1,116 @@
+{
+  "id": "kn-day-27-apology",
+  "day": 27,
+  "language": "kn",
+  "title": "The Apology",
+  "titleNative": "ಕ್ಷಮೆ",
+  "setting": "Sunday 5pm. You're back at Amma's place. Anika asked. Amma opened the door without surprise. Appa is in his chair. You can hear the kettle in the kitchen. Anika is sitting one seat over from you, deliberately not within reach.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "ಸಾರ್. ಬನ್ನಿ. Coffee ಬರುತ್ತೆ. ಏನು ಮಾತಾಡಬೇಕು — ಮಾತಾಡಿ.",
+      "translit": "sār. banni. coffee barutte. ēnu mātāḍabēku — mātāḍi.",
+      "en": "Sir. Sit. Coffee's coming. Whatever you came to say — say it.",
+      "emotion": "neutral",
+      "beat": "no preamble. she knows why you're here.",
+      "audio": "/audio/kn/chapters/kn-day-27-apology/amma-neutral-a81321a848.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You straighten up. You speak to Amma first. You say:",
+      "choices": [
+        {
+          "native": "ಆಂಟಿ. ಕ್ಷಮಿಸಿ. ಒಂದು ವಾರ ಮುಂಚೆ ನಿಮ್ಮ ಜೊತೆ ನಾನು 'ನೀನು' ಎಂದು ಬಳಸಿದೆ. ಅದು ತಪ್ಪು. ನೀವು. ನಿಮ್ಮ ಗೌರವ. ಇದು ನನಗೆ ಗೊತ್ತು, ಮತ್ತು ನಾನು careful ಆಗಬೇಕು.",
+          "translit": "aunty. kṣamisi. ondu vāra mumce nimma joḍe nānu 'nīnu' endu baḷaside. adu tappu. nīvu. nimma gaurava. idu nanage gottu, mattu nānu careful āgabēku.",
+          "en": "Aunty. I'm sorry. A week ago I used 'ninnu' with you. That was wrong. 'Neevu'. Your respect. I know that, and I have to be more careful.",
+          "effects": {
+            "fluency": 5,
+            "vibes": 5
+          },
+          "setFlag": "amma_recovered"
+        },
+        {
+          "native": "ಆಂಟಿ. Sorry for ee misstep. ಇನ್ನು careful ಇರ್ತೀನಿ.",
+          "translit": "aunty. sorry for ee misstep. innu careful irtīni.",
+          "en": "Aunty. Sorry for the misstep. I'll be careful from now.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Sorry about last Sunday, aunty.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "Hm. Coffee ಇದೆ — ತಗೋಳಿ. Mistake ಗೊತ್ತಾಗಿದ್ರೆ ಸಾಕು. ನಾನು ಯಾವತ್ತೂ ಯಾರಿಗೂ correct ಮಾಡಲ್ಲ.",
+      "translit": "hm. coffee ide — tagoḷi. mistake gottāgidre sāku. nānu yāvattū yārigū correct māḍalla.",
+      "en": "Hmm. Coffee's here — take some. Knowing the mistake is enough. I never correct anyone.",
+      "emotion": "warm",
+      "beat": "the smallest nod. the test wasn't whether you'd slip; it was whether you'd notice.",
+      "audio": "/audio/kn/chapters/kn-day-27-apology/amma-warm-23d8c30881.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "appa",
+      "native": "ನೀನು — ನೀವು — engineer ತಾನೇ. ಚೆನ್ನಾಗಿ ಕಲಿಯ್ತಾ ಇದ್ದೀರಿ. ಮುಂದುವರಿ.",
+      "translit": "nīnu — nīvu — engineer tānē. cennāgi kaliytā iddīri. munduvari.",
+      "en": "You're — neevu — an engineer. Learning well. Keep going.",
+      "emotion": "warm",
+      "beat": "he corrected himself mid-sentence. that was a joke. that was his joke.",
+      "audio": "/audio/kn/chapters/kn-day-27-apology/appa-warm-f6cfd65878.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You laugh, surprised. You say:",
+      "choices": [
+        {
+          "native": "ಸಾರ್, ಧನ್ಯವಾದಗಳು. ನೀವು ಚೆನ್ನಾಗಿ joke ಮಾಡ್ತೀರಿ — ಯಾರಿಗೂ ಗೊತ್ತಿಲ್ಲ ಅಂತಾ feel ಆಗ್ತಾ ಇದೆ.",
+          "translit": "sār, dhanyavādagaḷu. nīvu cennāgi joke māḍtīri — yārigū gottilla antā feel āgtā ide.",
+          "en": "Sir, thank you. You tell jokes well — feels like nobody knows.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 4
+          },
+          "setFlag": "appa_thawed"
+        },
+        {
+          "en": "Thanks, sir. That helps.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Amma, Appa — ನಾನು coffee ತಗೊಂಡು ಬರ್ತೀನಿ. ಸಾರ್ ಜೊತೆ ಸ್ವಲ್ಪ ಹೊರಗೆ ನಿಲ್ಲೋಣ.",
+      "translit": "Amma, Appa — nānu coffee tagoṇḍu bartīni. sār joḍe svalpa horage nillōṇa.",
+      "en": "Amma, Appa — let me take coffee out. I'll stand a bit outside with him.",
+      "emotion": "warm",
+      "beat": "she stands. you stand. Amma nods. it's permission.",
+      "audio": "/audio/kn/chapters/kn-day-27-apology/anika-warm-072c99f201.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Ee ರೀತಿ apologise ಮಾಡಿದ್ದು ಸಾಕು. ನಾನು ಬೇಕು ಸ್ವಲ್ಪ ಸಮಯ. But — ನೀನು — sorry — ನೀವು — gah, ನಾವು ಎಲ್ಲರೂ make ಮಾಡ್ತೀವಿ.",
+      "translit": "ee rīti apologise māḍiddu sāku. nānu bēku svalpa samaya. but — nīnu — sorry — nīvu — gah, nāvu ellarū make māḍtīvi.",
+      "en": "That kind of apology is enough. I need a little time. But — ninnu — sorry — neevu — gah, all of us make mistakes.",
+      "emotion": "hushed",
+      "beat": "she laughs at her own slip. you laugh. for the first time this week the air is lighter.",
+      "audio": "/audio/kn/chapters/kn-day-27-apology/anika-hushed-2ec8901818.wav"
+    }
+  ]
+}

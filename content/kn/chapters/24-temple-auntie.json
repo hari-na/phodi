@@ -1,0 +1,137 @@
+{
+  "id": "kn-day-24-temple-auntie",
+  "day": 24,
+  "language": "kn",
+  "title": "The Temple Auntie",
+  "titleNative": "ದೇವಸ್ಥಾನದ ಆಂಟಿ",
+  "setting": "Tuesday 6:30am. Banashankari temple. Anika asked you to drop off a small offering on your way to work — her grandmother's annual remembrance. You're standing in line. The auntie behind you has already decided you're shy and is fixing that.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "temple_auntie",
+      "native": "ತಮ್ಮಾ! ಯಾವ ಊರಿನವರು? ಮುಖ ಹೊಸದು.",
+      "translit": "tammā! yāva ūrinavaru? mukha hosadu.",
+      "en": "Brother! Which town are you from? Your face is new.",
+      "emotion": "warm",
+      "beat": "tapping your shoulder before you've finished turning",
+      "audio": "/audio/kn/chapters/kn-day-24-temple-auntie/temple_auntie-warm-66e6cc4ba4.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You half-turn. You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ ಆಂಟಿ. Bangalore ಗೆ ಬಂದು ಎರಡು ತಿಂಗಳ. Engineering work.",
+          "translit": "namaskāra aunty. Bangalore-ge bandu eraḍu tiṅgaḷa. engineering work.",
+          "en": "Hello aunty. Two months in Bangalore. Engineering work.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Hi aunty. I'm new here.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "temple_auntie",
+      "native": "Engineering! ಒಳ್ಳೆಯದು. ಮದುವೆ ಆಗಿದ್ಯಾ ತಮ್ಮಾ? Age ಎಷ್ಟು?",
+      "translit": "engineering! oḷḷeyadu. maduve āgidyā tammā? age eṣṭu?",
+      "en": "Engineering! Wonderful. Married yet, brother? What's your age?",
+      "emotion": "warm",
+      "beat": "she has not blinked since this conversation began",
+      "audio": "/audio/kn/chapters/kn-day-24-temple-auntie/temple_auntie-warm-4704cc0f28.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take half a step away. You say:",
+      "choices": [
+        {
+          "native": "ಆಂಟಿ, ಸ್ವಲ್ಪ — ಈಗ time ಇಲ್ಲ. Job ಗೆ late.",
+          "translit": "aunty, svalpa — īga time illa. job-ge late.",
+          "en": "Aunty, ah — no time right now. Late for work.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 1
+          }
+        },
+        {
+          "native": "ಇನ್ನು ಮದುವೆ ಇಲ್ಲ ಆಂಟಿ. ಇಪ್ಪತ್ತೇಳು.",
+          "translit": "innu maduve illa aunty. ippattēḷu.",
+          "en": "Not married yet, aunty. Twenty-seven.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 0
+          },
+          "setFlag": "told_temple_auntie_age"
+        },
+        {
+          "en": "Aunty I really need to keep moving.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "temple_auntie",
+      "native": "ಇಪ್ಪತ್ತೇಳು! ಪರ್ಫೆಕ್ಟ್. ನನ್ನ ತಂಗಿ ಮಗಳು — ಪ್ರೀತಿ. Twenty-five, Bangalore ನಲ್ಲಿ accountant. Photo ತೋರಿಸ್ತೀನಿ ತಮ್ಮಾ — ಒಂದು second.",
+      "translit": "ippattēḷu! perfect. nanna taṅgi magaḷu — Preethi. twenty-five, Bangalore-nalli accountant. photo tōristīni tammā — ondu second.",
+      "en": "Twenty-seven! Perfect. My sister's daughter — Preethi. Twenty-five, accountant in Bangalore. Let me show you a photo, brother — one second.",
+      "emotion": "warm",
+      "beat": "her phone is in her hand before you can object",
+      "audio": "/audio/kn/chapters/kn-day-24-temple-auntie/temple_auntie-warm-e1ba27a6cc.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You can feel the line shifting. You say:",
+      "choices": [
+        {
+          "native": "ಆಂಟಿ, ತುಂಬಾ ಧನ್ಯವಾದ — ಆದರೆ ನಾನು ಈಗಾಗಲೇ ಒಬ್ಬರ ಜೊತೆ ಇದ್ದೇನೆ. ನಿಮ್ಮ ಆಶೀರ್ವಾದ ಬೇಕು ಆಂಟಿ.",
+          "translit": "aunty, tumbā dhanyavāda — ādare nānu īgāgalē obbara joḍe iddēne. nimma āśīrvāda bēku aunty.",
+          "en": "Aunty, thank you so much — but I'm already seeing someone. Your blessings would mean a lot, aunty.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 4
+          },
+          "setFlag": "deflected_with_grace"
+        },
+        {
+          "native": "Sorry ಆಂಟಿ. ನನ್ನ ಆಗಿಲ್ಲ ಇನ್ನು.",
+          "translit": "sorry aunty. nanna āgilla innu.",
+          "en": "Sorry aunty. I'm not ready yet.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 1
+          }
+        },
+        {
+          "en": "Aunty no thank you please.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "temple_auntie",
+      "native": "Ayyo, already taken! ಅವಳಿಗೆ ಒಳ್ಳೆ ಆಶೀರ್ವಾದ ತಮ್ಮಾ. ಒಂದು Preethi ಗೆ ತೋರಿಸ್ತೀನಿ — ಬೇರೆ ಒಬ್ಬರು ಸಿಗ್ತಾರೆ. ಹೋಗಿ, late ಆಗ್ತಿದೆ — God bless.",
+      "translit": "ayyo, already taken! avaḷige oḷḷe āśīrvāda tammā. ondu Preethi-ge tōristīni — bēre obbaru sigtāre. hōgi, late āgtide — God bless.",
+      "en": "Ayyo, already taken! Blessings to her, brother. I'll show Preethi — someone else will turn up. Go, you're late — God bless.",
+      "emotion": "warm",
+      "beat": "puts her phone away. pats your back. forgives you for being unavailable.",
+      "audio": "/audio/kn/chapters/kn-day-24-temple-auntie/temple_auntie-warm-7906ba6a54.wav"
+    }
+  ]
+}

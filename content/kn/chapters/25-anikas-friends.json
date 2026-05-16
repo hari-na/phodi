@@ -1,0 +1,116 @@
+{
+  "id": "kn-day-25-anikas-friends",
+  "day": 25,
+  "language": "kn",
+  "title": "Anika's Friends",
+  "titleNative": "ಅನಿಕಾಳ ಗೆಳತಿಯರು",
+  "setting": "Friday 9pm. Arbor Brewing Company, Magrath Road. Anika's school crew — three of them — already two pitchers in. Divya is the one with sharp eyes who's been studying you since you sat down.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "anika_friend",
+      "native": "Ee, Anika ಎಷ್ಟು ಹೊಗಳಿದ್ದಾಳೆ ನಿಮ್ಮ accent. Let's see. Say something — anything in Kannada.",
+      "translit": "ee, Anika eṣṭu hogaḷiddāḷe nimma accent. let's see. say something — anything in Kannada.",
+      "en": "Ee, Anika talked up your accent so much. Let's see. Say something — anything in Kannada.",
+      "emotion": "amused",
+      "beat": "leaning in, elbows on the table",
+      "audio": "/audio/kn/chapters/kn-day-25-anikas-friends/anika_friend-amused-7fa074777a.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "Anika is biting back a smile. You say:",
+      "choices": [
+        {
+          "native": "Divya, accent ಚೆನ್ನಾಗಿಲ್ಲ. ಆದರೆ ನಾನು ತುಂಬಾ ಧೈರ್ಯವಂತ. ಎರಡು months ನಲ್ಲಿ ಒಬ್ಬ chai uncle, ಒಬ್ಬ broker, ಒಬ್ಬ watchman, ಎಲ್ಲ friends ಈಗ.",
+          "translit": "Divya, accent cennāgilla. ādare nānu tumbā dhairyavanta. eraḍu months-nalli obba chai uncle, obba broker, obba watchman, ella friends īga.",
+          "en": "Divya, my accent isn't good. But I'm brave. Two months in — one chai uncle, one broker, one watchman, all friends now.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 4
+          },
+          "setFlag": "won_divya"
+        },
+        {
+          "native": "ನಮಸ್ಕಾರ. ಒಂದು chai ಬೇಕು ಪ್ಲೀಸ್.",
+          "translit": "namaskāra. ondu chai bēku please.",
+          "en": "Hello. One chai please.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Yeah, no, I'm not doing party tricks.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -3
+          },
+          "setFlag": "divya_hostile"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika_friend",
+      "native": "Wait wait — broker friend? ನೀನು Bangalore broker ಜೊತೆ friend ಆಗಿದ್ಯಾ? Anika, ee ಎಲ್ಲಿ ಸಿಕ್ಕಿತು ನಿನಗೆ?",
+      "translit": "wait wait — broker friend? nīnu Bangalore broker joḍe friend āgidyā? Anika, ee elli sikkitu ninage?",
+      "en": "Wait wait — broker friend? You're friends with a Bangalore broker? Anika, where did you find this one?",
+      "emotion": "amused",
+      "beat": "leans back, gives Anika an obvious look",
+      "audio": "/audio/kn/chapters/kn-day-25-anikas-friends/anika_friend-amused-7f563dbb96.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Church Street, Blossom. Mispronouncing 'pustakha'.",
+      "translit": "Church Street, Blossom. mispronouncing 'pustakha'.",
+      "en": "Church Street, Blossom. Mispronouncing 'pustakha'.",
+      "emotion": "amused",
+      "beat": "doesn't look at you. small grin.",
+      "audio": "/audio/kn/chapters/kn-day-25-anikas-friends/anika-amused-0e41487a3a.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika_friend",
+      "native": "Pustakha ಬಗ್ಗೆ ಮಾತಾಡ್ತಾ ಪ್ರೀತಿ ಆಯ್ತಾ? Ee Kannada literature classic ಅಲ್ಲ ಬಾಸ್, ee Anika ಒಂದು ಒಳ್ಳೆ rom-com.",
+      "translit": "pustakha baggē mātāḍtā prīti āytā? ee Kannada literature classic alla bās, ee Anika ondu oḷḷe rom-com.",
+      "en": "Fell in love over 'pustakha'? Boss, this is no Kannada literature classic, this Anika is a rom-com.",
+      "emotion": "amused",
+      "beat": "the table laughs. someone refills your glass without asking.",
+      "audio": "/audio/kn/chapters/kn-day-25-anikas-friends/anika_friend-amused-8a6a7a2843.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take it. You say:",
+      "choices": [
+        {
+          "native": "Worst rom-com ever Divya. ಒಂದು engineer, ಒಂದು architect, ಒಂದು chai stall. Ee novel ಯಾರು read ಮಾಡ್ತಾರೆ?",
+          "translit": "worst rom-com ever Divya. ondu engineer, ondu architect, ondu chai stall. ee novel yāru read māḍtāre?",
+          "en": "Worst rom-com ever, Divya. One engineer, one architect, one chai stall. Who's reading this?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Look, the accent is bad but the timing was good.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika_friend",
+      "native": "Okay okay. ನೀನು pass. Anika, ಇವನು keeper. Next round on you for ee statement.",
+      "translit": "okay okay. nīnu pass. Anika, ivanu keeper. next round on you for ee statement.",
+      "en": "Okay okay. You pass. Anika — he's a keeper. Next round on you for that statement.",
+      "emotion": "warm",
+      "beat": "raises her glass at you. Anika finally looks at you and smiles like she means it.",
+      "audio": "/audio/kn/chapters/kn-day-25-anikas-friends/anika_friend-warm-33cd26e84a.wav"
+    }
+  ]
+}

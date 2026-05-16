@@ -1,0 +1,146 @@
+{
+  "id": "kn-day-29-eve",
+  "day": 29,
+  "language": "kn",
+  "title": "The Eve",
+  "titleNative": "ಮುನ್ನಾ ರಾತ್ರಿ",
+  "setting": "The night after Ugadi. Your flat. Anika is on your balcony, looking at the street. The city sounds different from up here — softer. You haven't told her about the offer from your old company. Bangalore. Or back. She turns when you come out with two coffees.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Ee speech — ನಿಜವಾಗಿ ಒಳ್ಳೆಯದು ಆಗಿತ್ತು. Amma cried after you left. Appa ಒಂದು ಸಲ ಮಾತ್ರ ಎಲ್ಲರ ಜೊತೆ smile ಮಾಡ್ತಾರೆ — ನಿನ್ನೆ ನೋಡಿದೆ.",
+      "translit": "ee speech — nijavāgi oḷḷeyadu āgittu. Amma cried after you left. Appa ondu sala mātra ellara joḍe smile māḍtāre — ninne nōḍide.",
+      "en": "That speech — was actually good. Amma cried after you left. Appa smiles in front of everyone maybe once a year — saw it last night.",
+      "emotion": "warm",
+      "beat": "she takes the coffee. doesn't sip yet.",
+      "audio": "/audio/kn/chapters/kn-day-29-eve/anika-warm-c8ae1ae8a2.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You stand next to her, looking out. You say:",
+      "choices": [
+        {
+          "native": "Anika — ಒಂದು ವಿಷಯ ಹೇಳಬೇಕು. ಮೊದಲ company — ಮನೆಯ ಊರಿನಲ್ಲಿ — offer ಬಂದಿದೆ. Senior role. ನಾನು ಇನ್ನು decide ಮಾಡಿಲ್ಲ.",
+          "translit": "Anika — ondu viṣaya hēḷabēku. modala company — maneya ūrinalli — offer bandide. senior role. nānu innu decide māḍilla.",
+          "en": "Anika — there's something to tell you. My old company — back home — sent an offer. Senior role. I haven't decided yet.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 4
+          },
+          "setFlag": "told_anika_about_offer"
+        },
+        {
+          "en": "I've been meaning to tell you something. Old company in my hometown sent an offer.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 3
+          },
+          "setFlag": "told_anika_about_offer"
+        },
+        {
+          "en": "Anika, this view is something.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -3
+          },
+          "setFlag": "ducked_the_eve"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ನಾನು ಗೊತ್ತಿತ್ತು ಒಂದು ಏನೋ ಇದೆ ಅಂತಾ. Two weeks ಆದರೆ ನೀನು ಯಾವತ್ತಾದರೂ phone ಮುಗಿಸಿ ಬರ್ತಾ ಇದ್ದೆ — face ಬೇರೆ ಆಗಿತ್ತು.",
+      "translit": "nānu gottittu ondu ēnō ide antā. two weeks ādare nīnu yāvattādarū phone mugisi bartā idde — face bēre āgittu.",
+      "en": "I knew something was up. For two weeks you'd come back from a call with a different face.",
+      "emotion": "hushed",
+      "beat": "doesn't sound surprised. just tired.",
+      "audio": "/audio/kn/chapters/kn-day-29-eve/anika-hushed-83d7b74362.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Salary?",
+      "translit": "salary?",
+      "en": "Salary?",
+      "emotion": "neutral",
+      "beat": "she just wants the math.",
+      "audio": "/audio/kn/chapters/kn-day-29-eve/anika-neutral-efb1c2f267.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You give her the number. You say:",
+      "choices": [
+        {
+          "native": "ಇಲ್ಲಿ ಗಿಂತ ಎರಡು ಪಟ್ಟು. ಆದರೆ ಊರು ಚಿಕ್ಕ. ಎಲ್ಲ familiar — ಆದರೆ ಎಲ್ಲ familiar.",
+          "translit": "illi ginta eraḍu paṭṭu. ādare ūru cikka. ella familiar — ādare ella familiar.",
+          "en": "Twice what I make here. But the town is small. Everything familiar — and everything familiar.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Twice this. But it's home. Small town. Comfortable.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ನಿನ್ನ choice. ನಿಜವಾಗಿ. ನಾನು ಎಲ್ಲಿಗೆ ಬರಲ್ಲ — ee ಬೆಂಗಳೂರು ನನ್ನ ಊರು. ಆದರೆ ನಿನ್ನ choice ನಲ್ಲಿ ನಾನು ಒಂದು variable ಇರಬೇಕು — ಅಷ್ಟೇ ಕೇಳ್ತೀನಿ.",
+      "translit": "ninna choice. nijavāgi. nānu ellige baralla — ee Beṅgaḷūru nanna ūru. ādare ninna choice-nalli nānu ondu variable irabēku — aṣṭē kēḷtīni.",
+      "en": "Your choice. Really. I'm not coming anywhere — Bangalore is my home. But I should be one variable in your decision — that's all I'm asking.",
+      "emotion": "hushed",
+      "beat": "she finally sips. holds the cup with both hands.",
+      "audio": "/audio/kn/chapters/kn-day-29-eve/anika-hushed-0230e5ace5.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಒಂದು variable ಅಲ್ಲ Anika. ತುಂಬಾ ದೊಡ್ಡ variable. ನಾಳೆ ಬೆಳಿಗ್ಗೆ — decide ಮಾಡ್ತೀನಿ.",
+          "translit": "ondu variable alla Anika. tumbā doḍḍa variable. nāḷe beḷigge — decide māḍtīni.",
+          "en": "Not one variable, Anika. A very big variable. Tomorrow morning — I'll decide.",
+          "effects": {
+            "fluency": 5,
+            "vibes": 5
+          },
+          "setFlag": "promised_decision"
+        },
+        {
+          "en": "You're more than a variable, Anika. I'll decide tomorrow.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 3
+          },
+          "setFlag": "promised_decision"
+        },
+        {
+          "en": "Let me think tonight.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ಆಯ್ತು. ನಾಳೆ ಬೆಳಿಗ್ಗೆ. Pongamia ತಾನೇ?",
+      "translit": "āytu. nāḷe beḷigge. Pongamia tānē?",
+      "en": "Okay. Tomorrow morning. The Pongamia, right?",
+      "emotion": "warm",
+      "beat": "the smallest small smile. the cup, halfway to her face, pauses.",
+      "audio": "/audio/kn/chapters/kn-day-29-eve/anika-warm-5821c6f0fe.wav"
+    }
+  ]
+}

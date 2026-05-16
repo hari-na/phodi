@@ -1,0 +1,129 @@
+{
+  "id": "kn-day-20-cooks-favor",
+  "day": 20,
+  "language": "kn",
+  "title": "The Cook's Favor",
+  "titleNative": "ಸರಸ್ವತಿಯ ಉಪಕಾರ",
+  "setting": "Wednesday 6:45am. Saraswati's been here forty minutes — earlier than usual, quieter than usual. The dosa batter is in the pan but she's standing by the kitchen window, phone in one hand, looking out at nothing. She turns when you come in.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "ಸಾರ್... ಒಂದು ವಿಷಯ. ನಾನು awkward ಆಗಿ feel ಆಗ್ತಾ ಇದೆ.",
+      "translit": "sār... ondu viṣaya. nānu awkward āgi feel āgtā ide.",
+      "en": "Sir... one thing. I'm feeling awkward about this.",
+      "emotion": "hushed",
+      "beat": "doesn't sit down. stays standing by the pan.",
+      "audio": "/audio/kn/chapters/kn-day-20-cooks-favor/cook_aunty-hushed-fa6e9907d8.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You set down your laptop. You say:",
+      "choices": [
+        {
+          "native": "ಪರವಾಗಿಲ್ಲ ಆಂಟಿ. ಹೇಳಿ — ಏನು?",
+          "translit": "paravāgilla aunty. hēḷi — ēnu?",
+          "en": "It's okay aunty. Tell me — what is it?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Aunty, please — what's going on?",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "ನನ್ನ ಮಗಳು — twelfth standard. Tuition fee ಎರಡು ತಿಂಗಳ ಬಾಕಿ. ಈ ತಿಂಗಳ salary advance ಆಗುತ್ತಾ ಸಾರ್? ಹದಿನೈದು ದಿನ ಮುಂಚೆ.",
+      "translit": "nanna magaḷu — twelfth standard. tuition fee eraḍu tiṅgaḷa bāki. ī tiṅgaḷa salary advance āguttā sār? hadinaidu dina mumce.",
+      "en": "My daughter — twelfth standard. Tuition fees overdue by two months. Can this month's salary be advanced, sir? Fifteen days early.",
+      "emotion": "pleading",
+      "beat": "fingers tight on the edge of the counter",
+      "audio": "/audio/kn/chapters/kn-day-20-cooks-favor/cook_aunty-pleading-998fb63d81.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You think for one second. You say:",
+      "choices": [
+        {
+          "native": "ಆಗುತ್ತೆ ಆಂಟಿ. ಇಂದು ಸಂಜೆ ಕೊಡ್ತೀನಿ. ಬೇರೆ ಏನು ಬೇಕು ಹೇಳಿ.",
+          "translit": "āgutte aunty. indu sañje koḍtīni. bēre ēnu bēku hēḷi.",
+          "en": "It's fine, aunty. I'll give it this evening. Tell me if you need anything else.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 4
+          },
+          "setFlag": "advanced_cook_salary"
+        },
+        {
+          "native": "ಸ್ವಲ್ಪ time ಕೊಡಿ ಆಂಟಿ. ATM ನೆನಪು ಮಾಡ್ತೀನಿ. ಇಂದು ರಾತ್ರಿ ಆಗುತ್ತಾ?",
+          "translit": "svalpa time koḍi aunty. ATM nenapu māḍtīni. indu rātri āguttā?",
+          "en": "Give me a moment aunty. I'll remember the ATM. Tonight okay?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "advanced_cook_salary"
+        },
+        {
+          "en": "Hmm. Tuition isn't really my problem, aunty.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -5
+          },
+          "setFlag": "refused_cook"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "ಬಹುಶಃ thank you ಸಾಕಲ್ಲ ಸಾರ್. ನಿಮ್ಮ ಒಂದು ಒಳ್ಳೆ ಕೆಲಸಕ್ಕೆ ನಾನು ತುಂಬಾ obliged.",
+      "translit": "bahuśaḥ thank you sākalla sār. nimma ondu oḷḷe kelasakke nānu tumbā obliged.",
+      "en": "Maybe thank you isn't enough, sir. For a kindness like this, I'm very obliged.",
+      "emotion": "hushed",
+      "beat": "her shoulders drop. she sits, finally.",
+      "audio": "/audio/kn/chapters/kn-day-20-cooks-favor/cook_aunty-hushed-670a4ec3d6.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You shake your head. You say:",
+      "choices": [
+        {
+          "native": "ಆಂಟಿ. Help — ಎಲ್ಲರಿಗೂ ಬೇಕು. ಈಗ ee dosa burn ಆಗ್ತಾ ಇದೆ ಅನ್ಸುತ್ತೆ.",
+          "translit": "aunty. help — ellarigū bēku. īga ee dosa burn āgtā ide ansutte.",
+          "en": "Aunty. Help — everyone needs it. Now I think this dosa is burning.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 4
+          }
+        },
+        {
+          "en": "It's fine, aunty. Really. Take care of your kid.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 3
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "Ayyo! Dosa!",
+      "translit": "ayyo! dosa!",
+      "en": "Ayyo! The dosa!",
+      "emotion": "amused",
+      "beat": "lifts the lid, the smoke clears, it's salvageable. she laughs for the first time today.",
+      "audio": "/audio/kn/chapters/kn-day-20-cooks-favor/cook_aunty-amused-c50e54dfd7.wav"
+    }
+  ]
+}

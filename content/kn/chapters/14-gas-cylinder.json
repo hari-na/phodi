@@ -1,0 +1,138 @@
+{
+  "id": "kn-day-14-gas-cylinder",
+  "day": 14,
+  "language": "kn",
+  "title": "The Gas Cylinder",
+  "titleNative": "ಸಿಲಿಂಡರ್ ಕರೆ",
+  "setting": "8:45pm. You're halfway through chopping for dinner. The flame on the stove gutters, blue to yellow, and dies. The cylinder is empty. The depot closes at 9. You dial the number on the fridge sticker.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "gas_uncle",
+      "native": "Hello. Bharat gas. ಯಾರು?",
+      "translit": "hello. Bharat gas. yāru?",
+      "en": "Hello. Bharat Gas. Who is it?",
+      "emotion": "tired",
+      "beat": "you can hear a fan and a small TV in the background",
+      "audio": "/audio/kn/chapters/kn-day-14-gas-cylinder/gas_uncle-tired-c81e9be67b.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ ಸಾರ್. Cylinder empty. ಇಂದು ರಾತ್ರಿ delivery ಸಾಧ್ಯವಾ?",
+          "translit": "namaskāra sār. cylinder empty. indu rātri delivery sādhyavā?",
+          "en": "Hello sir. The cylinder's empty. Is delivery possible tonight?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Hi, my gas cylinder is empty and I need a delivery.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        },
+        {
+          "native": "Gas ಬೇಕು.",
+          "translit": "gas bēku.",
+          "en": "Need gas.",
+          "effects": {
+            "fluency": 1,
+            "vibes": -2
+          },
+          "setFlag": "curt_with_gas_uncle"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "gas_uncle",
+      "native": "ಇಂದು ರಾತ್ರಿ? Depot ಒಂಬತ್ತಕ್ಕೆ close ಆಗುತ್ತೆ ಸಾರ್. ನಿಮ್ಮ address?",
+      "translit": "indu rātri? depot ombattakke close āgutte sār. nimma address?",
+      "en": "Tonight? Depot closes at nine, sir. Your address?",
+      "emotion": "tired",
+      "beat": "doesn't say no. doesn't say yes.",
+      "audio": "/audio/kn/chapters/kn-day-14-gas-cylinder/gas_uncle-tired-885203f521.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "Indiranagar, 3rd Cross. Krishnamurthy uncle ಮನೆ 2A. Connection no. 4471862.",
+          "translit": "Indiranagar, 3rd cross. Krishnamurthy uncle mane 2A. connection no. 4471862.",
+          "en": "Indiranagar, 3rd Cross. Krishnamurthy uncle's place, 2A. Connection 4471862.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "knew_connection_number"
+        },
+        {
+          "native": "Indiranagar 3rd Cross, ಸಾರ್. ಪ್ಲೀಸ್.",
+          "translit": "Indiranagar 3rd cross, sār. please.",
+          "en": "Indiranagar 3rd Cross, sir. Please.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Indiranagar. I'll text you the address.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "gas_uncle",
+      "native": "Ee number ಚೆನ್ನಾಗಿದೆ ಸಾರ್. ಆಯ್ತು. ಒಬ್ಬ boy ಕಳಿಸ್ತೀನಿ — half-an-hour ನಲ್ಲಿ ಬರ್ತಾನೆ. ನೀವು ಮನೇ ಇರಿ.",
+      "translit": "ee number cennāgide sār. āytu. obba boy kaḷistīni — half-an-hour-nalli bartāne. nīvu manē iri.",
+      "en": "Good that you have the number, sir. Okay — I'll send a boy, half-an-hour. Stay home.",
+      "emotion": "warm",
+      "beat": "for the first time, a small softening in his voice",
+      "audio": "/audio/kn/chapters/kn-day-14-gas-cylinder/gas_uncle-warm-dd6601784d.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ತುಂಬಾ ಧನ್ಯವಾದಗಳು ಸಾರ್. ನೀವು save ಮಾಡಿದ್ರಿ.",
+          "translit": "tumbā dhanyavādagaḷu sār. nīvu save māḍidri.",
+          "en": "Thank you so much, sir. You've saved me.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "thanked_gas_uncle"
+        },
+        {
+          "en": "Thanks a lot.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "gas_uncle",
+      "native": "ಆಯ್ತು ಸಾರ್. ಮುಂದಿನ ಬಾರಿ ಒಂದು ವಾರ ಮುಂಚೆ call ಮಾಡಿ.",
+      "translit": "āytu sār. mundina bāri ondu vāra mumce call māḍi.",
+      "en": "Okay sir. Next time, call one week earlier.",
+      "emotion": "tired",
+      "beat": "but the smile is in his voice now",
+      "audio": "/audio/kn/chapters/kn-day-14-gas-cylinder/gas_uncle-tired-6c313a2d48.wav"
+    }
+  ]
+}

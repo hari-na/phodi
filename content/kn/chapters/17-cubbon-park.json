@@ -1,0 +1,138 @@
+{
+  "id": "kn-day-17-cubbon-park",
+  "day": 17,
+  "language": "kn",
+  "title": "Cubbon Park",
+  "titleNative": "ಕಬ್ಬನ್ ಪಾರ್ಕ್",
+  "setting": "Sunday morning. Cubbon Park. Bamboo path. Anika walks fast and you're keeping up. She's pointing at a tree like she's known it for a while.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ಇದು Pongamia. ಎಲ್ಲ ಸಮಯ ಹೂವು. Bangalore ನಲ್ಲಿ ಒಳ್ಳೆ ಮರ — ಶಬ್ದ ಕಡಿಮೆ ಮಾಡ್ತೆ.",
+      "translit": "idu Pongamia. ella samaya hūvu. Bangalore-nalli oḷḷe mara — śabda kaḍime māḍte.",
+      "en": "This is Pongamia. Flowers all year. Good tree for Bangalore — cuts the noise.",
+      "emotion": "warm",
+      "beat": "doesn't look at you. looking up.",
+      "audio": "/audio/kn/chapters/kn-day-17-cubbon-park/anika-warm-27a1db6b1d.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "Trees ಬಗ್ಗೆ ಇಷ್ಟು ಗೊತ್ತು ನಿಮಗೆ? ನಿಮ್ಮ subject ಯಾವುದು?",
+          "translit": "trees baggē iṣṭu gottu nimage? nimma subject yāvudu?",
+          "en": "You know this much about trees? What's your subject?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Wow, are you a botanist or something?",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Architect. ಆದರೆ trees ನನ್ನ amma. ಪ್ರತಿ Sunday ಇಲ್ಲಿ ಬರ್ತೀನಿ — ಒಂದು coffee, ಒಂದು ಮರ.",
+      "translit": "architect. ādare trees nanna amma. prati Sunday illi bartīni — ondu coffee, ondu mara.",
+      "en": "Architect. But trees are my mother's thing. Every Sunday I come here — one coffee, one tree.",
+      "emotion": "warm",
+      "beat": "now she's looking at you",
+      "audio": "/audio/kn/chapters/kn-day-17-cubbon-park/anika-warm-5c99990aa1.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Engineer means — what kind of engineer? Coding? ಅಥವಾ ಬೇರೆ?",
+      "translit": "engineer means — what kind of engineer? coding? athavā bēre?",
+      "en": "Engineer means — what kind? Coding? Or something else?",
+      "emotion": "warm",
+      "beat": "the casual interrogation begins",
+      "audio": "/audio/kn/chapters/kn-day-17-cubbon-park/anika-warm-8b5c5dc81f.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "Software ಸಾರ್... ಸಾರ್ ಅಲ್ಲ. Anika. Sorry. Yes — software. Small startup, Indiranagar.",
+          "translit": "software sār... sār alla. Anika. sorry. yes — software. small startup, Indiranagar.",
+          "en": "Software, sir— Anika. Not 'sir.' Sorry. Software. Small startup, Indiranagar.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 4
+          },
+          "setFlag": "anika_remembers_slip"
+        },
+        {
+          "native": "Software. Small startup, Indiranagar.",
+          "translit": "software. small startup, Indiranagar.",
+          "en": "Software. Small startup, Indiranagar.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Boring software stuff. Won't bore you with it.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Sir alla. ತುಂಬಾ formal ಆಗ್ತಾ ಇದೀರಿ. Ee Bangalore ನಲ್ಲಿ Anika ಸಾಕು.",
+      "translit": "sir alla. tumbā formal āgtā idīri. ee Bangalore-nalli Anika sāku.",
+      "en": "Not 'sir.' You're being too formal. In Bangalore, just Anika is fine.",
+      "emotion": "amused",
+      "beat": "tucking a strand of hair. trying not to laugh.",
+      "audio": "/audio/kn/chapters/kn-day-17-cubbon-park/anika-amused-c3fbe87850.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ಒಂದು homework ಸಾರ್... sorry, [your name]. Conversational Kannada needs practice — every day five sentences with a real person. Not your cook, not your watchman. ಗೆಳೆಯ ಬೇಕು.",
+      "translit": "ondu homework sār... sorry, [your name]. conversational Kannada needs practice — every day five sentences with a real person. not your cook, not your watchman. geḷeya bēku.",
+      "en": "One bit of homework, sir — sorry, [you]. Conversational Kannada needs practice — five sentences a day with a real person. Not your cook, not your watchman. A friend.",
+      "emotion": "warm",
+      "beat": "ಗೆಳೆಯ. she said friend, looking at you.",
+      "audio": "/audio/kn/chapters/kn-day-17-cubbon-park/anika-warm-38c395d87c.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಗೆಳೆಯ ಸಿಗ್ತಾರ ಬೆಂಗಳೂರಿನಲ್ಲಿ? ಯಾವುದಾದರೂ recommend?",
+          "translit": "geḷeya sigtāra Beṅgaḷūrinalli? yāvudādarū recommend?",
+          "en": "Are friends easy to find in Bangalore? Any recommendations?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 4
+          },
+          "setFlag": "anika_called_out"
+        },
+        {
+          "en": "Looking. Slowly.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    }
+  ]
+}

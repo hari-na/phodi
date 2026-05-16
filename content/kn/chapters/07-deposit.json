@@ -1,0 +1,118 @@
+{
+  "id": "kn-day-07-deposit",
+  "day": 7,
+  "language": "kn",
+  "title": "The Deposit",
+  "titleNative": "ಮುಂಗಡ ಸ್ವೀಕಾರ",
+  "setting": "10am. Krishnamurthy uncle's verandah. A glass of filter coffee in front of you. Rangaswamy is leaning against the gatepost, finally off his phone. The paperwork sits on a low wooden stool between you.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "mysuru_uncle",
+      "native": "ಸಾರ್, ರಾತ್ರಿ ಯೋಚಿಸಿದೆ. ನಾಲ್ಕು ತಿಂಗಳ advance, twenty-two thousand rent. ಆಗುತ್ತಾ?",
+      "translit": "sār, rātri yōcisidde. nālku tiṅgaḷa advance, twenty-two thousand rent. āguttā?",
+      "en": "Sir, I thought about it last night. Four months advance, twenty-two thousand rent. Works for you?",
+      "emotion": "warm",
+      "beat": "meeting you halfway already — six down to four",
+      "audio": "/audio/kn/chapters/kn-day-07-deposit/mysuru_uncle-warm-da638ad86f.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "ಸಾರ್, four months ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ. Owners ಎಲ್ಲ ten ಕೇಳ್ತಾರೆ ಇಂದು. Sign ಮಾಡಿ ಸಾರ್.",
+      "translit": "sār, four months tumbā cennāgide. Owners ella ten kēḷtāre indu. sign māḍi sār.",
+      "en": "Sir, four months is very good. Owners all ask for ten these days. Sign sir.",
+      "emotion": "pushy",
+      "beat": "leaning forward — his commission is in the room",
+      "audio": "/audio/kn/chapters/kn-day-07-deposit/rangaswamy-pushy-8c3f820523.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take a sip of coffee. You say:",
+      "choices": [
+        {
+          "native": "Sir, ನಾಲ್ಕು ತಿಂಗಳ ಒಪ್ಪಿಗೆ. ಆದರೆ rent twenty thousand ಆದರೆ ಆಗುತ್ತಾ? Two thousand discount.",
+          "translit": "sir, nālku tiṅgaḷa oppige. ādare rent twenty thousand ādare āguttā? two thousand discount.",
+          "en": "Sir, four months agreed. But could we do twenty thousand rent? Two-thousand discount.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "asked_rent_discount"
+        },
+        {
+          "native": "ಸಾರ್, ನಾಲ್ಕು ತಿಂಗಳ ಒಪ್ಪಿಗೆ. Sign ಮಾಡ್ತೀನಿ.",
+          "translit": "sār, nālku tiṅgaḷa oppige. sign māḍtīni.",
+          "en": "Sir, four months agreed. I'll sign.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "signed_clean"
+        },
+        {
+          "en": "Could we revisit the rent number?",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "mysuru_uncle",
+      "native": "Twenty-one thousand. ನನ್ನ final ಸಾರ್. ಒಂದು sahi ಇಲ್ಲಿ, ಇನ್ನೊಂದು ಇಲ್ಲಿ.",
+      "translit": "twenty-one thousand. nanna final sār. ondu sahi illi, innondu illi.",
+      "en": "Twenty-one thousand. My final, sir. One signature here, another here.",
+      "emotion": "stern",
+      "beat": "slides the agreement across. one finger taps where you sign.",
+      "audio": "/audio/kn/chapters/kn-day-07-deposit/mysuru_uncle-stern-a719b53abe.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "Ha, ನೋಡಿ ಸಾರ್! Uncle ತುಂಬಾ kind. Sign ಮಾಡಿ ನಂತರ key.",
+      "translit": "ha, nōḍi sār! uncle tumbā kind. sign māḍi nantara key.",
+      "en": "Ha, see sir! Uncle is very kind. Sign and then keys.",
+      "emotion": "warm",
+      "beat": "his commission is officially in the bag",
+      "audio": "/audio/kn/chapters/kn-day-07-deposit/rangaswamy-warm-f613660834.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take the pen. You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದಗಳು ಸಾರ್. Trust ಗೆ thanks. ನಾನು ಒಳ್ಳೆ tenant ಆಗಿರ್ತೀನಿ.",
+          "translit": "dhanyavādagaḷu sār. trust-ge thanks. nānu oḷḷe tenant āgirtīni.",
+          "en": "Thank you, sir. Thank you for your trust. I'll be a good tenant.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "got_the_flat"
+        },
+        {
+          "en": "Thank you. I'll sign.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          },
+          "setFlag": "got_the_flat"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "mysuru_uncle",
+      "native": "ಒಳ್ಳೆಯದು ಸಾರ್. ಸ್ವಾಗತ. ಯಾವಾಗ ಬೇಕಾದರೂ ಬನ್ನಿ.",
+      "translit": "oḷḷeyadu sār. svāgata. yāvāga bēkādarū banni.",
+      "en": "Good, sir. Welcome. Come whenever you need anything.",
+      "emotion": "warm",
+      "beat": "hands you a single brass key with a faded red thread tied to it",
+      "audio": "/audio/kn/chapters/kn-day-07-deposit/mysuru_uncle-warm-c5a6d5ca1f.wav"
+    }
+  ]
+}

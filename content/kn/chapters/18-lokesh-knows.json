@@ -1,0 +1,113 @@
+{
+  "id": "kn-day-18-lokesh-knows",
+  "day": 18,
+  "language": "kn",
+  "title": "Lokesh Knows",
+  "titleNative": "ಲೋಕೇಶ್ ಗೆ ಗೊತ್ತು",
+  "setting": "Monday 9am. You're walking out of the building, late, eyes still half closed. Lokesh is at his post, pencil behind his ear, notebook open. He doesn't say hi. He just looks at you, then back at the notebook, with a small definite smile.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "lokesh",
+      "native": "ಸಾರ್. ನಿನ್ನೆ ರಾತ್ರಿ Indiranagar 3rd Cross taxi. ಒಬ್ಬರು young madam. Eleven-thirty.",
+      "translit": "sār. ninne rātri Indiranagar 3rd cross taxi. obbaru young madam. eleven-thirty.",
+      "en": "Sir. Last night, Indiranagar 3rd Cross taxi. A young madam. Eleven-thirty.",
+      "emotion": "amused",
+      "beat": "doesn't look up. reading the entry aloud.",
+      "audio": "/audio/kn/chapters/kn-day-18-lokesh-knows/lokesh-amused-fb191da4fb.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You stop walking. You say:",
+      "choices": [
+        {
+          "native": "Hm. ಗೆಳತಿ Lokesh. Coffee ಗೆ ಹೋಗಿದ್ದೆ ಅಷ್ಟೆ.",
+          "translit": "hm. geḷati Lokesh. coffee-ge hōgidde aṣṭe.",
+          "en": "Hmm. A friend, Lokesh. Just went for coffee.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Yeah, Lokesh. A friend.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        },
+        {
+          "en": "Is this in the job description?",
+          "effects": {
+            "fluency": 0,
+            "vibes": -3
+          },
+          "setFlag": "snapped_at_lokesh"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "lokesh",
+      "native": "ಗೆಳತಿ ಅಂದ್ರೆ ಗೊತ್ತು ಸಾರ್. ನಾನು logbook ನಲ್ಲಿ 'guest' ಅಂತಾ ಬರೆದಿದ್ದೇನೆ. Madam ಗೆ ಒಳ್ಳೆ smile ಇದೆ.",
+      "translit": "geḷati andre gottu sār. nānu logbook-nalli 'guest' antā barediddēne. madam-ge oḷḷe smile ide.",
+      "en": "I know what a friend means, sir. I've written 'guest' in the logbook. Madam has a good smile.",
+      "emotion": "amused",
+      "beat": "spins the notebook around so you can read it",
+      "audio": "/audio/kn/chapters/kn-day-18-lokesh-knows/lokesh-amused-70f01b3998.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "lokesh",
+      "native": "ಒಂದು ಮಾತು ಸಾರ್. Krishnamurthy uncle ಸ್ವಲ್ಪ traditional. Madam ಬರ್ತಾರೆ — ಸರಿ. ಆದರೆ uncle ಗೆ confirmation ಆಗದ ಹಾಗೆ ಇರಲಿ.",
+      "translit": "ondu mātu sār. Krishnamurthy uncle svalpa traditional. madam bartāre — sari. ādare uncle-ge confirmation āgada hāge irali.",
+      "en": "One thing, sir. Krishnamurthy uncle is a bit traditional. Madam visiting — fine. But it shouldn't become a confirmed thing for uncle.",
+      "emotion": "stern",
+      "beat": "not a threat. a real heads-up.",
+      "audio": "/audio/kn/chapters/kn-day-18-lokesh-knows/lokesh-stern-610facad98.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take this seriously. You say:",
+      "choices": [
+        {
+          "native": "ಗೊತ್ತಾಯ್ತು Lokesh. ಧನ್ಯವಾದ. ನಾನು careful ಇರ್ತೀನಿ.",
+          "translit": "gottāytu Lokesh. dhanyavāda. nānu careful irtīni.",
+          "en": "Got it, Lokesh. Thanks. I'll be careful.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "lokesh_on_my_side"
+        },
+        {
+          "en": "Appreciate the heads-up. Really.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          },
+          "setFlag": "lokesh_on_my_side"
+        },
+        {
+          "en": "I'll do whatever I want in my own flat.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -3
+          },
+          "setFlag": "lokesh_distant"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "lokesh",
+      "native": "Ee that's it ಸಾರ್. ಇನ್ನು ಹೋಗಿ — late ಆಗ್ತಾ ಇದೆ. ಮನೆಯ ಒಳ್ಳೆ ಹೆಸರು ಎಲ್ಲರ ಜವಾಬ್ದಾರಿ.",
+      "translit": "ee that's it sār. innu hōgi — late āgtā ide. maneya oḷḷe hesaru ellara javābdāri.",
+      "en": "That's it, sir. Go on now — you're late. A good name for the building is everyone's responsibility.",
+      "emotion": "warm",
+      "beat": "closes the notebook. taps it twice. goes back to watching the gate.",
+      "audio": "/audio/kn/chapters/kn-day-18-lokesh-knows/lokesh-warm-b41f5b1d4b.wav"
+    }
+  ]
+}

@@ -225,6 +225,34 @@ const shots = [
       // Now on beat 3 — pushy "Indiranagar 2BHK super flat"
     },
   },
+  {
+    name: "17-day-16-bookstore-meet.png",
+    url: "/kn/chapter/kn-day-16-bookstore",
+    setup: async () => {
+      await sleep(500);
+    },
+  },
+  {
+    name: "18-day-23-phone-call-home.png",
+    url: "/kn/chapter/kn-day-23-phone-call-home",
+    setup: async () => {
+      await sleep(500);
+    },
+  },
+  {
+    name: "19-day-28-ugadi.png",
+    url: "/kn/chapter/kn-day-28-ugadi",
+    setup: async () => {
+      await sleep(500);
+    },
+  },
+  {
+    name: "20-day-30-morning.png",
+    url: "/kn/chapter/kn-day-30-morning",
+    setup: async () => {
+      await sleep(500);
+    },
+  },
 ];
 
 async function main() {

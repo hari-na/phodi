@@ -1,0 +1,85 @@
+{
+  "id": "kn-day-30-morning",
+  "day": 30,
+  "language": "kn",
+  "title": "The Morning",
+  "titleNative": "ಬೆಳಿಗ್ಗೆ",
+  "setting": "Sunday morning. Cubbon Park. The Pongamia tree. Two coffees in your hands — you got there first. Anna at the chai stall waved you over on the way and asked, in his usual way, if everything was alright. You said you'd tell him tomorrow. He nodded as if he already knew.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "narrator",
+      "native": "You stand under the tree. The morning is cool. Anika is walking up the path, a hand raised. She's smiling. She doesn't know yet.",
+      "translit": "(diegetic narration)",
+      "en": "You stand under the tree. The morning is cool. Anika is walking up the path, a hand raised. She's smiling. She doesn't know yet.",
+      "emotion": "hushed",
+      "beat": "the only stage direction the chapter needs",
+      "audio": "/audio/kn/chapters/kn-day-30-morning/narrator-hushed-d7da73e346.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ಎರಡು coffee. Ee ಚೆನ್ನಾಗಿದೆ — ರಾತ್ರಿ ಹೆಚ್ಚು sleep ಬರಲಿಲ್ಲ ನಂಗೆ.",
+      "translit": "eraḍu coffee. ee cennāgide — rātri heccu sleep baralilla naṅge.",
+      "en": "Two coffees. That's nice — I didn't sleep much last night.",
+      "emotion": "warm",
+      "beat": "takes one. doesn't sip. waits.",
+      "audio": "/audio/kn/chapters/kn-day-30-morning/anika-warm-b24a816e7a.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "This is the choice. You say:",
+      "choices": [
+        {
+          "native": "Anika. ನಾನು ಇಲ್ಲಿ. Bangalore. ನಾನು ಬೇರೆ ಎಲ್ಲಿಗೂ ಹೋಗಲ್ಲ. ee ಊರು ನನ್ನ — ಸ್ವಲ್ಪ ಸ್ವಲ್ಪವಾಗಿ ಆಯ್ತು. ನೀನು ಒಂದು variable ಅಲ್ಲ. ನೀನು ಮನೆ.",
+          "translit": "Anika. nānu illi. Bangalore. nānu bēre ellige hōgalla. ee ūru nanna — svalpa svalpavāgi āytu. nīnu ondu variable alla. nīnu mane.",
+          "en": "Anika. I'm here. Bangalore. I'm not going anywhere. This city has become mine — little by little. You're not a variable. You're home.",
+          "effects": {
+            "fluency": 6,
+            "vibes": 6
+          },
+          "setFlag": "chose_stay_anika"
+        },
+        {
+          "native": "Anika. ನಾನು ಸ್ವಲ್ಪ ಸಮಯ ಬೇಕು. ಇನ್ನು clear ಇಲ್ಲ — ಆದರೆ ನೀನು ಜೊತೆ ಇರಬೇಕು.",
+          "translit": "Anika. nānu svalpa samaya bēku. innu clear illa — ādare nīnu joḍe irabēku.",
+          "en": "Anika. I need a little time. I'm not clear yet — but I want you with me.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 3
+          },
+          "setFlag": "chose_unsure"
+        },
+        {
+          "en": "Anika. I'm taking the offer. I'm going home.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -2
+          },
+          "setFlag": "chose_leave"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Ee — ee — okay. ಸರಿ. ಒಂದು sip ತಗೋಬೇಕು ನಾನು ಈಗ.",
+      "translit": "ee — ee — okay. sari. ondu sip tagōbēku nānu īga.",
+      "en": "Ee — ee — okay. Right. I need a sip now.",
+      "emotion": "hushed",
+      "beat": "she takes the sip. her eyes are wet. she's laughing.",
+      "audio": "/audio/kn/chapters/kn-day-30-morning/anika-hushed-3e896be4f4.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "narrator",
+      "native": "Anna will hear about this by lunch from someone he hasn't told yet. Lokesh will see Anika at the gate at 9pm and write 'guest' in the logbook with a small new flourish. Amma will pick up the phone before it rings, somehow, and Appa will say 'good' once, and once is enough. The bevu and the bella. The bitter and the sweet. You will think in Kannada all day without noticing once.",
+      "translit": "(closing diegesis)",
+      "en": "Anna will hear about this by lunch from someone he hasn't told yet. Lokesh will see Anika at the gate at 9pm and write 'guest' in the logbook with a small new flourish. Amma will pick up the phone before it rings, somehow, and Appa will say 'good' once, and once is enough. The bevu and the bella. The bitter and the sweet. You will think in Kannada all day without noticing once.",
+      "emotion": "warm",
+      "beat": "the end of the first hundred days. fade.",
+      "audio": "/audio/kn/chapters/kn-day-30-morning/narrator-warm-62e08397bd.wav"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "kn-day-16-bookstore",
+  "day": 16,
+  "language": "kn",
+  "title": "The Bookstore",
+  "titleNative": "ಪುಸ್ತಕದ ಅಂಗಡಿ",
+  "setting": "Saturday afternoon. Blossom Book House, Church Street. You're trying to find the Kannada-learning section. The staff member is helpful but rushed. You're about to ask in your best Kannada when a voice from behind a shelf cuts in, amused.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ಅದು 'pus-ta-ka' ಅಲ್ಲ. 'pus-ta-kha.' Kha. Ee aspirated sound.",
+      "translit": "adu 'pus-ta-ka' alla. 'pus-ta-kha.' Kha. ee aspirated sound.",
+      "en": "It's not 'pus-ta-ka.' It's 'pus-ta-kha.' Kha. The aspirated sound.",
+      "emotion": "amused",
+      "beat": "from one shelf over. you can't see her yet.",
+      "audio": "/audio/kn/chapters/kn-day-16-bookstore/anika-amused-cd5a33e0bc.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You turn. You see her. You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದಗಳು. ನಾನು ಕಲಿಯುತ್ತಾ ಇದ್ದೇನೆ — Bangalore ಗೆ ಬಂದು ಎರಡು ವಾರ.",
+          "translit": "dhanyavādagaḷu. nānu kaliyuttā iddēne — Bangalore-ge bandu eraḍu vāra.",
+          "en": "Thank you. I'm learning — two weeks in Bangalore.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Oh — thanks. I'm learning. Slowly.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Was that necessary?",
+          "effects": {
+            "fluency": 0,
+            "vibes": -3
+          },
+          "setFlag": "rude_to_anika"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Two weeks ಗೆ ಚೆನ್ನಾಗಿ ಹೇಳ್ತೀರಾ ಸಾರ್. ಯಾವ book ಹುಡುಕ್ತಾ ಇದೀರಿ?",
+      "translit": "two weeks-ge cennāgi hēḷtīrā sār. yāva book huḍuktā idīri?",
+      "en": "For two weeks, you speak well, sir. What book are you looking for?",
+      "emotion": "warm",
+      "beat": "her own copy of something tucked under one arm",
+      "audio": "/audio/kn/chapters/kn-day-16-bookstore/anika-warm-5090ad3f95.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "Conversational Kannada. ಒಳ್ಳೆ ಒಂದು recommend ಮಾಡ್ತೀರಾ?",
+          "translit": "conversational Kannada. oḷḷe ondu recommend māḍtīrā?",
+          "en": "Conversational Kannada. Can you recommend a good one?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 2
+          }
+        },
+        {
+          "native": "Vasudhendra ಯಾವುದಾದರೂ ಸಿಗುತ್ತಾ?",
+          "translit": "Vasudhendra yāvudādarū siguttā?",
+          "en": "Is there any Vasudhendra here?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 4
+          },
+          "setFlag": "knew_a_writer"
+        },
+        {
+          "en": "Honestly, anything that won't make me sound like a tourist.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "Ooh. ಒಬ್ಬ Vasudhendra ಓದೋ engineer. Now you have my attention.",
+      "translit": "ooh. obba Vasudhendra ōdō engineer. now you have my attention.",
+      "en": "Ooh. An engineer who reads Vasudhendra. Now you have my attention.",
+      "emotion": "amused",
+      "beat": "leans on the shelf, not in a hurry anymore",
+      "audio": "/audio/kn/chapters/kn-day-16-bookstore/anika-amused-5a741eab88.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ನಾನು Anika. ಒಂದು kaapi try ಮಾಡ್ತೀರಾ next door? Conversational Kannada — I can help.",
+      "translit": "nānu Anika. ondu kaapi try māḍtīrā next door? conversational Kannada — I can help.",
+      "en": "I'm Anika. Coffee next door? Conversational Kannada — I can help.",
+      "emotion": "warm",
+      "beat": "the offer is light. the eye contact isn't.",
+      "audio": "/audio/kn/chapters/kn-day-16-bookstore/anika-warm-e65bac822a.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಆಯ್ತು Anika. ನಾನು [you] — ನಿಮ್ಮ ಜೊತೆ kaapi ತುಂಬಾ ಒಳ್ಳೆಯದು.",
+          "translit": "āytu Anika. nānu [you] — nimma joḍe kaapi tumbā oḷḷeyadu.",
+          "en": "Sure, Anika. I'm [you] — coffee with you sounds great.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "met_anika"
+        },
+        {
+          "en": "Yeah. I'd like that. I'm [you].",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          },
+          "setFlag": "met_anika"
+        },
+        {
+          "en": "Maybe another time.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -3
+          },
+          "setFlag": "missed_anika"
+        }
+      ]
+    }
+  ]
+}

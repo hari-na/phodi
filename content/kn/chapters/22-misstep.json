@@ -1,0 +1,115 @@
+{
+  "id": "kn-day-22-misstep",
+  "day": 22,
+  "language": "kn",
+  "title": "The Misstep",
+  "titleNative": "ತಪ್ಪು ಪದ",
+  "setting": "Still Sunday at Amma's. Lunch is on the table — bisi bele bath, two curries, papad, curd rice. Amma is across from you, watching what you reach for first. The afternoon is warm. You are very alert and slightly less alert than you think.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "ಸ್ವಲ್ಪ bisi bele bath ತಗೊಳ್ಳಿ ಸಾರ್. Spicy ಆಗಿದೆ — ಬೇಕಾ extra mosaranna?",
+      "translit": "svalpa bisi bele bath tagoḷḷi sār. spicy āgide — bēkā extra mosaranna?",
+      "en": "Take some bisi bele bath, sir. It's spicy — want extra curd rice?",
+      "emotion": "warm",
+      "beat": "watching how you serve yourself",
+      "audio": "/audio/kn/chapters/kn-day-22-misstep/amma-warm-abafa3f4a9.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "ಮನೆಯಲ್ಲಿ ಯಾವ ಊಟ ಜಾಸ್ತಿ ಸಾರ್? Cooking ಮಾಡ್ತೀರಾ?",
+      "translit": "maneyalli yāva ūṭa jāsti sār? cooking māḍtīrā?",
+      "en": "What do you eat at home, sir? Do you cook?",
+      "emotion": "neutral",
+      "beat": "small-talk weight, but the question is doing work",
+      "audio": "/audio/kn/chapters/kn-day-22-misstep/amma-neutral-75406b5393.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಆಂಟಿ, ನಾನು ಒಂದು cook ಇಟ್ಟಿದ್ದೇನೆ ಮೂರು ದಿನ ವಾರಕ್ಕೆ. ಬೇರೆ ದಿನ — basic stuff. ಆಮ್ಲೆಟ್, rice, dal.",
+          "translit": "aunty, nānu ondu cook iṭṭiddēne mūru dina vārakke. bēre dina — basic stuff. amlet, rice, dal.",
+          "en": "Aunty, I have a cook three days a week. Other days — basic stuff. Omelette, rice, dal.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "native": "ಆಂಟಿ, ನಾನು — sorry — ನೀನು cook ಗೆ ತುಂಬಾ ಚೆನ್ನಾಗಿ make ಮಾಡ್ತೀಯ. Saraswati ಆಂಟಿ ಗಿಂತ better.",
+          "translit": "aunty, nānu — sorry — nīnu cook-ge tumbā cennāgi make māḍtīya. Saraswati aunty ginta better.",
+          "en": "Aunty, I — sorry — you cook so well. Better than Saraswati aunty.",
+          "effects": {
+            "fluency": -1,
+            "vibes": -4
+          },
+          "setFlag": "amma_noticed_ninnu"
+        },
+        {
+          "en": "I cook a bit. Mostly I order in.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "Hm. Three days cook — ಎಷ್ಟು ಕೊಡ್ತೀರಿ? ಒಳ್ಳೆ rate ಸಿಕ್ತಾ?",
+      "translit": "hm. three days cook — eṣṭu koḍtīri? oḷḷe rate sikkā?",
+      "en": "Hmm. Three days cook — how much do you pay? Got a good rate?",
+      "emotion": "neutral",
+      "beat": "she heard the slip. she's not going to mention it. she's just going to remember.",
+      "audio": "/audio/kn/chapters/kn-day-22-misstep/amma-neutral-a4ca920e72.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಆರು ಸಾವಿರ ತಿಂಗಳಿಗೆ ಆಂಟಿ. ಒಂದು meal ಪ್ರತಿ visit. ಪದ್ಮ ಮ್ಯಾಡಮ್ recommend ಮಾಡಿದ್ರು.",
+          "translit": "āru sāvira tiṅgaḷige aunty. ondu meal prati visit. Padma madam recommend māḍidru.",
+          "en": "Six thousand a month, aunty. One meal per visit. Padma madam recommended her.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Six thousand. Padma the neighbour set it up.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "ಸರಿ ರೇಟ್. ಪದ್ಮ ಒಳ್ಳೆಯವಳು. ನಿಮ್ಮ ಮನೆ ಬಗ್ಗೆ ಮಾತಾಡ್ತೀರಾ — ಯಾವ floor? ಎಷ್ಟು room?",
+      "translit": "sari rate. Padma oḷḷeyavaḷu. nimma mane baggē mātāḍtīrā — yāva floor? eṣṭu room?",
+      "en": "Fair rate. Padma's a good one. Tell me about your place — what floor? How many rooms?",
+      "emotion": "warm",
+      "beat": "moving on, but not really. building the picture.",
+      "audio": "/audio/kn/chapters/kn-day-22-misstep/amma-warm-4049c6aa94.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "appa",
+      "native": "ಪತ್ತಿಯಾ Engineering ಒಳ್ಳೆ.",
+      "translit": "pattiyā engineering oḷḷe.",
+      "en": "Engineering's a good field.",
+      "emotion": "neutral",
+      "beat": "first words in twenty minutes. small approval.",
+      "audio": "/audio/kn/chapters/kn-day-22-misstep/appa-neutral-a469a2f6cc.wav"
+    }
+  ]
+}

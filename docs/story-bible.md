@@ -79,14 +79,14 @@ Hotel for a week. Wallet thin. The city hasn't decided whether to be kind.
 5. **The First Flat.** A 2BHK in HSR. Too expensive, half-furnished, the
    owner is "out of town" (suspicious). You walk.
 6. **The Second Flat.** Indiranagar. Smaller. Owner is there — an uncle
-   from Mysuru. Cultural test: can you talk to him without sounding like
-   a kid trying too hard?
+   from Mysuru. Slow careful Kannada, the kind of attention that decides
+   whether you're a serious renter.
 7. **The Deposit.** Owner wants ten months' advance. Broker wants his cut.
    You push back, in Kannada, in front of both. Vibes matters here.
 8. **Moving In.** Day-one meet with the watchman, Lokesh. He'll be in
    every chapter from here. Set the tone.
-9. **The Neighbor.** Knock on the door. They're curious. They've heard the
-   accent. They want to know your story.
+9. **The Neighbour.** Knock on the door. She heard your accent and she's
+   just curious — Indiranagar's too small not to know who lives upstairs.
 10. **First Sunday — the Vegetable Market.** Vendor aunty and her bored
     granddaughter at the cash counter. Bargain without offending. Become
     a regular.
@@ -95,10 +95,11 @@ Hotel for a week. Wallet thin. The city hasn't decided whether to be kind.
 
 The flat is yours. Now work, food, friends — and someone.
 
-11. **Day One at the Office.** HR is Latha. The "casual" onboarding chat
-    is in Kannada. Cultural test disguised as paperwork.
-12. **The Canteen.** Lunch with Karthik, the colleague who will become
-    your first friend. Office gossip. Decoding which managers to avoid.
+11. **First Friday Out.** Karthik drags you out with the team after your
+    first week. The table toggles between Kannada, Hindi and English
+    depending on who's talking, and nobody's keeping score.
+12. **The Canteen.** Monday lunch with Karthik. Office gossip, decoding
+    which managers to avoid, the social map of the floor.
 13. **The Cook Interview.** You're hiring someone to cook three nights a
     week. Wages, hours, what you'll eat, what's appropriate to ask. Tricky.
 14. **The Gas Cylinder.** Runs out mid-dosa-batter. Phone call to the
@@ -128,9 +129,10 @@ The stakes rise. The shortcuts catch up.
     watching. The food is mostly silent. Every word counts.
 23. **The Misstep.** You use ನೀನು where ನೀವು was required, addressing
     Amma. Recoverable, but the flag is set. Amma doesn't say a word.
-24. **The Work Crisis.** Boss needs you to lead a vendor meeting. Vendors
-    speak only Kannada. Your career is on the line. *Fluency matters
-    here in a real way.*
+23. **The Phone Call Home.** Mom calls in your mother tongue. You answer
+    fluently and then notice you've been thinking in Kannada for an hour.
+    The slow drift you didn't see coming. *No external pressure — the
+    chapter is about who you're becoming.*
 25. **The Temple Auntie.** Anika asked you to stand in line for something
     at a temple. Auntie behind you strikes up a conversation that becomes
     a marriage proposal for her niece. Navigate without offending anyone.

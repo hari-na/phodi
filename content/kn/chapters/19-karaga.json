@@ -1,0 +1,115 @@
+{
+  "id": "kn-day-19-karaga",
+  "day": 19,
+  "language": "kn",
+  "title": "The Karaga",
+  "titleNative": "ಕರಗ",
+  "setting": "Saturday night. Dharmaraya Swamy temple, Thigalarpet. The street is packed shoulder-to-shoulder. Karthik has one hand on your forearm so you don't lose him. The procession is coming.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "ಬಾಸ್, ನೋಡು. ಆ ಮನುಷ್ಯ — Karaga ಹೊತ್ತಿರೋವ. ಒಂದು ಗಂಟೆ ಆಯ್ತು dance. ಹೂವಿನ ಭಾರ ಮಾತ್ರ ಇಪ್ಪತ್ತು kilo.",
+      "translit": "bās, nōḍu. ā manuṣya — Karaga hottirōva. ondu gaṇṭe āytu dance. hūvina bhāra mātra ippattu kilo.",
+      "en": "Boss, look. That man — carrying the Karaga. Dancing for an hour now. The flowers alone weigh twenty kilos.",
+      "emotion": "warm",
+      "beat": "the drums get closer, the crowd presses forward",
+      "audio": "/audio/kn/chapters/kn-day-19-karaga/karthik-warm-56b6f57620.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Ee festival ನೂರಾರು ವರ್ಷ ಇಂದ. ಬೆಂಗಳೂರಿನ ಒರಿಜಿನಲ್. Tigala community ಇದು — ಹಿಂದೆ ಜನರು farming, ಗಾರ್ಡನಿಂಗ್.",
+      "translit": "ee festival nūrāru varṣa inda. Beṅgaḷūrina original. Tigala community idu — hinde janaru farming, gardening.",
+      "en": "This festival's been going for centuries. Original to Bangalore. Tigala community — historically farmers, gardeners.",
+      "emotion": "warm",
+      "beat": "he tells you this every Karaga, but you wouldn't know that",
+      "audio": "/audio/kn/chapters/kn-day-19-karaga/karthik-warm-b3b181bcbc.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "The procession passes. Drums, jasmine, sweat. You say:",
+      "choices": [
+        {
+          "native": "Ee weight ಜೊತೆ ಒಂದು ಗಂಟೆ dance. ಇದನ್ನ practice ಎಷ್ಟು ತಿಂಗಳು ಮಾಡ್ತಾರೆ?",
+          "translit": "ee weight joḍe ondu gaṇṭe dance. idanna practice eṣṭu tiṅgaḷu māḍtāre?",
+          "en": "An hour of dancing with that weight. How many months do they practise?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "I had no idea this was a whole thing. Wild.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        },
+        {
+          "native": "ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ.",
+          "translit": "tumbā cennāgide.",
+          "en": "Very nice.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Years ಬಾಸ್. ಒಂದು ಕುಟುಂಬದಿಂದ ಒಬ್ಬ. ಸಣ್ಣ ವಯಸ್ಸಿಂದ ತರಬೇತಿ. ನಮ್ಮ ತಾತ ಒಮ್ಮೆ ಹೇಳಿದ್ರು — Karaga ಹೊರೋವ ಆಗೋಕೆ ಒಬ್ಬ ಆಯ್ಕೆ ಆದ್ರೆ, ಊರಿಗೆ ಊರು celebrate ಮಾಡ್ತೆ.",
+      "translit": "years bās. ondu kuṭumbadinda obba. saṇṇa vayassinda tarabēti. namma tāta omme hēḷidru — Karaga horōva āgōke obba āyke ādre, ūrige ūru celebrate māḍte.",
+      "en": "Years, boss. One per family. Training from a young age. My grandfather once told me — when someone's chosen to carry the Karaga, the whole town celebrates.",
+      "emotion": "warm",
+      "beat": "the noise around you somehow drops for just this one line",
+      "audio": "/audio/kn/chapters/kn-day-19-karaga/karthik-warm-b284d02caf.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Bangalore ಅಂದ್ರೆ tech ಮಾತ್ರ ಅಲ್ಲ ಬಾಸ್. ಇದು — this is also Bangalore.",
+      "translit": "Bangalore andre tech mātra alla bās. idu — this is also Bangalore.",
+      "en": "Bangalore isn't just tech, boss. This — this is also Bangalore.",
+      "emotion": "warm",
+      "beat": "doesn't look at you. watches the procession turn the corner.",
+      "audio": "/audio/kn/chapters/kn-day-19-karaga/karthik-warm-f87414f349.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದ Karthik. ಇದು ತೋರಿಸಿದ್ದಕ್ಕೆ. Ee ride internet ನಲ್ಲಿ ಸಿಗಲ್ಲ.",
+          "translit": "dhanyavāda Karthik. idu tōrisiddakke. ee ride internet-nalli sigalla.",
+          "en": "Thanks, Karthik. For showing me this. You don't get this from the internet.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 4
+          },
+          "setFlag": "got_the_karaga"
+        },
+        {
+          "en": "Thanks for bringing me, man. Really.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Welcome. ಈಗ ಒಂದು dosa — ಅಲ್ಲಿ ಒಂದು ಅಂಗಡಿ ಇದೆ, ಪ್ರತಿ Karaga night open. ಬಾ.",
+      "translit": "welcome. īga ondu dosa — alli ondu aṅgaḍi ide, prati Karaga night open. bā.",
+      "en": "Welcome. Now a dosa — there's a place, open every Karaga night. Come.",
+      "emotion": "warm",
+      "beat": "already turning, already feeding you",
+      "audio": "/audio/kn/chapters/kn-day-19-karaga/karthik-warm-bfe7ca0dcf.wav"
+    }
+  ]
+}

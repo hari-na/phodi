@@ -1,0 +1,126 @@
+{
+  "id": "kn-day-15-pharmacy",
+  "day": 15,
+  "language": "kn",
+  "title": "The Pharmacy",
+  "titleNative": "ಔಷಧಿ ಅಂಗಡಿ",
+  "setting": "7pm. Apollo Pharmacy, Indiranagar 100ft Road. You've been ignoring a scratchy throat for three days and it's now a small fire. The pharmacist looks up from a packet of tablets he's labelling.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "pharmacist",
+      "native": "ಸಾರ್? ಏನು ಬೇಕು?",
+      "translit": "sār? ēnu bēku?",
+      "en": "Sir? What do you need?",
+      "emotion": "neutral",
+      "beat": "doesn't put the marker down",
+      "audio": "/audio/kn/chapters/kn-day-15-pharmacy/pharmacist-neutral-e9a768ff5e.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You point at your throat. You say:",
+      "choices": [
+        {
+          "native": "ಗಂಟಲು ನೋವು ಸಾರ್. ಮೂರು ದಿನ ಆಯ್ತು. ಸಣ್ಣ fever ಕೂಡ ಇದೆ.",
+          "translit": "gaṇṭalu nōvu sār. mūru dina āytu. saṇṇa fever kūḍa ide.",
+          "en": "Throat pain, sir. Three days now. Small fever too.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "My throat hurts. Bad. Three days.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        },
+        {
+          "native": "Throat ನೋವು.",
+          "translit": "throat nōvu.",
+          "en": "Throat pain.",
+          "effects": {
+            "fluency": 1,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "pharmacist",
+      "native": "ಕೆಮ್ಮು ಬರ್ತಾ ಇದೆಯಾ? ಒಣಗಿದ ಕೆಮ್ಮು ಅಥವಾ ಕಫ?",
+      "translit": "kemmu bartā ideyā? oṇagida kemmu athavā kapha?",
+      "en": "Are you coughing? Dry cough or with phlegm?",
+      "emotion": "neutral",
+      "beat": "puts the marker down. clinical now.",
+      "audio": "/audio/kn/chapters/kn-day-15-pharmacy/pharmacist-neutral-5f6328262c.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಒಣಗಿದ ಕೆಮ್ಮು ಸಾರ್. ರಾತ್ರಿ ಜಾಸ್ತಿ.",
+          "translit": "oṇagida kemmu sār. rātri jāsti.",
+          "en": "Dry cough, sir. Worse at night.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Dry. Worse when I lie down.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "pharmacist",
+      "native": "ಸಾಮಾನ್ಯ viral. ಎರಡು tablets ಕೊಡ್ತೀನಿ — fever ಮತ್ತು cough. ಮೂರು ದಿನ ತಗೋಳಿ. Spicy ಬೇಡ. ಬೆಚ್ಚಗಿನ ನೀರು ಜಾಸ್ತಿ.",
+      "translit": "sāmānya viral. eraḍu tablets koḍtīni — fever mattu cough. mūru dina tagoḷi. spicy bēḍa. beccagina nīru jāsti.",
+      "en": "Regular viral. I'll give you two tablets — fever and cough. Take for three days. No spicy. Lots of warm water.",
+      "emotion": "neutral",
+      "beat": "already reaching for the right shelf",
+      "audio": "/audio/kn/chapters/kn-day-15-pharmacy/pharmacist-neutral-ed03c2b79f.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದಗಳು ಸಾರ್. ಮೂರು ದಿನದ ನಂತರ ಸರಿ ಆಗದಿದ್ದರೆ?",
+          "translit": "dhanyavādagaḷu sār. mūru dinada nantara sari āgadiddare?",
+          "en": "Thanks sir. What if it's not better after three days?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Thanks. How much?",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "pharmacist",
+      "native": "ಸರಿ ಆಗದಿದ್ದರೆ doctor ಗೆ ಹೋಗಿ. ಇಲ್ಲಿ ಮುಂದೆ ಒಂದು clinic ಇದೆ — Dr. Hegde, ಸಂಜೆ ಆರು ಗಂಟೆಯಿಂದ. ಎರಡು ತಿಂಗಳ ಮುಂಚೆ ನಾನೂ ಅಲ್ಲಿಗೇ ಹೋಗಿದ್ದೆ.",
+      "translit": "sari āgadiddare doctor-ge hōgi. illi munde ondu clinic ide — Dr. Hegde, sañje āru gaṇṭeyinda. eraḍu tiṅgaḷa mumce nānū allige hōgidde.",
+      "en": "If not better, go to a doctor. There's a clinic up ahead — Dr. Hegde, from 6pm. I went there myself two months ago.",
+      "emotion": "warm",
+      "beat": "the personal recommendation. you didn't pay for it but it's free.",
+      "audio": "/audio/kn/chapters/kn-day-15-pharmacy/pharmacist-warm-0799d0196c.wav"
+    }
+  ]
+}

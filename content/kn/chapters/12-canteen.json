@@ -1,0 +1,113 @@
+{
+  "id": "kn-day-12-canteen",
+  "day": 12,
+  "language": "kn",
+  "title": "The Canteen",
+  "titleNative": "ಆಫೀಸ್ ಊಟ",
+  "setting": "1:15pm Monday. The canteen on the third floor. Karthik's already at a corner table with a plate of something that's gone slightly orange. He waves you over and pushes the bench out.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "ಬಾಸ್! Friday ride ಹೇಗಿತ್ತು? ತಲೆನೋವು ಇಲ್ಲ ತಾನೇ?",
+      "translit": "bās! Friday ride hēgittu? talenōvu illa tānē?",
+      "en": "Boss! How was the Friday ride? No headache, hopefully?",
+      "emotion": "amused",
+      "beat": "mouth half full, not even pretending to wait until he's done",
+      "audio": "/audio/kn/chapters/kn-day-12-canteen/karthik-amused-d80ac6f987.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You sit down. You say:",
+      "choices": [
+        {
+          "native": "Survive ಆದೆ. Saturday ಪೂರ್ತಿ sleep. Today Monday ಆಗಿದ್ದು ನಿಜ ತಾನೇ?",
+          "translit": "survive āde. Saturday pūrti sleep. today Monday āgiddu nija tānē?",
+          "en": "Survived. Slept all Saturday. Today's really Monday, right?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Made it. Barely. Thanks for the dark ale education.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Ha! ಸರಿ — ಈಗ floor politics. ನೋಡು ಅಲ್ಲಿ — grey shirt, glasses? ಅವನು Suresh ಮ್ಯಾನೇಜರ್. ಎಲ್ಲರ ಜೊತೆ smile. ಎಲ್ಲರ ಜೊತೆ daily one-on-one. ಆದರೆ promotion list ನಲ್ಲಿ — ಅವನ favourite ಮಾತ್ರ.",
+      "translit": "ha! sari — īga floor politics. nōḍu alli — grey shirt, glasses? avanu Suresh manager. ellara joḍe smile. ellara joḍe daily one-on-one. ādare promotion list-nalli — avana favourite mātra.",
+      "en": "Ha! Okay — floor politics. See over there — grey shirt, glasses? That's Suresh manager. Smiles at everyone. One-on-ones with everyone daily. But on the promotion list — only his favourite.",
+      "emotion": "hushed",
+      "beat": "doesn't point. just nods minutely.",
+      "audio": "/audio/kn/chapters/kn-day-12-canteen/karthik-hushed-c10e5d32fa.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Eeshwari ma'am — pink dupatta, near the window. ಅವಳು ಒಳ್ಳೆ. Honest feedback. ಅವಳ team ಗೆ try ಮಾಡು after probation.",
+      "translit": "Eeshwari ma'am — pink dupatta, near the window. avaḷu oḷḷe. honest feedback. avaḷa team-ge try māḍu after probation.",
+      "en": "Eeshwari ma'am — pink dupatta, by the window. She's good. Honest feedback. Try to get on her team after probation.",
+      "emotion": "warm",
+      "beat": "spears a fritter, eats half of it in one bite",
+      "audio": "/audio/kn/chapters/kn-day-12-canteen/karthik-warm-c9c5a70817.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You ask:",
+      "choices": [
+        {
+          "native": "Eeshwari ma'am team ಗೆ ಹೋಗೋದು ಹೇಗೆ? Suresh ಗೆ ಹೇಳಬೇಕಾ?",
+          "translit": "Eeshwari ma'am team-ge hōgōdu hēge? Suresh-ge hēḷabēkā?",
+          "en": "How do you get on Eeshwari ma'am's team? Do I tell Suresh?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "asked_about_eeshwari"
+        },
+        {
+          "en": "Got it. I'll keep my head down till probation.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "What kind of work does Suresh's team do?",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Suresh ಗೆ ಹೇಳಬೇಡ. ಯಾವತ್ತೂ ಹೇಳಬೇಡ. ಒಂದು project ತೆಗೆದುಕೋ, ಚೆನ್ನಾಗಿ ಮಾಡು, Eeshwari ಗೆ visible ಆಗು. ಅದು ದಾರಿ.",
+      "translit": "Suresh-ge hēḷabēḍa. yāvattū hēḷabēḍa. ondu project tegedukō, cennāgi māḍu, Eeshwari-ge visible āgu. adu dāri.",
+      "en": "Don't tell Suresh. Never tell Suresh. Take one project, do it well, become visible to Eeshwari. That's the way.",
+      "emotion": "stern",
+      "beat": "for the first time, no joke in it",
+      "audio": "/audio/kn/chapters/kn-day-12-canteen/karthik-stern-5145995aed.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Anyway. Friday's drinks ನನ್ನ — Saturday housewarming forget ಮಾಡಬೇಡ. ಎಂಟು ಗಂಟೆಗೆ. Karthik ride.",
+      "translit": "anyway. Friday's drinks nanna — Saturday housewarming forget māḍabēḍa. eṇṭu gaṇṭege. Karthik ride.",
+      "en": "Anyway — Friday's drinks were mine. Don't forget the housewarming Saturday. Eight pm. I'll pick you up.",
+      "emotion": "warm",
+      "beat": "drains his glass, claps a hand on the table",
+      "audio": "/audio/kn/chapters/kn-day-12-canteen/karthik-warm-1cea34eded.wav"
+    }
+  ]
+}

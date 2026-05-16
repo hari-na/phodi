@@ -1,0 +1,129 @@
+{
+  "id": "kn-day-13-hiring-cook",
+  "day": 13,
+  "language": "kn",
+  "title": "Hiring a Cook",
+  "titleNative": "ಅಡಿಗೆಯವರನ್ನು ಕೆಲಸಕ್ಕೆ ಇಟ್ಟುಕೊಳ್ಳುವುದು",
+  "setting": "11am. Padma the neighbour sent Saraswati your way. She's standing at your door in a maroon sari with her notebook in one hand — she's already been interviewing in this building for ten years.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "ನಮಸ್ಕಾರ ಸಾರ್. ಪದ್ಮ ಮ್ಯಾಡಮ್ ಹೇಳಿದರು. ನಾನು Saraswati. ಈ ಬಿಲ್ಡಿಂಗ್ ನಲ್ಲಿ ನಾಲ್ಕು flats ಅಡಿಗೆ ಮಾಡ್ತಾ ಇದ್ದೇನೆ.",
+      "translit": "namaskāra sār. Padma madam hēḷidaru. nānu Saraswati. ī building-nalli nālku flats aḍige māḍtā iddēne.",
+      "en": "Hello sir. Padma madam sent me. I'm Saraswati. I cook in four flats in this building.",
+      "emotion": "neutral",
+      "beat": "doesn't step inside until you gesture",
+      "audio": "/audio/kn/chapters/kn-day-13-hiring-cook/cook_aunty-neutral-0692cb061a.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You wave her in. You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ ಆಂಟಿ, ಬನ್ನಿ. ನನಗೆ ಮೂರು ದಿನ ಅಡಿಗೆ ಬೇಕು ಒಂದು ವಾರಕ್ಕೆ. ಯಾವ days ಆಗುತ್ತೆ?",
+          "translit": "namaskāra aunty, banni. nanage mūru dina aḍige bēku ondu vārakke. yāva days āgutte?",
+          "en": "Hello aunty, come in. I need cooking three days a week. Which days work?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Yes, hi, come in. I need cooking three times a week.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "Monday, Wednesday, Friday — ಬೆಳಿಗ್ಗೆ ಆರ್ರಿಂದ ಎಂಟು. ಒಂದು ಬಾರಿ ಒಂದು meal. ತಿಂಗಳಿಗೆ ಆರು ಸಾವಿರ.",
+      "translit": "Monday, Wednesday, Friday — beḷigge ārinda eṇṭu. ondu bāri ondu meal. tiṅgaḷige āru sāvira.",
+      "en": "Monday, Wednesday, Friday — six to eight in the morning. One meal per visit. Six thousand a month.",
+      "emotion": "neutral",
+      "beat": "the rate she charges flats one floor up. no haggle in her tone.",
+      "audio": "/audio/kn/chapters/kn-day-13-hiring-cook/cook_aunty-neutral-0e268cc63e.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಸರಿ ಆಂಟಿ. ಆರು ಸಾವಿರ ಒಪ್ಪಿಗೆ. ಯಾವ ರೀತಿ ಊಟ — North Indian, South, ಎಲ್ಲ?",
+          "translit": "sari aunty. āru sāvira oppige. yāva rīti ūṭa — north Indian, south, ella?",
+          "en": "Okay aunty. Six thousand agreed. What kind of food — North Indian, South, anything?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "native": "ಐದು ಸಾವಿರ ಆಗುತ್ತಾ ಆಂಟಿ? ಮೂರು ದಿನ ಮಾತ್ರ.",
+          "translit": "aidu sāvira āguttā aunty? mūru dina mātra.",
+          "en": "Could it be five thousand, aunty? Just three days.",
+          "effects": {
+            "fluency": 2,
+            "vibes": -2
+          },
+          "setFlag": "underbid_cook"
+        },
+        {
+          "en": "Sounds fair. Let's start.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "ಎಲ್ಲ ಮಾಡ್ತೀನಿ ಸಾರ್. ಆದರೆ ಈಡಿ-ಈಡಿ list ಬೇಕು ಭಾನುವಾರ. ತಿಂಗಳಿಗೆ ಒಂದು extra ತಿಂಗಳ paid leave — festival ಗೆ ಊರಿಗೆ ಹೋಗ್ತೀನಿ.",
+      "translit": "ella māḍtīni sār. ādare īḍi-īḍi list bēku bhānuvāra. tiṅgaḷige ondu extra tiṅgaḷa paid leave — festival-ge ūrige hōgtīni.",
+      "en": "I'll cook anything, sir. But I need a clear weekly list by Sunday. One paid leave a month — I go home for festivals.",
+      "emotion": "stern",
+      "beat": "the actual terms. she's been burned before.",
+      "audio": "/audio/kn/chapters/kn-day-13-hiring-cook/cook_aunty-stern-82414d776a.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಸರಿ ಆಂಟಿ. Paid leave ಒಪ್ಪಿಗೆ. Sunday list ಕೊಡ್ತೀನಿ. Trial week start ಮಾಡೋಣ ತಾನೇ?",
+          "translit": "sari aunty. paid leave oppige. Sunday list koḍtīni. trial week start māḍōṇa tānē?",
+          "en": "Okay aunty. Paid leave agreed. I'll give you the list Sunday. Trial week, shall we?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "hired_cook"
+        },
+        {
+          "en": "Sounds good. Let's start next week.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          },
+          "setFlag": "hired_cook"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "cook_aunty",
+      "native": "ಆಯ್ತು ಸಾರ್. ನಾಳೆ ಬೆಳಿಗ್ಗೆ ಆರಕ್ಕೆ ಬರ್ತೀನಿ. ಒಂದು ಒಳ್ಳೆ pan ತಗೊಳ್ಳಿ — ನಿಮ್ಮದು ಪತ್ಲ ಇದೆ.",
+      "translit": "āytu sār. nāḷe beḷigge ārakke bartīni. ondu oḷḷe pan tagoḷḷi — nimmadu patla ide.",
+      "en": "Done, sir. Tomorrow six am. And get a good pan — yours is too thin.",
+      "emotion": "amused",
+      "beat": "her eyes already on your kitchen as she turns to leave",
+      "audio": "/audio/kn/chapters/kn-day-13-hiring-cook/cook_aunty-amused-7d807025af.wav"
+    }
+  ]
+}

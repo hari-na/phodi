@@ -1,0 +1,105 @@
+{
+  "id": "kn-day-28-ugadi",
+  "day": 28,
+  "language": "kn",
+  "title": "Ugadi",
+  "titleNative": "ಯುಗಾದಿ",
+  "setting": "Ugadi morning. Amma's house, full of cousins and aunties and an uncle in a starched white kurta who has never met you before. The bevu-bella plate is on the table. Amma is feeding a child neem leaves with one hand while pouring filter coffee with the other. She turns and finds you in the doorway.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "ಬಂದ್ಯಾ! ಎಲ್ಲರನ್ನು meet ಮಾಡಿಸ್ತೀನಿ. ಆದರೆ ಮೊದಲು — bevu-bella. ಬಾ.",
+      "translit": "bandyā! ellarannu meet māḍistīni. ādare modalu — bevu-bella. bā.",
+      "en": "You came! I'll introduce you to everyone. But first — bevu-bella. Come.",
+      "emotion": "warm",
+      "beat": "for the first time, she's pulling you in by the elbow",
+      "audio": "/audio/kn/chapters/kn-day-28-ugadi/amma-warm-05f72c564d.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "amma",
+      "native": "ಒಂದು ಸ್ವಲ್ಪ ಬೇವು — ಕಷ್ಟ. ಒಂದು ಸ್ವಲ್ಪ ಬೆಲ್ಲ — ಸಿಹಿ. ವರ್ಷ ಎಲ್ಲ ಇದು. ಎಲ್ಲ ಕಷ್ಟ ಎಲ್ಲ ಸಿಹಿ ಒಪ್ಪಿಗೆ — ಹಾಗೇ ಬಾಳ್ಬೇಕು.",
+      "translit": "ondu svalpa bēvu — kaṣṭa. ondu svalpa bella — sihi. varṣa ella idu. ella kaṣṭa ella sihi oppige — hāgē bāḷbēku.",
+      "en": "A little neem — the bitter. A little jaggery — the sweet. That's the whole year. Accept all bitterness, all sweetness — that's how to live.",
+      "emotion": "warm",
+      "beat": "she puts the mix on your tongue herself. it's the speech she gives every guest.",
+      "audio": "/audio/kn/chapters/kn-day-28-ugadi/amma-warm-627c4a2415.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You swallow. You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದ ಆಂಟಿ. ಬೇವು ಮೊದಲ ಸಲ ತಿಂದ್ದು. ಬೆಲ್ಲ ಯಾವತ್ತೂ welcome.",
+          "translit": "dhanyavāda aunty. bēvu modala sala tinddu. bella yāvattū welcome.",
+          "en": "Thank you, aunty. First time eating neem. Jaggery's always welcome.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 4
+          }
+        },
+        {
+          "en": "Wow. That's bitter. Thanks aunty.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ಎಲ್ಲರೂ ಒಂದು ಸ್ವಲ್ಪ ಮಾತಾಡಬೇಕು ಸಾರ್. New year — ಒಂದು intention ಹೇಳಬೇಕು. ನೀನು ಒಂದು ಮಾತು ಹೇಳ್ತೀಯಾ ಎಲ್ಲರಿಗೆ?",
+      "translit": "ellarū ondu svalpa mātāḍabēku sār. new year — ondu intention hēḷabēku. nīnu ondu mātu hēḷtīyā ellarige?",
+      "en": "Everyone has to say a little something, sir. New year — an intention. Will you say one to everybody?",
+      "emotion": "warm",
+      "beat": "she didn't warn you. but she's looking at you like she has been believing this would happen.",
+      "audio": "/audio/kn/chapters/kn-day-28-ugadi/anika-warm-1f4aaa03ac.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "The room quiets down. Twelve adults, three children, one uncle holding a coffee cup. You stand. You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ ಎಲ್ಲರಿಗೂ. ನಾನು ಮೂರು ತಿಂಗಳ ಮುಂಚೆ Bangalore ಗೆ ಬಂದೆ. Kannada ಗೊತ್ತಿಲ್ಲ ಅಂದು ತಪ್ಪು ಆಯ್ತು ಬಂದ ದಿನ. ಆಮೇಲೆ ಒಬ್ಬ chai uncle, ಒಬ್ಬ watchman, ಒಬ್ಬ vendor aunty — everyone teach ಮಾಡಿದ್ರು. ಈಗ ಒಂದು ಸಣ್ಣ speech possible. ಧನ್ಯವಾದ. ಹೊಸ ವರ್ಷ ಎಲ್ಲರಿಗೂ ಒಳ್ಳೆಯದು ಆಗಲಿ.",
+          "translit": "namaskāra ellarigū. nānu mūru tiṅgaḷa mumce Bangalore-ge bande. Kannada gottilla andu tappu āytu banda dina. āmēle obba chai uncle, obba watchman, obba vendor aunty — everyone teach māḍidru. īga ondu saṇṇa speech possible. dhanyavāda. hosa varṣa ellarigū oḷḷeyadu āgali.",
+          "en": "Hello everybody. I came to Bangalore three months ago. Not knowing Kannada was a mistake on the day I arrived. After that, a chai uncle, a watchman, a vendor aunty — everyone taught me. Now even a small speech is possible. Thank you. May the new year be good for all of us.",
+          "effects": {
+            "fluency": 6,
+            "vibes": 6
+          },
+          "setFlag": "gave_the_speech"
+        },
+        {
+          "native": "ನಮಸ್ಕಾರ. Thank you Amma, Appa, Anika. ಹೊಸ ವರ್ಷ ಒಳ್ಳೆಯದು.",
+          "translit": "namaskāra. thank you Amma, Appa, Anika. hosa varṣa oḷḷeyadu.",
+          "en": "Hello. Thank you, Amma, Appa, Anika. Good new year.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Hi everyone. Thanks for having me. Happy Ugadi.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "appa",
+      "native": "ಮೂರು ತಿಂಗಳಲ್ಲಿ ಇಷ್ಟು speech. ನನ್ನ ಸಹೋದರ ಇಪ್ಪತ್ತು ವರ್ಷ Bangalore ನಲ್ಲಿ — ಒಂದು sentence Kannada ಇಲ್ಲ. ನಿಮ್ಮ accent ಸ್ವಲ್ಪ heavy — ಆದರೆ ಧೈರ್ಯ ಒಳ್ಳೆಯದು. ಸ್ವಾಗತ ತಮ್ಮ.",
+      "translit": "mūru tiṅgaḷalli iṣṭu speech. nanna sahōdara ippattu varṣa Bangalore-nalli — ondu sentence Kannada illa. nimma accent svalpa heavy — ādare dhairya oḷḷeyadu. svāgata tamma.",
+      "en": "This much speech in three months. My brother's been in Bangalore twenty years — not one sentence of Kannada. Your accent is a little heavy — but the bravery is good. Welcome, son.",
+      "emotion": "warm",
+      "beat": "tamma. son. the room hears it. amma's eyes are wet but she's pouring the next coffee.",
+      "audio": "/audio/kn/chapters/kn-day-28-ugadi/appa-warm-b5d57db6b4.wav"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "kn-day-09-neighbour",
+  "day": 9,
+  "language": "kn",
+  "title": "The Neighbour",
+  "titleNative": "ನೆರೆಮನೆಯವರು",
+  "setting": "9pm. You're unpacking a kettle. A small steady knock at the door — not the urgent kind. When you open it, there's a woman in a salwar, holding a small steel container, smiling like she's been thinking about this for an hour.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "neighbour",
+      "native": "ನಮಸ್ಕಾರ! ನಾನು ಪದ್ಮ — 2B. ಸ್ವಾಗತ ಸಾರ್.",
+      "translit": "namaskāra! nānu Padma — 2B. svāgata sār.",
+      "en": "Hello! I'm Padma — 2B. Welcome, sir.",
+      "emotion": "warm",
+      "beat": "holds out the steel container — something is warm inside",
+      "audio": "/audio/kn/chapters/kn-day-09-neighbour/neighbour-warm-009768cfec.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take it. You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ ಮ್ಯಾಡಮ್! ಧನ್ಯವಾದಗಳು. ಇದು ಏನು?",
+          "translit": "namaskāra madam! dhanyavādagaḷu. idu ēnu?",
+          "en": "Hello, madam! Thank you. What's this?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Oh, thank you so much. You really didn't have to.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Thanks.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "neighbour",
+      "native": "Bisi bele bath. ಸ್ವಲ್ಪ extra ಮಾಡಿದ್ದೆ. ಹೊಸ ಮನೆ ಮೊದಲ ರಾತ್ರಿ ಊಟ ಮಾಡಿಲ್ಲ ತಾನೇ?",
+      "translit": "bisi bele bath. svalpa extra māḍidde. hosa mane modala rātri ūṭa māḍilla tānē?",
+      "en": "Bisi bele bath. I made a bit extra. First night in a new place — you haven't eaten, right?",
+      "emotion": "warm",
+      "beat": "she did know. she made extra on purpose.",
+      "audio": "/audio/kn/chapters/kn-day-09-neighbour/neighbour-warm-8c7d617582.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "neighbour",
+      "native": "ನೀವು ಯಾವ ಊರಿನವರು ಸಾರ್? Accent ಸ್ವಲ್ಪ ಬೇರೆ ಇದೆ.",
+      "translit": "nīvu yāva ūrinavaru sār? accent svalpa bēre ide.",
+      "en": "Where are you from, sir? Your accent is a little different.",
+      "emotion": "warm",
+      "beat": "not pushy — Indiranagar's too small not to ask",
+      "audio": "/audio/kn/chapters/kn-day-09-neighbour/neighbour-warm-71ab36a731.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "Engineering job ಗೆ Bangalore ಗೆ ಬಂದಿದ್ದೇನೆ ಮ್ಯಾಡಮ್. ಹೊಸಬ.",
+          "translit": "engineering job-ge Bangalore-ge bandiddēne madam. hosaba.",
+          "en": "Came to Bangalore for an engineering job, madam. I'm new.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "I just moved here for work.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        },
+        {
+          "native": "ದೂರ ಇಂದ.",
+          "translit": "dūra inda.",
+          "en": "From far away.",
+          "effects": {
+            "fluency": 1,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "neighbour",
+      "native": "ಆಯ್ತು. ಯಾವುದೇ ಸಮಸ್ಯೆ ಇದ್ದರೆ, knock ಮಾಡಿ ಸಾರ್. ನಾನು ಬೆಳಿಗ್ಗೆ ಎಂಟರ ಹೊತ್ತಿಗೆ office ಗೆ ಹೋಗ್ತೀನಿ — ಮೊದಲು ಸಿಗ್ತೀನಿ.",
+      "translit": "āytu. yāvudē samasye iddare, knock māḍi sār. nānu beḷigge eṇṭara hottige office-ge hōgtīni — modalu sigtīni.",
+      "en": "Okay. Any trouble, just knock, sir. I leave for the office around eight — you'll find me before then.",
+      "emotion": "warm",
+      "beat": "already turning to go. neighbourly without being nosy.",
+      "audio": "/audio/kn/chapters/kn-day-09-neighbour/neighbour-warm-1be6b71ce8.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದಗಳು ಮ್ಯಾಡಮ್. ಕಿಚನ್ ಸೆಟ್ ಆದ ಮೇಲೆ ನೀವು ಊಟಕ್ಕೆ ಬರಬೇಕು.",
+          "translit": "dhanyavādagaḷu madam. kitchen set āda mēle nīvu ūṭakke barabēku.",
+          "en": "Thank you, madam. Once the kitchen is set up, you must come over for a meal.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "invited_padma"
+        },
+        {
+          "en": "Thank you so much again.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "kn-day-11-first-friday",
+  "day": 11,
+  "language": "kn",
+  "title": "First Friday Out",
+  "titleNative": "ಮೊದಲ ಶುಕ್ರವಾರ",
+  "setting": "8pm. Toit, Indiranagar. The first round is already in. Karthik flags you down across the rooftop — he's saved you a chair next to him and someone's half-empty pint of dark beer is waiting at your spot.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "ಬಂದ್ಯಾ ಬಾಸ್! ನಿನ್ನ pint already ordered. Ee dark ale try ಮಾಡು — ಒಳ್ಳೆಯದು.",
+      "translit": "bandyā bās! ninna pint already ordered. ee dark ale try māḍu — oḷḷeyadu.",
+      "en": "You're here, boss! Pint already ordered for you. Try this dark ale — it's good.",
+      "emotion": "warm",
+      "beat": "claps your shoulder hard enough that you spill a little",
+      "audio": "/audio/kn/chapters/kn-day-11-first-friday/karthik-warm-8113bc9e2c.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Guys, ಇವನು ನಮ್ಮ new joinee. Last week ಬಂದಿದ್ದಾನೆ — already ಒಳ್ಳೆ flat ಸಿಕ್ಕಿದೆ. Indiranagar!",
+      "translit": "guys, ivanu namma new joinee. last week bandiddāne — already oḷḷe flat sikkide. Indiranagar!",
+      "en": "Guys, this is our new joinee. Came last week — already got a good flat. Indiranagar!",
+      "emotion": "amused",
+      "beat": "to the table at large. heads turn.",
+      "audio": "/audio/kn/chapters/kn-day-11-first-friday/karthik-amused-2d67298667.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You raise your glass. You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ ಎಲ್ಲರಿಗೂ! ಒಳ್ಳೆ ಜನ ಸಿಕ್ಕಿದ್ರು ಅಂತ Karthik ಹೇಳಿದ.",
+          "translit": "namaskāra ellarigū! oḷḷe jana sikkidru anta Karthik hēḷida.",
+          "en": "Hi everyone! Karthik said I'd meet good people here.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Hey, nice to meet you all.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        },
+        {
+          "native": "ಹಾಯ್.",
+          "translit": "hāy.",
+          "en": "Hi.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Yaaru helideyo Karthik ಒಳ್ಳೆ ಜನ ಸಿಗ್ತಾರೆ ಅಂತ? ನಾವೆಲ್ಲ ಕೆಟ್ಟವರು. Especially ee Suresh — boss is watching, boss is watching ಅಂತ ಹೇಳ್ತಾ ಇರ್ತಾನೆ.",
+      "translit": "yāru helideyo Karthik oḷḷe jana sigtāre anta? nāvella keṭṭavaru. especially ee Suresh — boss is watching, boss is watching anta hēḷtā irtāne.",
+      "en": "Who said Karthik's people are good? We're all bad. Especially this Suresh — keeps saying 'boss is watching, boss is watching'.",
+      "emotion": "amused",
+      "beat": "the table laughs. someone protests in Tamil. it gets louder.",
+      "audio": "/audio/kn/chapters/kn-day-11-first-friday/karthik-amused-ab282315b0.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Anyway. Two rules ಬಾಸ್. Manager Ravi ಗೆ promise ಮಾಡಬೇಡ Friday EOD. ಅವನು ಎಲ್ಲ remember ಮಾಡ್ತಾನೆ. And ee canteen sambar ಮಾತ್ರ — bisi bele bath skip.",
+      "translit": "anyway. two rules bās. manager Ravi-ge promise māḍabēḍa Friday EOD. avanu ella remember māḍtāne. and ee canteen sambar mātra — bisi bele bath skip.",
+      "en": "Anyway. Two rules, boss. Never promise Manager Ravi anything by Friday EOD — he remembers everything. And in the canteen — only the sambar. Skip the bisi bele bath.",
+      "emotion": "warm",
+      "beat": "his hand wraps around the back of your chair — you're in",
+      "audio": "/audio/kn/chapters/kn-day-11-first-friday/karthik-warm-e1775dbc0e.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "Noted. ಮುಂದಿನ round ನನ್ನ.",
+          "translit": "noted. mundina round nanna.",
+          "en": "Noted. Next round's on me.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "bought_round_friday"
+        },
+        {
+          "en": "Solid advice. Thanks.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "karthik",
+      "native": "Ee ee, that's how we keep ee boy! ಮುಂದಿನ ವಾರ Saturday — colleague ಒಬ್ಬನ housewarming. ನೀನು ಬರಬೇಕು.",
+      "translit": "ee ee, that's how we keep ee boy! mundina vāra Saturday — colleague obbana housewarming. nīnu barabēku.",
+      "en": "Ee ee, that's how we keep this boy! Next Saturday — a colleague's housewarming. You're coming.",
+      "emotion": "warm",
+      "beat": "not a question. you're in the calendar now.",
+      "audio": "/audio/kn/chapters/kn-day-11-first-friday/karthik-warm-ed5b6fcaea.wav"
+    }
+  ]
+}

@@ -81,6 +81,53 @@ you push back with ಮೀಟರ್ ಹಾಕಿ.
 hook. Cultural-appropriateness scoring (Vibes) is the wedge no learning
 app currently does. This is the PM Engineer signal that lands.
 
+## Milestone 10 — All 30 chapters of Act 1 (entire story shipped)
+**Shipped:** The complete playable story. Days 5-30 hand-crafted to
+match the editorial voice of Days 1-4. Ten new voice profiles
+(Padma the neighbour, Karthik the office friend, Anika the love
+interest, Saraswati the cook, the gas supplier, the pharmacist,
+Appa, the temple auntie, Anika's friend Divya, and the diegetic
+mother for the phone-call-home chapter).
+
+Highlights of the new content:
+  - **Days 5-7 broker arc** — the first flat fails on inspection;
+    Krishnamurthy uncle does the slow careful Mysuru-register
+    negotiation; you sign on Day 7.
+  - **Day 8 Lokesh** — the watchman who'll be in ten more chapters
+    has his introduction beat. Sets the relationship's tone.
+  - **Day 13 Saraswati's interview** — hiring a cook in Bangalore
+    as a genuine domestic-logistics chapter, not a power-asymmetry
+    beat.
+  - **Day 14 gas cylinder** — phone-only chapter, tired-uncle voice
+    profile, the urgency carried by stage directions.
+  - **Day 16 bookstore** — Anika's debut. Pronunciation correction
+    as meet-cute. Five months of pacing land in one beat.
+  - **Day 19 Karaga** — public street procession, Karthik as host,
+    "Bangalore isn't just tech, boss. This — this is also Bangalore."
+  - **Day 23 Phone Call Home** — the introspective chapter where
+    Mom calls in your mother tongue and you realise you've been
+    thinking in Kannada for an hour. The drift.
+  - **Day 28 Ugadi speech** — emotional peak. A six-line speech in
+    Kannada to a room of twelve adults. Appa calls you "tamma" (son)
+    at the end.
+  - **Day 30 morning** — the choice. Three endings: stay with Anika,
+    take time, or take the offer back home.
+
+Total: 30 chapters, ~200 NPC dialogue lines voiced by Sarvam
+Bulbul-v2 across 15 distinct voice profiles, 6 emotional registers,
+all rendered with per-line intonation modifiers stacking on the
+character's base profile.
+
+**Screenshots:** `07-course-with-chapters.png` (now 30/30),
+`17-day-16-bookstore-meet.png`, `18-day-23-phone-call-home.png`,
+`19-day-28-ugadi.png`, `20-day-30-morning.png`.
+
+**Why it matters:** the entire story is playable end-to-end. This
+isn't a demo or a vertical slice — it's a complete 30-chapter
+narrative game with full voice acting. The LinkedIn pitch goes from
+"prototype of a language game" to "complete narrative game I shipped
+solo with AI as content team."
+
 ## Milestone 09 — Day 4: Broker Call (phone-only) + 100-day rescope
 **Shipped:** Day 4 — The Broker Call. The first phone-only chapter:
 no body language, only audio + stage directions like "his Bluetooth

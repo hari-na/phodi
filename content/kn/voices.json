@@ -90,6 +90,106 @@
       "pace": 1.05,
       "pitch": 0.0,
       "loudness": 1.1
+    },
+    {
+      "id": "neighbour",
+      "name": "Padma",
+      "role": "Your floor neighbour. Late 30s. Working mother. Genuinely curious about anyone new in the building. Not gossipy, just observant.",
+      "model": "bulbul:v2",
+      "speaker": "manisha",
+      "pace": 1.0,
+      "pitch": 0.08,
+      "loudness": 1.0
+    },
+    {
+      "id": "karthik",
+      "name": "Karthik",
+      "role": "Office friend, late 20s. Code-switches between Kannada, Hindi and English mid-sentence. Always knows a place. Will introduce you to the city.",
+      "model": "bulbul:v2",
+      "speaker": "abhilash",
+      "pace": 1.1,
+      "pitch": 0.1,
+      "loudness": 1.0
+    },
+    {
+      "id": "anika",
+      "name": "Anika",
+      "role": "Bookstore meet-cute. Late 20s, Kannadiga from Jayanagar, fast native speech, formal when she wants to be. Amused at your accent — at first.",
+      "model": "bulbul:v2",
+      "speaker": "anushka",
+      "pace": 1.05,
+      "pitch": 0.12,
+      "loudness": 1.0
+    },
+    {
+      "id": "cook_aunty",
+      "name": "Saraswati",
+      "role": "The cook you hire. 40s. Brisk, professional, watching what you ask for and how. Has worked in five flats on this street.",
+      "model": "bulbul:v2",
+      "speaker": "vidya",
+      "pace": 1.0,
+      "pitch": 0.0,
+      "loudness": 1.05
+    },
+    {
+      "id": "gas_uncle",
+      "name": "Gas Supplier",
+      "role": "Phone-only. Late 50s. Tired voice — he's the last call before he closes the depot. Don't waste it.",
+      "model": "bulbul:v2",
+      "speaker": "karun",
+      "pace": 0.9,
+      "pitch": -0.2,
+      "loudness": 0.85
+    },
+    {
+      "id": "pharmacist",
+      "name": "Pharmacist",
+      "role": "Counter at a chemist's in Indiranagar. Early 30s. Quick, helpful if you can describe your symptom. Won't sell you cough syrup unless you sound miserable.",
+      "model": "bulbul:v2",
+      "speaker": "hitesh",
+      "pace": 1.05,
+      "pitch": 0.0,
+      "loudness": 1.0
+    },
+    {
+      "id": "appa",
+      "name": "Appa",
+      "role": "Anika's father. Mid-60s. Mostly silent. When he speaks, listen — slow deliberate Kannada, every word costs him something.",
+      "model": "bulbul:v2",
+      "speaker": "karun",
+      "pace": 0.75,
+      "pitch": -0.25,
+      "loudness": 0.8
+    },
+    {
+      "id": "temple_auntie",
+      "name": "Temple auntie",
+      "role": "Bustling 60s, in the queue at a temple. Warm, presumptuous, marries you off to her niece in three sentences. The walking embodiment of Indian aunty energy.",
+      "model": "bulbul:v2",
+      "speaker": "vidya",
+      "pace": 1.1,
+      "pitch": 0.15,
+      "loudness": 1.15
+    },
+    {
+      "id": "anika_friend",
+      "name": "Divya",
+      "role": "Anika's school friend. Late 20s. Sharper-tongued than Anika, tests your sense of humour before she decides if she likes you.",
+      "model": "bulbul:v2",
+      "speaker": "arya",
+      "pace": 1.15,
+      "pitch": 0.08,
+      "loudness": 1.0
+    },
+    {
+      "id": "mom",
+      "name": "Amma (mum)",
+      "role": "Your mother. Phone call in English on Day 23 — diegetic stand-in for whatever mother tongue the player picked at onboarding. Warm, just-checking-in.",
+      "model": "bulbul:v2",
+      "speaker": "vidya",
+      "pace": 0.92,
+      "pitch": 0.05,
+      "loudness": 0.95
     }
   ],
   "emotionModifiers": {

@@ -1,0 +1,140 @@
+{
+  "id": "kn-day-26-fight",
+  "day": 26,
+  "language": "kn",
+  "title": "The Fight",
+  "titleNative": "ಜಗಳ",
+  "setting": "Saturday night. Your flat. The TV is off. Anika is on the sofa, her arms folded — not angry exactly, but the kind of quiet that's worse. You said something in the auto on the way back. You didn't mean it the way she heard it. Or did you.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ನೀನು ನಿಜವಾಗಿ ಕಲಿಯ್ತಾ ಇದ್ಯಾ — ಅಥವಾ ಸ್ವಲ್ಪ perform ಮಾಡ್ತಾ ಇದ್ಯಾ? Tonight Divya ಜೊತೆ — ಒಂದು good performance ಆಗಿತ್ತು. Genuine ಆಗಿತ್ತಾ ಅಲ್ಲ ಗೊತ್ತಿಲ್ಲ.",
+      "translit": "nīnu nijavāgi kaliytā idyā — athavā svalpa perform māḍtā idyā? tonight Divya joḍe — ondu good performance āgittu. genuine āgittā alla gottilla.",
+      "en": "Are you actually learning — or are you performing a little? Tonight with Divya — that was a good performance. Whether it was real, I don't know.",
+      "emotion": "stern",
+      "beat": "not raising her voice. that's the problem.",
+      "audio": "/audio/kn/chapters/kn-day-26-fight/anika-stern-50bdb35e32.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You sit down opposite her. You say:",
+      "choices": [
+        {
+          "native": "Anika. ಸ್ವಲ್ಪ performance, ಸ್ವಲ್ಪ real. ಆದರೆ ಎಲ್ಲ ನಿನಗೋಸ್ಕರ ಅಲ್ಲ. ನನಗೋಸ್ಕರ ಕೂಡ. ನಾನು here ಇರ್ತೀನಿ.",
+          "translit": "Anika. svalpa performance, svalpa real. ādare ella ninagōskara alla. nanagōskara kūḍa. nānu here irtīni.",
+          "en": "Anika. Some performance, some real. But not all for you — for me too. I'm staying here.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 4
+          },
+          "setFlag": "named_the_truth"
+        },
+        {
+          "en": "Anika that's not fair. I've been trying so hard.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          },
+          "setFlag": "got_defensive"
+        },
+        {
+          "native": "ಎಲ್ಲ ನಿಜ Anika. ಯಾವತ್ತೂ performance ಇಲ್ಲ.",
+          "translit": "ella nija Anika. yāvattū performance illa.",
+          "en": "It's all real, Anika. Never a performance.",
+          "effects": {
+            "fluency": 2,
+            "vibes": -2
+          },
+          "setFlag": "lied"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ನನಗೋಸ್ಕರ ಅಲ್ಲ — ಎಂದು ಹೇಳಿದ್ದು ಒಳ್ಳೆಯದು. ಆದರೆ ನೀನು ಯಾವತ್ತಾದರೂ ಮನೆ ಗೆ ಹೋಗ್ತೀಯ.",
+      "translit": "nanagōskara alla — endu hēḷiddu oḷḷeyadu. ādare nīnu yāvattādarū mane-ge hōgtīya.",
+      "en": "'Not for me' — good that you said that. But someday you'll go home.",
+      "emotion": "hushed",
+      "beat": "the real fear, finally said out loud",
+      "audio": "/audio/kn/chapters/kn-day-26-fight/anika-hushed-9fae5f9de6.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take a breath. You say:",
+      "choices": [
+        {
+          "native": "Anika. ಮನೆ ಎಲ್ಲಿದೆ ಎಂದು ಈಗ ಗೊತ್ತಿಲ್ಲ ನನಗೆ. ಮಾತಾಡೋಣ. Sunday. ನಾವು — both of us — ಮಾತಾಡೋಣ.",
+          "translit": "Anika. mane ellide endu īga gottilla nanage. mātāḍōṇa. Sunday. nāvu — both of us — mātāḍōṇa.",
+          "en": "Anika. I don't know where home is anymore. Let's talk. Sunday. We — both of us — talk.",
+          "effects": {
+            "fluency": 4,
+            "vibes": 4
+          },
+          "setFlag": "asked_for_real_talk"
+        },
+        {
+          "en": "I don't know yet. That's the honest answer.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 2
+          },
+          "setFlag": "honest_at_least"
+        },
+        {
+          "en": "Why are we talking about this now?",
+          "effects": {
+            "fluency": 0,
+            "vibes": -4
+          },
+          "setFlag": "ducked_the_question"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ಸರಿ. Sunday. Cubbon Park. ನಮ್ಮ ಮೊದಲ ಮರ — Pongamia. ನೆನಪಿದ್ಯಾ?",
+      "translit": "sari. Sunday. Cubbon Park. namma modala mara — Pongamia. nenapidyā?",
+      "en": "Okay. Sunday. Cubbon Park. Our first tree — Pongamia. Remember?",
+      "emotion": "hushed",
+      "beat": "the smallest small smile. the fight isn't over but it's softened.",
+      "audio": "/audio/kn/chapters/kn-day-26-fight/anika-hushed-6e9378e0cd.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ನೆನಪಿದೆ. ಒಂದು coffee, ಒಂದು ಮರ. Sunday.",
+          "translit": "nenapide. ondu coffee, ondu mara. Sunday.",
+          "en": "I remember. One coffee, one tree. Sunday.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "remembered_pongamia"
+        },
+        {
+          "en": "Yeah. Sunday.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "anika",
+      "native": "ನಾನು ಈಗ ಹೋಗ್ತೀನಿ. Tomorrow ಬೆಳಿಗ್ಗೆ Amma ಗೆ help ಬೇಕು. Sunday — see you.",
+      "translit": "nānu īga hōgtīni. tomorrow beḷigge Amma-ge help bēku. Sunday — see you.",
+      "en": "I'll go now. Tomorrow morning Amma needs help. Sunday — see you.",
+      "emotion": "warm",
+      "beat": "stands up. picks up her bag. she doesn't look back at the door, but she pauses there for a half second.",
+      "audio": "/audio/kn/chapters/kn-day-26-fight/anika-warm-c3a3171358.wav"
+    }
+  ]
+}
