@@ -1,0 +1,217 @@
+{
+  "language": "kn",
+  "name": "Kannada",
+  "nameNative": "ಕನ್ನಡ",
+  "description": "Conversational Kannada, built for people who already speak an Indian language. Every concept is bridged from Tamil and Malayalam where the grammar carries over.",
+  "units": [
+    {
+      "id": "kn-foundations",
+      "order": 1,
+      "title": "Foundations",
+      "titleNative": "ಮೂಲಗಳು",
+      "description": "Greetings, basic courtesies, yes and no. By the end of this unit you can survive your first day on the street.",
+      "lessons": [
+        {
+          "id": "kn-001-greetings",
+          "order": 1,
+          "title": "Greetings",
+          "titleNative": "ನಮಸ್ಕಾರ",
+          "titleNativeTranslit": "namaskāra",
+          "description": "Five words. By the end you'll hold a real four-line greeting exchange.",
+          "estimatedMinutes": 6,
+          "xp": 10,
+          "vocabulary": [
+            {
+              "native": "ನಮಸ್ಕಾರ",
+              "translit": "namaskāra",
+              "en": "Hello / Greetings",
+              "notes": "Neutral and respectful. Works in every register — to a stranger, an elder, a shopkeeper. The default greeting.",
+              "bridges": {
+                "ta": {
+                  "word": "வணக்கம்",
+                  "translit": "vaṇakkam",
+                  "note": "Different word, same job. நமஸ்காரம் also exists in Tamil as a Sanskrit borrowing."
+                },
+                "ml": {
+                  "word": "നമസ്കാരം",
+                  "translit": "namaskāram",
+                  "note": "Direct cognate — Kannada drops the final -m."
+                }
+              }
+            },
+            {
+              "native": "ಹೇಗಿದ್ದೀರಾ",
+              "translit": "hēgiddīrā",
+              "en": "How are you? (formal)",
+              "notes": "Literally 'how-are-you-being'. The -īrā ending marks formal/plural respect. Use this with anyone older than you or anyone you've just met.",
+              "bridges": {
+                "ta": {
+                  "word": "எப்படி இருக்கீங்க",
+                  "translit": "eppaḍi irukkīṅga",
+                  "note": "Same structure: 'how' + 'are you' + respect marker. The -īṅga ending matches Kannada's -īrā."
+                },
+                "ml": {
+                  "word": "എങ്ങനെയുണ്ട്",
+                  "translit": "eṅṅaneyuṇṭ",
+                  "note": "Same pattern. Malayalam compresses the respect marker into context rather than a suffix."
+                }
+              }
+            },
+            {
+              "native": "ಚೆನ್ನಾಗಿದ್ದೇನೆ",
+              "translit": "cennāgiddēne",
+              "en": "I'm well / I'm fine",
+              "notes": "Breaks into chennāgi (well) + iddēne (I am). The -ēne ending is first-person. You'll see this ending everywhere — remember it.",
+              "bridges": {
+                "ta": {
+                  "word": "நல்லா இருக்கேன்",
+                  "translit": "nallā irukkēn",
+                  "note": "Same architecture: adverb + 'I am'. nallā maps to chennāgi, irukkēn maps to iddēne. The -ēn / -ēne first-person ending is the same root."
+                },
+                "ml": {
+                  "word": "സുഖമാണ്",
+                  "translit": "sukhamāṇ",
+                  "note": "Different word for 'well' (sukha, Sanskrit-origin), but the -māṇ copula does the same work as iddēne."
+                }
+              }
+            },
+            {
+              "native": "ನೀವು",
+              "translit": "nīvu",
+              "en": "You (formal / plural)",
+              "notes": "When you toss the question back. Pronounced like 'NEE-voo'. The informal singular is ನೀನು (nīnu) — use that only with friends and kids.",
+              "bridges": {
+                "ta": {
+                  "word": "நீங்க",
+                  "translit": "nīṅga",
+                  "note": "Same root nī- with a respect suffix. Kannada uses -vu, Tamil uses -ṅga."
+                },
+                "ml": {
+                  "word": "നിങ്ങൾ",
+                  "translit": "niṅṅaḷ",
+                  "note": "Same nī- root. Malayalam preserves the older -ṅṅaḷ ending."
+                }
+              }
+            },
+            {
+              "native": "ಧನ್ಯವಾದಗಳು",
+              "translit": "dhanyavādagaḷu",
+              "en": "Thank you",
+              "notes": "Sanskrit-origin, used across South India. The -gaḷu ending is plural — literally 'thanks-plural', because one thanks isn't enough. In casual speech 'thanks' (in English) is just as common.",
+              "bridges": {
+                "ta": {
+                  "word": "நன்றி",
+                  "translit": "nandri",
+                  "note": "Pure Tamil word, more common than the Sanskrit ధన்யவாதம். Both exist but nandri wins in speech."
+                },
+                "ml": {
+                  "word": "നന്ദി",
+                  "translit": "nandi",
+                  "note": "Same Dravidian root as Tamil nandri."
+                }
+              }
+            }
+          ],
+          "exercises": [
+            {
+              "type": "multipleChoice",
+              "prompt": "What does ನಮಸ್ಕಾರ mean?",
+              "options": ["Hello", "Goodbye", "Sorry", "Please"],
+              "correctIndex": 0,
+              "explanation": "ನಮಸ್ಕಾರ is the default neutral greeting — works for anyone, any time of day."
+            },
+            {
+              "type": "multipleChoice",
+              "prompt": "How do you say 'How are you?' (formal)",
+              "options": [
+                "ಚೆನ್ನಾಗಿದ್ದೇನೆ",
+                "ಹೇಗಿದ್ದೀರಾ",
+                "ನಮಸ್ಕಾರ",
+                "ಧನ್ಯವಾದಗಳು"
+              ],
+              "correctIndex": 1,
+              "explanation": "The -īrā ending is the formal/plural respect marker. Use it with anyone you wouldn't call by their first name."
+            },
+            {
+              "type": "wordBank",
+              "prompt": "Build: 'Hello! How are you?'",
+              "target": "ನಮಸ್ಕಾರ! ಹೇಗಿದ್ದೀರಾ?",
+              "targetTranslit": "namaskāra! hēgiddīrā?",
+              "words": ["ಹೇಗಿದ್ದೀರಾ?", "ನಮಸ್ಕಾರ!"],
+              "correctOrder": [1, 0]
+            },
+            {
+              "type": "multipleChoice",
+              "prompt": "What does ಚೆನ್ನಾಗಿದ್ದೇನೆ mean?",
+              "options": [
+                "I'm sorry",
+                "I'm well",
+                "I don't know",
+                "I'm coming"
+              ],
+              "correctIndex": 1,
+              "explanation": "Breaks into chennāgi (well) + iddēne (I am). The -ēne ending = first person 'I'."
+            },
+            {
+              "type": "fillBlank",
+              "prompt": "ಚೆನ್ನಾಗಿದ್ದೇನೆ, ___? (I'm well, and you?)",
+              "promptParts": ["ಚೆನ್ನಾಗಿದ್ದೇನೆ, ", "?"],
+              "options": ["ನೀವು", "ನಾನು", "ಅವರು", "ಯಾರು"],
+              "optionTranslits": ["nīvu", "nānu", "avaru", "yāru"],
+              "correctIndex": 0,
+              "explanation": "ನೀವು = you (formal). Tossing the question back is what closes the loop in any greeting exchange."
+            },
+            {
+              "type": "wordBank",
+              "prompt": "Build: 'I'm well, thank you.'",
+              "target": "ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದಗಳು",
+              "targetTranslit": "cennāgiddēne, dhanyavādagaḷu",
+              "words": ["ಧನ್ಯವಾದಗಳು", "ಚೆನ್ನಾಗಿದ್ದೇನೆ,"],
+              "correctOrder": [1, 0]
+            },
+            {
+              "type": "multipleChoice",
+              "prompt": "What does ಧನ್ಯವಾದಗಳು mean?",
+              "options": ["Sorry", "Please", "Thank you", "Welcome"],
+              "correctIndex": 2,
+              "explanation": "Sanskrit-origin. The -gaḷu ending makes it plural — Kannada speakers say 'thanks-plural' because once isn't enough."
+            },
+            {
+              "type": "fillBlank",
+              "prompt": "___! ಹೇಗಿದ್ದೀರಾ? (Hello! How are you?)",
+              "promptParts": ["", "! ಹೇಗಿದ್ದೀರಾ?"],
+              "options": ["ನಮಸ್ಕಾರ", "ಧನ್ಯವಾದಗಳು", "ಚೆನ್ನಾಗಿ", "ನೀವು"],
+              "optionTranslits": ["namaskāra", "dhanyavādagaḷu", "cennāgi", "nīvu"],
+              "correctIndex": 0
+            },
+            {
+              "type": "wordBank",
+              "prompt": "Build: 'I'm well, thank you. And you?'",
+              "target": "ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದಗಳು. ನೀವು?",
+              "targetTranslit": "cennāgiddēne, dhanyavādagaḷu. nīvu?",
+              "words": ["ನೀವು?", "ಧನ್ಯವಾದಗಳು.", "ಚೆನ್ನಾಗಿದ್ದೇನೆ,"],
+              "correctOrder": [2, 1, 0],
+              "explanation": "This is a complete return-turn in a greeting exchange. You can now hold all four lines: ನಮಸ್ಕಾರ → ಹೇಗಿದ್ದೀರಾ → ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದಗಳು. ನೀವು?"
+            },
+            {
+              "type": "multipleChoice",
+              "prompt": "You meet your girlfriend's mother for the first time. She says ನಮಸ್ಕಾರ. What do you say back?",
+              "options": [
+                "ಚೆನ್ನಾಗಿದ್ದೇನೆ",
+                "ಧನ್ಯವಾದಗಳು",
+                "ನಮಸ್ಕಾರ! ಹೇಗಿದ್ದೀರಾ?",
+                "ನೀವು?"
+              ],
+              "correctIndex": 2,
+              "explanation": "Mirror the greeting, then take the conversational initiative. Skipping ಹೇಗಿದ್ದೀರಾ feels cold — like a flat 'hi' in English."
+            }
+          ],
+          "bridges": {
+            "ta": "If you already speak Tamil, the structural moves here will feel familiar: respect suffixes (-īrā ↔ -īṅga), first-person endings (-ēne ↔ -ēn), and the nī- root for 'you'. The vocabulary differs but the grammar is the same shape.",
+            "ml": "Malayalam speakers will spot the Sanskrit borrowings instantly (ನಮಸ್ಕಾರ, ಧನ್ಯವಾದ). The native Dravidian forms (ಚೆನ್ನಾಗಿ, ನೀವು) follow the same logic as Malayalam but with different suffixes."
+          }
+        }
+      ]
+    }
+  ]
+}
