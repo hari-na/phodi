@@ -120,6 +120,56 @@ than true frame-by-frame animation. The motion is real (Ken Burns drift
 on the gradient + glow) but it's procedural, not photographic. True
 video/GIF generation per chapter is a v2 with a real image-gen budget.
 
+## Milestone 12 — Dual-style scene art, character portraits, ambient audio
+**Shipped overnight (single autonomous run):**
+- **Bangalore-anchored scene prompts** rewritten for all 30 chapters in
+  `src/lib/scenes.ts`. Auto rickshaws, gopuram, bougainvillea,
+  red-oxide verandahs, BTM market tarps, mango trees, water tanks,
+  Cubbon Park bamboo — every prompt names locality cues.
+- **30 painterly scene renders** at `public/scenes/painterly/`. Oil-on-
+  canvas concept-art via DreamShaper XL Lightning, ~60-70s per image
+  on RTX 4060 mobile (8GB VRAM).
+- **30 comic scene renders** at `public/scenes/comic/`. Graphic-novel
+  ink / cel-shaded variant using the same model with a different
+  style suffix (Sean Murphy / Mignola / Tomer Hanuka reference cues).
+- **Character portrait system** — `src/lib/characters.ts` +
+  `scripts/character_prompts.py` defines 17 recurring NPC templates
+  with locked seeds so each character keeps the same face across
+  generations. Portraits at `public/portraits/{painterly,comic}/`.
+- **Local DreamShaper loader workaround** — HF kept dropping
+  connections trying to fetch SDXL base 1.0 configs. Solved by
+  loading the cached SDXL Turbo pipeline as a scaffold and
+  swapping in DreamShaper's UNet + VAE weights via diffusers'
+  built-in LDM-to-diffusers converters. Fully offline once the
+  Civitai safetensors is cached.
+- **UI integration:**
+  - `SceneBackground` now reads the player's art-style preference,
+    prefers the real generated image, falls back gracefully to the
+    procedural gradient.
+  - `CharacterPortrait` shows next to each NPC speaker name.
+  - `AmbientPlayer` mounts per chapter, fades in over 1.5s, mute
+    toggle persists.
+  - `StyleToggle` in the chapter header switches painterly ↔ comic
+    live. Scene image and portraits both re-render.
+- **Placeholder ambient SFX** synthesised from filtered noise in
+  `scripts/generate_placeholder_sfx.py`. 17 loops at
+  `public/sfx/*.mp3`. Replace with real CC0 field recordings using
+  the same filenames to upgrade.
+
+**Tools added:**
+- `scripts/generate_scenes_local.py` — `--style {painterly,comic}` flag.
+- `scripts/generate_portraits_local.py` — per-character portraits.
+- `scripts/character_prompts.py` — character template registry.
+- `scripts/generate_placeholder_sfx.py` — synthesised ambient loops.
+- `scripts/download_sfx.py` — Pixabay CDN downloader (currently
+  blocked by anti-leech; documented for manual swap).
+
+**Why it matters:** the game now has cinematic scene art per chapter,
+consistent character faces across appearances, and ambient sound. A
+single toggle in the chapter header switches the entire visual
+language between painterly oil and graphic-novel ink. The infra runs
+fully on a consumer 8GB-VRAM laptop GPU — no cloud spend.
+
 ## Milestone 11 — Onboarding, persistent state, hint tiers, multi-ending
 **Shipped:** Four player-facing systems on top of the now-complete 30
 chapters. The game goes from "playable demo" to "complete shippable
