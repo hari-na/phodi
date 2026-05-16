@@ -81,6 +81,26 @@ you push back with ಮೀಟರ್ ಹಾಕಿ.
 hook. Cultural-appropriateness scoring (Vibes) is the wedge no learning
 app currently does. This is the PM Engineer signal that lands.
 
+## Milestone 09 — Day 4: Broker Call (phone-only) + 100-day rescope
+**Shipped:** Day 4 — The Broker Call. The first phone-only chapter:
+no body language, only audio + stage directions like "his Bluetooth
+crackles" and "the honking gets louder — he's walking somewhere
+fast" to sell the medium. Rangaswamy debuts in four emotional
+registers: neutral pickup, pushy sales pitch (pace 1.35 — the
+fastest line in the game), annoyed when you push back on the
+advance, warm closing as he locks in the viewing.
+
+Story bible rescoped to **100 narrative days, 30 playable chapters**.
+"Day N" tags are arc-positions inside that 100, not chapter indexes.
+Lets the story breathe — chapters 1-10 happen on Days 1-10, then
+spread non-uniformly across the next 90 narrative days.
+
+**Screenshots:** `15-day-4-broker-intro.png`, `16-day-4-broker-pushy.png`
+**Why it matters:** Phone-only proves the pipeline carries the
+emotional register without any visual anchor. Rangaswamy's pace 1.35
+pushy pitch is the most distinct intonation we've shipped — should
+feel unmistakably like a broker hustling.
+
 ## Milestone 08 — Story bible + Days 2-3 + chapter index
 **Commits:** `aafa074` (bible), Day 2/Day 3 content + voice profiles,
 chapter index on course page

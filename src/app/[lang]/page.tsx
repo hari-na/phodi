@@ -44,7 +44,7 @@ export default async function CoursePage({
               </h2>
             </div>
             <p className="text-xs text-cream-dim">
-              {chapters.length} / 10 days
+              {chapters.length} / 30 chapters
             </p>
           </div>
           <p className="mb-6 max-w-md text-sm text-cream-muted">

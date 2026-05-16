@@ -4,6 +4,7 @@ import knVoices from "@content/kn/voices.json";
 import knDay01 from "@content/kn/chapters/01-airport.json";
 import knDay02 from "@content/kn/chapters/02-hotel.json";
 import knDay03 from "@content/kn/chapters/03-chai.json";
+import knDay04 from "@content/kn/chapters/04-broker-call.json";
 
 interface VoicesDoc {
   language: string;
@@ -20,6 +21,7 @@ const chaptersByLang: Record<string, Chapter[]> = {
     knDay01 as unknown as Chapter,
     knDay02 as unknown as Chapter,
     knDay03 as unknown as Chapter,
+    knDay04 as unknown as Chapter,
   ],
 };
 

@@ -204,6 +204,27 @@ const shots = [
       // Beat 3 (AMUSED — "less sugar? good choice")
     },
   },
+  {
+    name: "15-day-4-broker-intro.png",
+    url: "/kn/chapter/kn-day-04-broker-call",
+    setup: async () => {
+      await sleep(500);
+    },
+  },
+  {
+    name: "16-day-4-broker-pushy.png",
+    url: "/kn/chapter/kn-day-04-broker-call",
+    setup: async (page) => {
+      await sleep(500);
+      // Beat 1 → continue
+      await page.getByRole("button", { name: /Continue/i }).click();
+      await sleep(250);
+      // Pick formal Kannada reply
+      await page.locator("button").filter({ hasText: "Anna ಕೊಟ್ಟರು" }).first().click();
+      await sleep(400);
+      // Now on beat 3 — pushy "Indiranagar 2BHK super flat"
+    },
+  },
 ];
 
 async function main() {

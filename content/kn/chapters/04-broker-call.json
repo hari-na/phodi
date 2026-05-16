@@ -1,0 +1,167 @@
+{
+  "id": "kn-day-04-broker-call",
+  "day": 4,
+  "language": "kn",
+  "title": "The Broker Call",
+  "titleNative": "ಬ್ರೋಕರ್ ಕರೆ",
+  "setting": "Noon. Day three at the hotel and your back already misses your old mattress. Anna passed you Rangaswamy's number — \"good broker sir, fast.\" The phone rings on the second try. You hear honking through it before he says hello.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "Hello, ಯಾರು?",
+      "translit": "hello, yāru?",
+      "en": "Hello — who is this?",
+      "emotion": "neutral",
+      "beat": "his Bluetooth crackles. someone is honking near him.",
+      "audio": "/audio/kn/chapters/kn-day-04-broker-call/rangaswamy-neutral-06f47e255b.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ. Flat ಬಗ್ಗೆ call ಮಾಡಿದ್ದೆ. Anna ಕೊಟ್ಟರು ನಿಮ್ಮ number.",
+          "translit": "namaskāra. flat baggē call māḍidde. Anna koṭṭaru nimma number.",
+          "en": "Hello. I'm calling about a flat. Anna gave me your number.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "en": "Hi, calling about the Indiranagar flat.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        },
+        {
+          "en": "Hello. Flat?",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          },
+          "setFlag": "curt_with_broker"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "Oh, ಹೌದು ಹೌದು ಸಾರ್. Indiranagar 2BHK. ಸೂಪರ್ flat. Fully furnished. ಮುಂದೆ ಮೆಟ್ರೋ.",
+      "translit": "oh, haudu haudu sār. Indiranagar 2BHK. super flat. fully furnished. munde metro.",
+      "en": "Oh yes yes sir. Indiranagar 2BHK. Super flat. Fully furnished. Metro right in front.",
+      "emotion": "pushy",
+      "beat": "the honking gets louder — he's walking somewhere fast",
+      "audio": "/audio/kn/chapters/kn-day-04-broker-call/rangaswamy-pushy-dceb240da3.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "Twenty-five thousand monthly. Ten months advance. Ready to move in, ಸಾರ್.",
+      "translit": "twenty-five thousand monthly. ten months advance. ready to move in, sār.",
+      "en": "Twenty-five thousand a month. Ten months advance. Ready to move in, sir.",
+      "emotion": "pushy",
+      "beat": "rapid-fire, the number lands first",
+      "audio": "/audio/kn/chapters/kn-day-04-broker-call/rangaswamy-pushy-791fc8794d.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You reply:",
+      "choices": [
+        {
+          "native": "ಹತ್ತು months advance ತುಂಬಾ ಜಾಸ್ತಿ. Two months ನಲ್ಲಿ ಆಗುತ್ತಾ?",
+          "translit": "hattu months advance tumbā jāsti. two months-nalli āguttā?",
+          "en": "Ten months advance is too much. Can we do two?",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "native": "Fully furnished ಅಂದ್ರೆ exact ಏನು ಇದೆ ಸಾರ್?",
+          "translit": "fully furnished andre exact ēnu ide sār?",
+          "en": "When you say 'fully furnished' — what exactly is in there?",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          },
+          "setFlag": "probed_specifics"
+        },
+        {
+          "en": "Okay, sounds good. Let me come see it.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          },
+          "setFlag": "didnt_negotiate_on_call"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "Sir sir sir. ಎಲ್ಲಾ owners ten months ಕೇಳ್ತಾರೆ. Okay, six months ಆದ್ರೆ. ಬೇರೆ ಯಾವುದೇ negotiation ಇಲ್ಲ ಸಾರ್.",
+      "translit": "sir sir sir. ellā owners ten months kēḷtāre. okay, six months ādre. bēre yāvudē negotiation illa sār.",
+      "en": "Sir sir sir. All owners ask for ten months. Okay, six months if you must. No other negotiations, sir.",
+      "emotion": "annoyed",
+      "beat": "he's already moving you to a yes — the no is half-hearted",
+      "audio": "/audio/kn/chapters/kn-day-04-broker-call/rangaswamy-annoyed-ba5d43ca89.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "ನೋಡಿ ಒಮ್ಮೆ ಸಾರ್, ನಿಮಗೆ ಇಷ್ಟ ಆಗುತ್ತೆ. Today evening 6 o'clock ಬರ್ರೀ. ನಾನು ಬಂದು meet ಮಾಡ್ತೀನಿ.",
+      "translit": "nōḍi omme sār, nimage iṣṭa āgutte. today evening 6 o'clock barrī. nānu bandu meet māḍtīni.",
+      "en": "Just come see it once, sir, you'll love it. Today evening 6 o'clock, come. I'll meet you there.",
+      "emotion": "warm",
+      "beat": "the honking has stopped. he's standing still for the first time on this call.",
+      "audio": "/audio/kn/chapters/kn-day-04-broker-call/rangaswamy-warm-5a9784af45.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಸರಿ. ಆರು ಗಂಟೆಗೆ ಬರ್ತೀನಿ. Address WhatsApp ಗೆ send ಮಾಡಿ.",
+          "translit": "sari. āru gaṇṭege bartīni. address WhatsApp-ge send māḍi.",
+          "en": "Okay. I'll come at six. WhatsApp me the address.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 2
+          },
+          "setFlag": "scheduled_viewing"
+        },
+        {
+          "native": "ಬೇರೆ ಒಂದು flat ಕೂಡ ತೋರಿಸಿ ಸಾರ್. ಒಂದು ಮಾತ್ರ enough ಇಲ್ಲ.",
+          "translit": "bēre ondu flat kūḍa tōrisi sār. ondu mātra enough illa.",
+          "en": "Show me another flat too, sir. One isn't enough.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "asked_for_options"
+        },
+        {
+          "en": "Let me think about it. I'll call back.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "rangaswamy",
+      "native": "Done ಸಾರ್. Address ಬರ್ತಾ ಇದೆ. Bye!",
+      "translit": "done sār. address bartā ide. bye!",
+      "en": "Done, sir. Address is coming. Bye!",
+      "emotion": "warm",
+      "beat": "he's already on the next call before the line cuts",
+      "audio": "/audio/kn/chapters/kn-day-04-broker-call/rangaswamy-warm-eccf0578ad.wav"
+    }
+  ]
+}

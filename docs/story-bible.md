@@ -12,11 +12,16 @@ You moved to Bangalore for your first engineering job. You have thirty days
 to find a flat, hold down the job, and figure out whether this city is
 yours. The catch: the city speaks Kannada and you don't. (Yet.)
 
-**Scope decision (2026-05-16):** the narrative arc is 30 days, but only
-**the first 10 days ship as playable chapters** (Act 1 — Survival). Days
-11-30 exist as a story scaffold the player learns about through
-references in Act 1; we build them as content if Act 1 lands. Anika and
-the family beats are foreshadowed but not in scope for the playable game.
+**Scope decision (2026-05-16, updated):** the narrative arc is **100
+days** — your character's first hundred days in Bangalore, roughly the
+length of a real-world probation period. We build **30 of those days
+as playable chapters**; the rest are time passing between key moments.
+A "Day N" tag on a chapter is the *narrative* day inside the 100-day
+arc, not the chapter index — so chapters 1, 2, 3 happen on Days 1, 2,
+3, but chapter 11 might happen on Day 17 or 22 of your arc.
+
+This shape lets the story breathe. You don't grind through 100 chapters
+to feel time pass — the gaps between chapters *are* the time.
 
 ## You
 
@@ -224,9 +229,9 @@ Same editorial bible as the lessons, with these chapter-specific additions:
 - **Anika's gender** — player choice at onboarding ("Who do you want to
   fall for?"). Same dialogue tree, gendered pronouns rendered from the
   selection.
-- **Length** — 10 playable days (Act 1 only). The full 30-day arc is the
-  story scaffold visible in the bible; whether we build Acts 2-3 depends
-  on how Act 1 lands.
+- **Length** — 100-day arc, 30 playable chapters. Chapter cadence is
+  variable: dense at the start (Days 1-10 = chapters 1-10), then
+  spread out across the next 90 narrative days.
 
 ## Open questions
 
