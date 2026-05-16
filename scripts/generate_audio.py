@@ -44,6 +44,14 @@ import time
 import unicodedata
 from pathlib import Path
 
+# Windows consoles default to cp1252 which can't print Kannada — flip stdout
+# and stderr to UTF-8 before any native-script gets printed.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, OSError):
+    pass
+
 try:
     from dotenv import load_dotenv  # type: ignore
 except ImportError:
