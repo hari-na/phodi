@@ -1,0 +1,113 @@
+{
+  "id": "kn-day-01-airport",
+  "day": 1,
+  "language": "kn",
+  "title": "The Airport Auto",
+  "titleNative": "ವಿಮಾನ ನಿಲ್ದಾಣದ ಆಟೋ",
+  "setting": "11pm. Sticky with rain. Outside the terminal. Your bag is heavier than you remembered. The auto pulls up before you've even spotted the queue.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "ravi_auto",
+      "native": "ಎಲ್ಲಿಗೆ ಸಾರ್?",
+      "translit": "ellige sār?",
+      "en": "Where to, sir?",
+      "emotion": "neutral",
+      "beat": "leaning over the handlebar, eyeing your suitcase",
+      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-neutral-5ce5c03fb6.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ನಮಸ್ಕಾರ. Indiranagar ಗೆ ಹೋಗಬೇಕು.",
+          "translit": "namaskāra. Indiranagar ge hōgabēku.",
+          "en": "Hello. I need to go to Indiranagar.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Indira Nagar.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          },
+          "setFlag": "sounds_like_tourist"
+        },
+        {
+          "en": "(Silent — just show him the address on your phone)",
+          "effects": {
+            "fluency": 0,
+            "vibes": -2
+          },
+          "setFlag": "sounds_like_tourist"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "ravi_auto",
+      "native": "ಆಯ್ತು ಸಾರ್. ಮುನ್ನೂರು ರೂಪಾಯಿ.",
+      "translit": "āytu sār. munnūru rūpāyi.",
+      "en": "Alright sir. Three hundred rupees.",
+      "emotion": "neutral",
+      "beat": "the price he'd give a local — for now",
+      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-neutral-5cf97ffd27.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "ravi_auto",
+      "native": "ಐನೂರು ರೂಪಾಯಿ, ಸಾರ್. ಮಳೆ ಬೀಳ್ತಾ ಇದೆ.",
+      "translit": "ainūru rūpāyi, sār. maḷe bīḷtā ide.",
+      "en": "Five hundred rupees, sir. It's raining.",
+      "emotion": "pushy",
+      "beat": "a beat too quick — he's already decided you don't know the meter",
+      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-pushy-6b2697db44.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You reply:",
+      "choices": [
+        {
+          "native": "ತುಂಬಾ ಜಾಸ್ತಿ. ಮೀಟರ್ ಹಾಕಿ.",
+          "translit": "tumbā jāsti. mīṭar hāki.",
+          "en": "Too much. Put on the meter.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          }
+        },
+        {
+          "native": "ಸರಿ.",
+          "translit": "sari.",
+          "en": "Okay. (just accept)",
+          "effects": {
+            "fluency": 1,
+            "vibes": -2
+          }
+        },
+        {
+          "en": "(Walk away to find another auto)",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "ravi_auto",
+      "native": "ಸರಿ ಸರಿ. ಮುನ್ನೂರೈವತ್ತು. ಬನ್ನಿ.",
+      "translit": "sari sari. munnūraivattu. banni.",
+      "en": "Okay okay. Three-fifty. Come on.",
+      "emotion": "amused",
+      "beat": "half-impressed you knew the word for meter",
+      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-amused-7ef77f1211.wav"
+    }
+  ]
+}

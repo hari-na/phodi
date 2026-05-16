@@ -1,0 +1,56 @@
+{
+  "language": "kn",
+  "profiles": [
+    {
+      "id": "ravi_auto",
+      "name": "Ravi",
+      "role": "Auto driver. Late shift, KIA airport. Built like a wire. Has been doing this for 14 years and you are not the first foreigner he's met.",
+      "model": "bulbul:v2",
+      "speaker": "hitesh",
+      "pace": 1.1,
+      "pitch": -0.15,
+      "loudness": 1.2
+    },
+    {
+      "id": "chai_anna",
+      "name": "Anna",
+      "role": "Chai stall owner near Indiranagar metro. Friendly, asks everyone where they're from. Used to be in IT, quit, never looked back.",
+      "model": "bulbul:v2",
+      "speaker": "karun",
+      "pace": 0.95,
+      "pitch": 0.05,
+      "loudness": 0.95
+    },
+    {
+      "id": "amma",
+      "name": "Amma",
+      "role": "Your Kannadiga roommate's mother. Visiting from Mysuru. Speaks slow formal Kannada. Will absolutely catch you if you use અਉ instead of અఈಋಁ.",
+      "model": "bulbul:v2",
+      "speaker": "vidya",
+      "pace": 0.85,
+      "pitch": -0.05,
+      "loudness": 0.9
+    },
+    {
+      "id": "narrator",
+      "name": "Narrator",
+      "role": "Diegetic stage directions in English. Used sparingly.",
+      "model": "bulbul:v2",
+      "speaker": "anushka",
+      "pace": 0.95,
+      "pitch": 0,
+      "loudness": 1.0
+    }
+  ],
+  "emotionModifiers": {
+    "neutral":  { "paceDelta": 0,     "pitchDelta": 0,     "loudnessDelta": 0 },
+    "pushy":    { "paceDelta": 0.15,  "pitchDelta": -0.1,  "loudnessDelta": 0.3 },
+    "warm":     { "paceDelta": -0.05, "pitchDelta": 0.05,  "loudnessDelta": -0.1 },
+    "stern":    { "paceDelta": -0.05, "pitchDelta": -0.05, "loudnessDelta": 0.15 },
+    "annoyed":  { "paceDelta": 0.1,   "pitchDelta": -0.05, "loudnessDelta": 0.2 },
+    "pleading": { "paceDelta": -0.1,  "pitchDelta": 0.15,  "loudnessDelta": -0.05 },
+    "amused":   { "paceDelta": 0.05,  "pitchDelta": 0.1,   "loudnessDelta": 0 },
+    "hushed":   { "paceDelta": -0.15, "pitchDelta": -0.05, "loudnessDelta": -0.4 },
+    "tired":    { "paceDelta": -0.15, "pitchDelta": -0.1,  "loudnessDelta": -0.2 }
+  }
+}
