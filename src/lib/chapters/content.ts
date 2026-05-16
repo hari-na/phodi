@@ -2,6 +2,8 @@ import type { LanguageCode } from "../types";
 import type { Chapter, VoiceProfile } from "./types";
 import knVoices from "@content/kn/voices.json";
 import knDay01 from "@content/kn/chapters/01-airport.json";
+import knDay02 from "@content/kn/chapters/02-hotel.json";
+import knDay03 from "@content/kn/chapters/03-chai.json";
 
 interface VoicesDoc {
   language: string;
@@ -14,7 +16,11 @@ const voicesByLang: Record<string, VoicesDoc> = {
 };
 
 const chaptersByLang: Record<string, Chapter[]> = {
-  kn: [knDay01 as unknown as Chapter],
+  kn: [
+    knDay01 as unknown as Chapter,
+    knDay02 as unknown as Chapter,
+    knDay03 as unknown as Chapter,
+  ],
 };
 
 export function getVoices(lang: LanguageCode): VoicesDoc | null {

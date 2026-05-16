@@ -75,11 +75,43 @@ stern / annoyed / amused / hushed — that stack on top of the base voice.
 Day 1: The Airport Auto plays end to end: Ravi opens neutral, lowballs
 ₹500 in pushy mode (faster, lower, louder), settles in amused mode when
 you push back with ಮೀಟರ್ ಹಾಕಿ.
-**Screenshots:** `07-chapter-day-1-intro.png`, `08-chapter-npc-pushy.png`,
-`09-chapter-choice.png`, `10-chapter-scorecard.png`
+**Screenshots:** `08-chapter-day-1-intro.png`, `09-chapter-npc-pushy.png`,
+`10-chapter-choice.png`, `11-chapter-scorecard.png`
 **Why it matters:** The lesson app stays as training mode; the game is the
 hook. Cultural-appropriateness scoring (Vibes) is the wedge no learning
 app currently does. This is the PM Engineer signal that lands.
+
+## Milestone 08 — Story bible + Days 2-3 + chapter index
+**Commits:** `aafa074` (bible), Day 2/Day 3 content + voice profiles,
+chapter index on course page
+**Shipped:** A locked 30-day story scaffold with 10 playable days as
+the actual game scope. Apolitical framing — protagonist origin never
+stated, onboarding asks only what you already speak. Five new Act 1
+voice profiles (Receptionist, Rangaswamy the broker, Krishnamurthy
+uncle from Mysuru, Lokesh the watchman, the vegetable vendor aunty).
+
+Day 2: The Lobby — hotel check-in after midnight. Polite formal
+register. The receptionist apologises in hushed mode for a botched
+breakfast booking, warms up when you push back politely. 6 NPC
+lines, three emotional registers (neutral / hushed / warm).
+
+Day 3: The First Chai — morning chai stall with Anna. The cultural
+beat is "where are you from?" — vulnerability earns Vibes, vagueness
+is neutral, "Bangalore" is a Vibes hit. Anna's response is amused
+("everyone in Bangalore is an engineer. I was too."). 6 NPC lines,
+warm/amused/neutral.
+
+Course page now shows "Thirty Days in Bangalore" as the primary
+section above the lesson list — chapters get billing, lessons are
+the supporting training mode.
+
+**Screenshots:** `07-course-with-chapters.png`,
+`12-day-2-hotel-hushed.png`, `13-day-3-chai-warm.png`,
+`14-day-3-chai-amused.png`
+**Why it matters:** Three voices, three characters, three different
+emotional registers per character — all delivered by Sarvam's
+inventory of 7 speakers via pitch/pace deltas. The pipeline scales
+to all 17 NPCs in the story bible without adding new infrastructure.
 
 ---
 

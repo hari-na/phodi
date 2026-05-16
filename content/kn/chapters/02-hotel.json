@@ -1,0 +1,155 @@
+{
+  "id": "kn-day-02-hotel",
+  "day": 2,
+  "language": "kn",
+  "title": "The Lobby",
+  "titleNative": "ಲಾಬಿ",
+  "setting": "Three-fifty later, you're standing under a low awning. The door says LAKSHMI INN. The lobby is dim, the AC hums, the receptionist barely looks up from the register.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "hotel_clerk",
+      "native": "ನಮಸ್ಕಾರ ಸಾರ್. ನೀವು ಬುಕ್ ಮಾಡಿದ್ದೀರಾ?",
+      "translit": "namaskāra sār. nīvu buk māḍiddīrā?",
+      "en": "Hello sir. Have you booked?",
+      "emotion": "neutral",
+      "beat": "barely glances up from the register",
+      "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-neutral-b6f1bd8551.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಹೌದು. Online ಬುಕ್ ಮಾಡಿದ್ದೆ.",
+          "translit": "haudu. online buk māḍidde.",
+          "en": "Yes. I booked online.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Yes. I have a booking.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        },
+        {
+          "en": "(Hand her your phone with the booking open)",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          },
+          "setFlag": "skipped_speaking"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "hotel_clerk",
+      "native": "ID ಕೊಡಿ ಸಾರ್.",
+      "translit": "ID koḍi sār.",
+      "en": "ID please, sir.",
+      "emotion": "neutral",
+      "beat": "already turning the page",
+      "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-neutral-abf3eea04e.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "hotel_clerk",
+      "native": "ಕ್ಷಮಿಸಿ ಸಾರ್. ನಿಮ್ಮ booking ರಲ್ಲಿ ಒಂದು ಸಣ್ಣ problem ಇದೆ. Breakfast ಸೇರಿಸಿಲ್ಲ.",
+      "translit": "kṣamisi sār. nimma booking-ralli ondu saṇṇa problem ide. breakfast sērisilla.",
+      "en": "Sorry sir. There's a small problem with your booking. Breakfast isn't included.",
+      "emotion": "hushed",
+      "beat": "as if she's apologising for the receipt printer",
+      "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-hushed-9c7be6d0b6.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಪರವಾಗಿಲ್ಲ. Booking ರಲ್ಲಿ included ಅಂತ ಇತ್ತು. ನೋಡಿ ಪ್ಲೀಸ್.",
+          "translit": "paravāgilla. booking-ralli included anta ittu. nōḍi please.",
+          "en": "It's okay. The booking said it was included. Please check.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 2
+          }
+        },
+        {
+          "native": "ಪರವಾಗಿಲ್ಲ.",
+          "translit": "paravāgilla.",
+          "en": "It's okay.",
+          "effects": {
+            "fluency": 1,
+            "vibes": 1
+          }
+        },
+        {
+          "en": "That's not right. I paid for it.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -2
+          },
+          "setFlag": "rude_to_clerk"
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "hotel_clerk",
+      "native": "ಒಂದು ನಿಮಿಷ ಸಾರ್. ನಾನು manager ಗೆ ಕೇಳ್ತೀನಿ.",
+      "translit": "ondu nimiṣa sār. nānu manager-ge kēḷtīni.",
+      "en": "One minute sir. I'll ask the manager.",
+      "emotion": "warm",
+      "beat": "picks up the desk phone with one hand, still smiling",
+      "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-warm-ee594a04c2.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "hotel_clerk",
+      "native": "ಸಿಕ್ಕಿತು ಸಾರ್. Tomorrow breakfast ಕೊಡ್ತಾರೆ. Room three-oh-four. Wi-Fi password ಇಲ್ಲಿ ಇದೆ.",
+      "translit": "sikkitu sār. tomorrow breakfast koḍtāre. room three-oh-four. Wi-Fi password illi ide.",
+      "en": "Sorted, sir. They'll give you breakfast tomorrow. Room three-oh-four. The Wi-Fi password is here.",
+      "emotion": "warm",
+      "beat": "slides the key card and a printed slip across the desk",
+      "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-warm-279a8cfbcb.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You take the key. You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದಗಳು. ಶುಭ ರಾತ್ರಿ.",
+          "translit": "dhanyavādagaḷu. śubha rātri.",
+          "en": "Thank you. Good night.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "en": "Thanks.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "hotel_clerk",
+      "native": "ಶುಭ ರಾತ್ರಿ ಸಾರ್. Welcome.",
+      "translit": "śubha rātri sār. welcome.",
+      "en": "Good night, sir. Welcome.",
+      "emotion": "warm",
+      "beat": "the smile reaches her eyes this time",
+      "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-warm-5b45daa203.wav"
+    }
+  ]
+}

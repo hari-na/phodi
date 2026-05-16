@@ -40,6 +40,56 @@
       "pace": 0.95,
       "pitch": 0,
       "loudness": 1.0
+    },
+    {
+      "id": "hotel_clerk",
+      "name": "Receptionist",
+      "role": "Hotel front desk. Late 30s, has seen a thousand of you this month. Polite, slightly tired, very formal Kannada. Doesn't make jokes after midnight.",
+      "model": "bulbul:v2",
+      "speaker": "manisha",
+      "pace": 0.92,
+      "pitch": 0.0,
+      "loudness": 0.9
+    },
+    {
+      "id": "rangaswamy",
+      "name": "Rangaswamy",
+      "role": "Broker. Late 20s. Talks fast, switches to English when cornered, sells you a flat he hasn't seen. Wears a Bluetooth even when not on a call.",
+      "model": "bulbul:v2",
+      "speaker": "abhilash",
+      "pace": 1.2,
+      "pitch": 0.05,
+      "loudness": 1.05
+    },
+    {
+      "id": "mysuru_uncle",
+      "name": "Krishnamurthy uncle",
+      "role": "Owner of the second flat. Late 60s. Mysuru pronunciation, careful with money. Tests you politely. Has owned three flats since 1989.",
+      "model": "bulbul:v2",
+      "speaker": "karun",
+      "pace": 0.78,
+      "pitch": -0.18,
+      "loudness": 0.85
+    },
+    {
+      "id": "lokesh",
+      "name": "Lokesh",
+      "role": "Your apartment building's watchman. Mid-50s, North Karnataka cadence. Knows everyone's schedule, every visitor, every delivery. Friendly, but he's watching.",
+      "model": "bulbul:v2",
+      "speaker": "hitesh",
+      "pace": 0.95,
+      "pitch": -0.08,
+      "loudness": 0.95
+    },
+    {
+      "id": "vendor_aunty",
+      "name": "Vendor aunty",
+      "role": "Sunday-morning vegetable vendor at the BTM market. 50s. Direct, no-nonsense, prices things by glancing at your shoes. Her bored granddaughter rings up the bill.",
+      "model": "bulbul:v2",
+      "speaker": "arya",
+      "pace": 1.05,
+      "pitch": 0.0,
+      "loudness": 1.1
     }
   ],
   "emotionModifiers": {

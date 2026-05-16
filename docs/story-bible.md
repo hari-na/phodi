@@ -12,6 +12,12 @@ You moved to Bangalore for your first engineering job. You have thirty days
 to find a flat, hold down the job, and figure out whether this city is
 yours. The catch: the city speaks Kannada and you don't. (Yet.)
 
+**Scope decision (2026-05-16):** the narrative arc is 30 days, but only
+**the first 10 days ship as playable chapters** (Act 1 — Survival). Days
+11-30 exist as a story scaffold the player learns about through
+references in Act 1; we build them as content if Act 1 lands. Anika and
+the family beats are foreshadowed but not in scope for the playable game.
+
 ## You
 
 - An engineer. Mid-twenties.
@@ -213,14 +219,17 @@ Same editorial bible as the lessons, with these chapter-specific additions:
 - **No exposition dumps.** The player learns the rules by getting them
   wrong. Vibes hits are the teaching.
 
+## Resolved questions
+
+- **Anika's gender** — player choice at onboarding ("Who do you want to
+  fall for?"). Same dialogue tree, gendered pronouns rendered from the
+  selection.
+- **Length** — 10 playable days (Act 1 only). The full 30-day arc is the
+  story scaffold visible in the bible; whether we build Acts 2-3 depends
+  on how Act 1 lands.
+
 ## Open questions
 
-- **Anika's gender / orientation.** Default is female love interest to
-  match the recognisable Bangalore-engineer-meets-Kannadiga rom-com beat.
-  An option at onboarding to set the love interest's gender is cheap to
-  add and would broaden the player base — flag for v1.5.
-- **Pacing for casual players.** 30 days is long. Possible quick-mode at
-  10 abridged chapters for first-time players who want to taste the loop?
 - **Multiplayer / leaderboard.** Defer. Out of scope.
 
 ---

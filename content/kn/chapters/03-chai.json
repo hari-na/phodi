@@ -1,0 +1,164 @@
+{
+  "id": "kn-day-03-chai",
+  "day": 3,
+  "language": "kn",
+  "title": "The First Chai",
+  "titleNative": "ಮೊದಲನೇ ಚಹಾ",
+  "setting": "Morning. Cardamom and diesel. The corner stall outside Indiranagar Metro. Anna's already up, kettle on, watching the street. A few regulars stand with their cups, scrolling phones, not talking.",
+  "recommendedLesson": "kn-001-greetings",
+  "beats": [
+    {
+      "kind": "npc",
+      "speakerId": "chai_anna",
+      "native": "ನಮಸ್ಕಾರ, ಸಾರ್! ಒಂದು ಚಹಾ?",
+      "translit": "namaskāra, sār! ondu cahā?",
+      "en": "Hello, sir! One chai?",
+      "emotion": "warm",
+      "beat": "doesn't look up — already pouring",
+      "audio": "/audio/kn/chapters/kn-day-03-chai/chai_anna-warm-bdd49efcee.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You say:",
+      "choices": [
+        {
+          "native": "ಹೌದು, ಒಂದು ಚಹಾ. ಸಕ್ಕರೆ ಕಡಿಮೆ ಪ್ಲೀಸ್.",
+          "translit": "haudu, ondu cahā. sakkare kaḍime please.",
+          "en": "Yes, one chai. Less sugar, please.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          }
+        },
+        {
+          "native": "ಹೌದು.",
+          "translit": "haudu.",
+          "en": "Yes.",
+          "effects": {
+            "fluency": 1,
+            "vibes": 0
+          }
+        },
+        {
+          "en": "One tea please.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "chai_anna",
+      "native": "ಸಕ್ಕರೆ ಕಡಿಮೆ? ಒಳ್ಳೆ choice ಸಾರ್.",
+      "translit": "sakkare kaḍime? oḷḷe choice sār.",
+      "en": "Less sugar? Good choice, sir.",
+      "emotion": "amused",
+      "beat": "raises an eyebrow — most people don't ask",
+      "audio": "/audio/kn/chapters/kn-day-03-chai/chai_anna-amused-ee65905060.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "chai_anna",
+      "native": "ಯಾವ ಕಡೆ ಇಂದ ಸಾರ್?",
+      "translit": "yāva kaḍe inda sār?",
+      "en": "Where are you from, sir?",
+      "emotion": "warm",
+      "beat": "stirring the pot, glancing up now",
+      "audio": "/audio/kn/chapters/kn-day-03-chai/chai_anna-warm-356edcbc3f.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You reply:",
+      "choices": [
+        {
+          "native": "ನಾನು ಹೊಸದಾಗಿ ಬಂದಿದ್ದೇನೆ. Engineer ಆಗಿ work ಮಾಡ್ತಿದ್ದೇನೆ.",
+          "translit": "nānu hosadāgi bandiddēne. engineer āgi work māḍtiddēne.",
+          "en": "I've just arrived. Working as an engineer.",
+          "effects": {
+            "fluency": 3,
+            "vibes": 3
+          },
+          "setFlag": "told_anna_engineer"
+        },
+        {
+          "native": "ಯಾವುದೋ ಕಡೆ ಇಂದ.",
+          "translit": "yāvudō kaḍe inda.",
+          "en": "From somewhere.",
+          "effects": {
+            "fluency": 1,
+            "vibes": 1
+          }
+        },
+        {
+          "en": "Bangalore.",
+          "effects": {
+            "fluency": 0,
+            "vibes": -1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "npc",
+      "speakerId": "chai_anna",
+      "native": "ಓ, engineering! Bangalore ನಲ್ಲಿ ಎಲ್ಲರೂ engineer. ನಾನು ಕೂಡ before. ಈಗ ಇದು better.",
+      "translit": "ō, engineering! Bangalore-nalli ellarū engineer. nānu kūḍa before. īga idu better.",
+      "en": "Oh, engineering! Everyone in Bangalore is an engineer. I was too, before. Now this is better.",
+      "emotion": "amused",
+      "beat": "laughs, taps the side of the kettle",
+      "audio": "/audio/kn/chapters/kn-day-03-chai/chai_anna-amused-a2ed3c1b8b.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "chai_anna",
+      "native": "ಇಲ್ಲಿ ಪ್ರತಿ ದಿನ ಬರ್ರೀ ಸಾರ್. ಒಳ್ಳೆ ಚಹಾ ಕೊಡ್ತೀನಿ.",
+      "translit": "illi prati dina barrī sār. oḷḷe cahā koḍtīni.",
+      "en": "Come every day, sir. I'll make you good chai.",
+      "emotion": "warm",
+      "beat": "hands you the cup — too hot to hold the wrong way",
+      "audio": "/audio/kn/chapters/kn-day-03-chai/chai_anna-warm-8cc9a4d965.wav"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "chai_anna",
+      "native": "ಹತ್ತು ರೂಪಾಯಿ ಸಾರ್.",
+      "translit": "hattu rūpāyi sār.",
+      "en": "Ten rupees, sir.",
+      "emotion": "neutral",
+      "beat": "wiping his hand on his shoulder",
+      "audio": "/audio/kn/chapters/kn-day-03-chai/chai_anna-neutral-70f4a59dde.wav"
+    },
+    {
+      "kind": "choice",
+      "prompt": "You pay. You say:",
+      "choices": [
+        {
+          "native": "ಧನ್ಯವಾದ. ನಾಳೆ ಬರ್ತೀನಿ.",
+          "translit": "dhanyavāda. nāḷe bartīni.",
+          "en": "Thanks. I'll come tomorrow.",
+          "effects": {
+            "fluency": 2,
+            "vibes": 2
+          },
+          "setFlag": "anna_regular"
+        },
+        {
+          "en": "(Hand the note over silently)",
+          "effects": {
+            "fluency": 0,
+            "vibes": 0
+          }
+        },
+        {
+          "en": "Thanks.",
+          "effects": {
+            "fluency": 0,
+            "vibes": 1
+          }
+        }
+      ]
+    }
+  ]
+}

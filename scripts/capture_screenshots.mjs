@@ -100,14 +100,21 @@ const shots = [
     },
   },
   {
-    name: "07-chapter-day-1-intro.png",
+    name: "07-course-with-chapters.png",
+    url: "/kn",
+    setup: async () => {
+      await sleep(600);
+    },
+  },
+  {
+    name: "08-chapter-day-1-intro.png",
     url: "/kn/chapter/kn-day-01-airport",
     setup: async (page) => {
       await sleep(500);
     },
   },
   {
-    name: "08-chapter-npc-pushy.png",
+    name: "09-chapter-npc-pushy.png",
     url: "/kn/chapter/kn-day-01-airport",
     setup: async (page) => {
       await sleep(500);
@@ -124,7 +131,7 @@ const shots = [
     },
   },
   {
-    name: "09-chapter-choice.png",
+    name: "10-chapter-choice.png",
     url: "/kn/chapter/kn-day-01-airport",
     setup: async (page) => {
       await sleep(500);
@@ -140,7 +147,7 @@ const shots = [
     },
   },
   {
-    name: "10-chapter-scorecard.png",
+    name: "11-chapter-scorecard.png",
     url: "/kn/chapter/kn-day-01-airport",
     setup: async (page) => {
       await sleep(500);
@@ -157,6 +164,44 @@ const shots = [
       await sleep(250);
       await page.getByRole("button", { name: /Continue/i }).click();
       await sleep(500);
+    },
+  },
+  {
+    name: "12-day-2-hotel-hushed.png",
+    url: "/kn/chapter/kn-day-02-hotel",
+    setup: async (page) => {
+      await sleep(500);
+      // Beat 1 (greet) → continue
+      await page.getByRole("button", { name: /Continue/i }).click();
+      await sleep(250);
+      // Pick the Kannada reply
+      await page.locator("button").filter({ hasText: "ಬುಕ್" }).first().click();
+      await sleep(250);
+      // Beat 3 (ID request) → continue
+      await page.getByRole("button", { name: /Continue/i }).click();
+      await sleep(400);
+      // Now on beat 4: HUSHED apology
+    },
+  },
+  {
+    name: "13-day-3-chai-warm.png",
+    url: "/kn/chapter/kn-day-03-chai",
+    setup: async (page) => {
+      await sleep(500);
+    },
+  },
+  {
+    name: "14-day-3-chai-amused.png",
+    url: "/kn/chapter/kn-day-03-chai",
+    setup: async (page) => {
+      await sleep(500);
+      // Beat 1 (greet) → continue
+      await page.getByRole("button", { name: /Continue/i }).click();
+      await sleep(250);
+      // Pick "less sugar"
+      await page.locator("button").filter({ hasText: "ಸಕ್ಕರೆ ಕಡಿಮೆ" }).first().click();
+      await sleep(400);
+      // Beat 3 (AMUSED — "less sugar? good choice")
     },
   },
 ];
