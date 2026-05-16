@@ -17,6 +17,7 @@ import {
   type PhoneticDict,
 } from "./Phonetic";
 import { AudioButton } from "./AudioButton";
+import { SceneBackground } from "./SceneBackground";
 import {
   hintTierForDay,
   loadProfile,
@@ -119,7 +120,8 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
 
   return (
     <PhoneticProvider dict={dict}>
-      <main className="mx-auto max-w-2xl px-6 py-10">
+      <SceneBackground chapterId={chapter.id} layout="full" />
+      <main className="relative z-10 mx-auto max-w-2xl px-6 py-10">
         <div className="mb-6 flex items-center justify-between">
           <Link
             href={`/${langCode}`}

@@ -44,3 +44,31 @@ ruby rt {
   color: #8a8678;
   font-weight: 400;
 }
+
+/* Scene background drift — slow Ken Burns on the radial glow + gradient stack.
+   Two animations layered so the motion feels organic, not loop-cycled. */
+@keyframes scene-drift {
+  0% {
+    background-position: center, 45% 55%, center;
+    transform: scale(1.04);
+  }
+  50% {
+    background-position: center, 55% 45%, center;
+    transform: scale(1.08);
+  }
+  100% {
+    background-position: center, 45% 55%, center;
+    transform: scale(1.04);
+  }
+}
+
+.scene-plate {
+  animation: scene-drift 28s ease-in-out infinite;
+  will-change: transform, background-position;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-plate {
+    animation: none;
+  }
+}

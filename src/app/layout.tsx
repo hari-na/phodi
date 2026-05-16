@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-ink text-cream antialiased">
+      <body className="relative min-h-screen bg-ink text-cream antialiased">
         <OnboardingGate>{children}</OnboardingGate>
       </body>
     </html>

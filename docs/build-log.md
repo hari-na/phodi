@@ -81,6 +81,45 @@ you push back with ಮೀಟರ್ ಹಾಕಿ.
 hook. Cultural-appropriateness scoring (Vibes) is the wedge no learning
 app currently does. This is the PM Engineer signal that lands.
 
+## Milestone 12 — Scene backdrops + image generation pipeline
+**Shipped:** Every chapter now has a distinct visual mood underneath the
+dialogue, calibrated per scene by palette + glow + animation.
+
+What's there:
+- `src/lib/scenes.ts` — palette catalog for all 30 chapters. Each entry
+  is a top/bottom gradient + a radial glow at a specific position + an
+  author note that doubles as the future image-gen prompt.
+- `src/components/SceneBackground.tsx` — fixed-position backdrop layered
+  with a gradient, a soft radial light, and a darkening vignette so
+  foreground text always reads. Animated with a 28-second Ken Burns
+  drift (subtle zoom + glow position shift) so it feels alive rather
+  than static. Respects `prefers-reduced-motion`.
+- Wired into `ChapterPlayer` behind the entire chapter — every chapter
+  now has its own mood. Day 1 is sodium-orange rain glow on cool blue.
+  Day 19 (Karaga) is fire-orange on black. Day 28 (Ugadi) is deep
+  golden. Day 30 (morning) is pale dawn blue-pink.
+
+What's the upgrade path:
+- `scripts/generate_scenes.py` — parses the scene catalog and generates
+  real cinematic stills via either Together AI's FLUX.1-schnell (~$0.003
+  per image) or Fal.ai's FLUX.1 [dev] (~$0.04). Drops JPGs into
+  `public/scenes/{chapterId}.jpg`. Setting `image: true` for that entry
+  in `scenes.ts` makes the component crossfade in the real image over
+  the gradient base.
+- Pollinations.ai was the original plan (free) but it dropped its free
+  tier mid-build. The script is provider-agnostic — adding Replicate
+  or DALL-E support is a 30-line addition.
+
+**Why it matters:** the dialogue used to play on flat black. Now every
+chapter has a deliberate atmosphere — same code, no images shipped, no
+runtime cost. Real images later are a content drop, not an architecture
+change.
+
+**Note on "GIFs":** the user asked for GIFs. v1 is animated CSS rather
+than true frame-by-frame animation. The motion is real (Ken Burns drift
+on the gradient + glow) but it's procedural, not photographic. True
+video/GIF generation per chapter is a v2 with a real image-gen budget.
+
 ## Milestone 11 — Onboarding, persistent state, hint tiers, multi-ending
 **Shipped:** Four player-facing systems on top of the now-complete 30
 chapters. The game goes from "playable demo" to "complete shippable
