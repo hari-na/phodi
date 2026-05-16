@@ -37,7 +37,8 @@
                   "translit": "namaskāram",
                   "note": "Direct cognate — Kannada drops the final -m."
                 }
-              }
+              },
+              "audio": "/audio/kn/kn-001-greetings/namaskara.wav"
             },
             {
               "native": "ಹೇಗಿದ್ದೀರಾ",
@@ -55,7 +56,8 @@
                   "translit": "eṅṅaneyuṇṭ",
                   "note": "Same pattern. Malayalam compresses the respect marker into context rather than a suffix."
                 }
-              }
+              },
+              "audio": "/audio/kn/kn-001-greetings/hegiddira.wav"
             },
             {
               "native": "ಚೆನ್ನಾಗಿದ್ದೇನೆ",
@@ -73,7 +75,8 @@
                   "translit": "sukhamāṇ",
                   "note": "Different word for 'well' (sukha, Sanskrit-origin), but the -māṇ copula does the same work as iddēne."
                 }
-              }
+              },
+              "audio": "/audio/kn/kn-001-greetings/cennagiddene.wav"
             },
             {
               "native": "ನೀವು",
@@ -91,7 +94,8 @@
                   "translit": "niṅṅaḷ",
                   "note": "Same nī- root. Malayalam preserves the older -ṅṅaḷ ending."
                 }
-              }
+              },
+              "audio": "/audio/kn/kn-001-greetings/nivu.wav"
             },
             {
               "native": "ಧನ್ಯವಾದಗಳು",
@@ -109,16 +113,23 @@
                   "translit": "nandi",
                   "note": "Same Dravidian root as Tamil nandri."
                 }
-              }
+              },
+              "audio": "/audio/kn/kn-001-greetings/dhanyavadagalu.wav"
             }
           ],
           "exercises": [
             {
               "type": "multipleChoice",
               "prompt": "What does ನಮಸ್ಕಾರ mean?",
-              "options": ["Hello", "Goodbye", "Sorry", "Please"],
+              "options": [
+                "Hello",
+                "Goodbye",
+                "Sorry",
+                "Please"
+              ],
               "correctIndex": 0,
-              "explanation": "ನಮಸ್ಕಾರ is the default neutral greeting — works for anyone, any time of day."
+              "explanation": "ನಮಸ್ಕಾರ is the default neutral greeting — works for anyone, any time of day.",
+              "audio": "/audio/kn/kn-001-greetings/mc-51f37bf9dc.wav"
             },
             {
               "type": "multipleChoice",
@@ -137,8 +148,15 @@
               "prompt": "Build: 'Hello! How are you?'",
               "target": "ನಮಸ್ಕಾರ! ಹೇಗಿದ್ದೀರಾ?",
               "targetTranslit": "namaskāra! hēgiddīrā?",
-              "words": ["ಹೇಗಿದ್ದೀರಾ?", "ನಮಸ್ಕಾರ!"],
-              "correctOrder": [1, 0]
+              "words": [
+                "ಹೇಗಿದ್ದೀರಾ?",
+                "ನಮಸ್ಕಾರ!"
+              ],
+              "correctOrder": [
+                1,
+                0
+              ],
+              "targetAudio": "/audio/kn/kn-001-greetings/wb-f5f39d852d.wav"
             },
             {
               "type": "multipleChoice",
@@ -150,48 +168,99 @@
                 "I'm coming"
               ],
               "correctIndex": 1,
-              "explanation": "Breaks into chennāgi (well) + iddēne (I am). The -ēne ending = first person 'I'."
+              "explanation": "Breaks into chennāgi (well) + iddēne (I am). The -ēne ending = first person 'I'.",
+              "audio": "/audio/kn/kn-001-greetings/mc-1a0bfde54d.wav"
             },
             {
               "type": "fillBlank",
               "prompt": "ಚೆನ್ನಾಗಿದ್ದೇನೆ, ___? (I'm well, and you?)",
-              "promptParts": ["ಚೆನ್ನಾಗಿದ್ದೇನೆ, ", "?"],
-              "options": ["ನೀವು", "ನಾನು", "ಅವರು", "ಯಾರು"],
-              "optionTranslits": ["nīvu", "nānu", "avaru", "yāru"],
+              "promptParts": [
+                "ಚೆನ್ನಾಗಿದ್ದೇನೆ, ",
+                "?"
+              ],
+              "options": [
+                "ನೀವು",
+                "ನಾನು",
+                "ಅವರು",
+                "ಯಾರು"
+              ],
+              "optionTranslits": [
+                "nīvu",
+                "nānu",
+                "avaru",
+                "yāru"
+              ],
               "correctIndex": 0,
-              "explanation": "ನೀವು = you (formal). Tossing the question back is what closes the loop in any greeting exchange."
+              "explanation": "ನೀವು = you (formal). Tossing the question back is what closes the loop in any greeting exchange.",
+              "audio": "/audio/kn/kn-001-greetings/fb-b2f394fbc8.wav"
             },
             {
               "type": "wordBank",
               "prompt": "Build: 'I'm well, thank you.'",
               "target": "ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದಗಳು",
               "targetTranslit": "cennāgiddēne, dhanyavādagaḷu",
-              "words": ["ಧನ್ಯವಾದಗಳು", "ಚೆನ್ನಾಗಿದ್ದೇನೆ,"],
-              "correctOrder": [1, 0]
+              "words": [
+                "ಧನ್ಯವಾದಗಳು",
+                "ಚೆನ್ನಾಗಿದ್ದೇನೆ,"
+              ],
+              "correctOrder": [
+                1,
+                0
+              ],
+              "targetAudio": "/audio/kn/kn-001-greetings/wb-bb7d7cc086.wav"
             },
             {
               "type": "multipleChoice",
               "prompt": "What does ಧನ್ಯವಾದಗಳು mean?",
-              "options": ["Sorry", "Please", "Thank you", "Welcome"],
+              "options": [
+                "Sorry",
+                "Please",
+                "Thank you",
+                "Welcome"
+              ],
               "correctIndex": 2,
-              "explanation": "Sanskrit-origin. The -gaḷu ending makes it plural — Kannada speakers say 'thanks-plural' because once isn't enough."
+              "explanation": "Sanskrit-origin. The -gaḷu ending makes it plural — Kannada speakers say 'thanks-plural' because once isn't enough.",
+              "audio": "/audio/kn/kn-001-greetings/mc-6a60801391.wav"
             },
             {
               "type": "fillBlank",
               "prompt": "___! ಹೇಗಿದ್ದೀರಾ? (Hello! How are you?)",
-              "promptParts": ["", "! ಹೇಗಿದ್ದೀರಾ?"],
-              "options": ["ನಮಸ್ಕಾರ", "ಧನ್ಯವಾದಗಳು", "ಚೆನ್ನಾಗಿ", "ನೀವು"],
-              "optionTranslits": ["namaskāra", "dhanyavādagaḷu", "cennāgi", "nīvu"],
-              "correctIndex": 0
+              "promptParts": [
+                "",
+                "! ಹೇಗಿದ್ದೀರಾ?"
+              ],
+              "options": [
+                "ನಮಸ್ಕಾರ",
+                "ಧನ್ಯವಾದಗಳು",
+                "ಚೆನ್ನಾಗಿ",
+                "ನೀವು"
+              ],
+              "optionTranslits": [
+                "namaskāra",
+                "dhanyavādagaḷu",
+                "cennāgi",
+                "nīvu"
+              ],
+              "correctIndex": 0,
+              "audio": "/audio/kn/kn-001-greetings/fb-f5f39d852d.wav"
             },
             {
               "type": "wordBank",
               "prompt": "Build: 'I'm well, thank you. And you?'",
               "target": "ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದಗಳು. ನೀವು?",
               "targetTranslit": "cennāgiddēne, dhanyavādagaḷu. nīvu?",
-              "words": ["ನೀವು?", "ಧನ್ಯವಾದಗಳು.", "ಚೆನ್ನಾಗಿದ್ದೇನೆ,"],
-              "correctOrder": [2, 1, 0],
-              "explanation": "This is a complete return-turn in a greeting exchange. You can now hold all four lines: ನಮಸ್ಕಾರ → ಹೇಗಿದ್ದೀರಾ → ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದಗಳು. ನೀವು?"
+              "words": [
+                "ನೀವು?",
+                "ಧನ್ಯವಾದಗಳು.",
+                "ಚೆನ್ನಾಗಿದ್ದೇನೆ,"
+              ],
+              "correctOrder": [
+                2,
+                1,
+                0
+              ],
+              "explanation": "This is a complete return-turn in a greeting exchange. You can now hold all four lines: ನಮಸ್ಕಾರ → ಹೇಗಿದ್ದೀರಾ → ಚೆನ್ನಾಗಿದ್ದೇನೆ, ಧನ್ಯವಾದಗಳು. ನೀವು?",
+              "targetAudio": "/audio/kn/kn-001-greetings/wb-f436001400.wav"
             },
             {
               "type": "multipleChoice",
@@ -203,7 +272,8 @@
                 "ನೀವು?"
               ],
               "correctIndex": 2,
-              "explanation": "Mirror the greeting, then take the conversational initiative. Skipping ಹೇಗಿದ್ದೀರಾ feels cold — like a flat 'hi' in English."
+              "explanation": "Mirror the greeting, then take the conversational initiative. Skipping ಹೇಗಿದ್ದೀರಾ feels cold — like a flat 'hi' in English.",
+              "audio": "/audio/kn/kn-001-greetings/mc-51f37bf9dc.wav"
             }
           ],
           "bridges": {
