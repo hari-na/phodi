@@ -12,7 +12,7 @@
       "speakerId": "mysuru_uncle",
       "native": "ನಮಸ್ಕಾರ ಸಾರ್. ಬನ್ನಿ. ನೀವು engineer ಅಂದ್ರೆ?",
       "translit": "namaskāra sār. banni. nīvu engineer andre?",
-      "en": "Hello, sir. Come. You're the engineer?",
+      "en": "Hello, boss. Come. You're the engineer?",
       "emotion": "neutral",
       "beat": "folds the paper, takes his time",
       "audio": "/audio/kn/chapters/kn-day-06-second-flat/mysuru_uncle-neutral-edcaabca67.wav"
@@ -24,14 +24,14 @@
         {
           "native": "ನಮಸ್ಕಾರ ಸಾರ್. ಹೌದು, ನಾನು engineer. Indiranagar ನಲ್ಲಿ ಒಂದು ಒಳ್ಳೆ flat ಬೇಕು.",
           "translit": "namaskāra sār. haudu, nānu engineer. Indiranagar-nalli ondu oḷḷe flat bēku.",
-          "en": "Hello sir. Yes, I'm an engineer. I need a good flat in Indiranagar.",
+          "en": "Hello boss. Yes, I'm an engineer. I need a good flat in Indiranagar.",
           "effects": {
             "fluency": 3,
             "vibes": 3
           }
         },
         {
-          "en": "Yes sir, thank you for showing me.",
+          "en": "Yes boss, thank you for showing me.",
           "effects": {
             "fluency": 0,
             "vibes": 1
@@ -76,7 +76,7 @@
         {
           "native": "ಸಾರ್, ಆರು ತಿಂಗಳ advance ಸ್ವಲ್ಪ ಜಾಸ್ತಿ. ಮೂರು ತಿಂಗಳ ಸಾಧ್ಯವಾ?",
           "translit": "sār, āru tiṅgaḷa advance svalpa jāsti. mūru tiṅgaḷa sādhyavā?",
-          "en": "Sir, six months advance is a bit much. Could we do three?",
+          "en": "Boss, six months advance is a bit much. Could we do three?",
           "effects": {
             "fluency": 3,
             "vibes": 2
@@ -86,7 +86,7 @@
         {
           "native": "ಸಾಕು ಸಾರ್. ಒಪ್ಪಿಗೆ.",
           "translit": "sāku sār. oppige.",
-          "en": "Enough, sir. Agreed.",
+          "en": "Enough, boss. Agreed.",
           "effects": {
             "fluency": 2,
             "vibes": 3
@@ -107,7 +107,7 @@
       "speakerId": "mysuru_uncle",
       "native": "ಸ್ವಲ್ಪ ಯೋಚನೆ ಮಾಡ್ತೀನಿ ಸಾರ್. ನೀವು ಒಬ್ಬರೇ ಇರ್ತೀರಾ?",
       "translit": "svalpa yōcane māḍtīni sār. nīvu obbarē irtīrā?",
-      "en": "Let me think on it, sir. You'll be living alone?",
+      "en": "Let me think on it, boss. You'll be living alone?",
       "emotion": "stern",
       "beat": "the real question, finally",
       "audio": "/audio/kn/chapters/kn-day-06-second-flat/mysuru_uncle-stern-423bf03815.wav"
@@ -119,7 +119,7 @@
         {
           "native": "ಹೌದು ಸಾರ್. ಒಬ್ಬನೇ. Quiet ಆಗಿ ಇರ್ತೀನಿ, ಗಲಾಟೆ ಇಲ್ಲ.",
           "translit": "haudu sār. obbanē. quiet āgi irtīni, galāṭe illa.",
-          "en": "Yes sir. Alone. I'll be quiet, no noise.",
+          "en": "Yes boss. Alone. I'll be quiet, no noise.",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -148,7 +148,7 @@
       "speakerId": "mysuru_uncle",
       "native": "ಸರಿ ಸಾರ್. ನಾಳೆ ಮಾತಾಡೋಣ. Rangaswamy ಗೆ ಹೇಳಿ ನೀವು serious ಅಂತ.",
       "translit": "sari sār. nāḷe mātāḍōṇa. Rangaswamy-ge hēḷi nīvu serious anta.",
-      "en": "Okay sir. We'll talk tomorrow. Tell Rangaswamy you're serious.",
+      "en": "Okay boss. We'll talk tomorrow. Tell Rangaswamy you're serious.",
       "emotion": "warm",
       "beat": "shakes your hand with both of his — old-school",
       "audio": "/audio/kn/chapters/kn-day-06-second-flat/mysuru_uncle-warm-b82cf0e252.wav"

@@ -12,7 +12,7 @@
       "speakerId": "amma",
       "native": "ಬನ್ನಿ ಸಾರ್. ಬೂಟು ಅಲ್ಲಿ. ಒಳಗೆ ಬನ್ನಿ.",
       "translit": "banni sār. būṭu alli. oḷage banni.",
-      "en": "Come, sir. Shoes there. Come inside.",
+      "en": "Come. Shoes there. Come inside.",
       "emotion": "neutral",
       "beat": "doesn't smile yet. observation mode.",
       "audio": "/audio/kn/chapters/kn-day-21-amma/amma-neutral-d9b37b826a.wav"
@@ -54,7 +54,7 @@
       "speakerId": "amma",
       "native": "Flowers — ಒಳ್ಳೆ choice ಸಾರ್. Sit, sit. Appa, ee Anika ಜೊತೆ ಬಂದಿರೋ engineer.",
       "translit": "flowers — oḷḷe choice sār. sit, sit. Appa, ee Anika joḍe bandirō engineer.",
-      "en": "Flowers — good choice, sir. Sit, sit. Appa, this is the engineer Anika brought.",
+      "en": "Flowers — good choice. Sit, sit. Appa, this is the engineer Anika brought.",
       "emotion": "warm",
       "beat": "takes the flowers, doesn't smell them. evaluation: passed.",
       "audio": "/audio/kn/chapters/kn-day-21-amma/amma-warm-769c88b414.wav"
@@ -76,14 +76,14 @@
         {
           "native": "ಇಲ್ಲ ಸಾರ್. ಬೆಳಿಗ್ಗೆ coffee ಮಾತ್ರ. Aunty ಊಟ make ಮಾಡಿದ್ದಾರೆ ಅಂದು Anika ಹೇಳಿದ್ರು.",
           "translit": "illa sār. beḷigge coffee mātra. aunty ūṭa make māḍiddāre andu Anika hēḷidru.",
-          "en": "No sir. Just coffee in the morning. Anika said aunty made lunch.",
+          "en": "No. Just coffee in the morning. Anika said aunty made lunch.",
           "effects": {
             "fluency": 3,
             "vibes": 3
           }
         },
         {
-          "en": "No sir, I'm starving honestly.",
+          "en": "No, I'm starving honestly.",
           "effects": {
             "fluency": 0,
             "vibes": 2
@@ -118,7 +118,7 @@
         {
           "native": "ಒಂದು small startup ಸಾರ್. Indiranagar ನಲ್ಲಿ. ಈಗ ಎರಡು ತಿಂಗಳ ಆಯ್ತು. Probation ಮುಗಿದ ನಂತರ confirm.",
           "translit": "ondu small startup sār. Indiranagar-nalli. īga eraḍu tiṅgaḷa āytu. probation mugida nantara confirm.",
-          "en": "A small startup, sir. In Indiranagar. Two months in. Confirm after probation.",
+          "en": "A small startup. In Indiranagar. Two months in. Confirm after probation.",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -138,7 +138,7 @@
       "speakerId": "amma",
       "native": "Ee Anika, ಬಾ ಮಗಳೆ, ಊಟಕ್ಕೆ ready ಮಾಡೋಣ. ಸಾರ್, ನೀವು ಸ್ವಲ್ಪ ಮಾತಾಡಿ — Appa ಗೆ engineer ಗಳ ಜೊತೆ ಮಾತಾಡ್ಬೇಕು.",
       "translit": "ee Anika, bā magaḷe, ūṭakke ready māḍōṇa. sār, nīvu svalpa mātāḍi — Appa-ge engineer-gaḷa joḍe mātāḍbēku.",
-      "en": "Anika, come, dear, let's get lunch ready. Sir, you two talk a bit — Appa likes talking to engineers.",
+      "en": "Anika, come, dear, let's get lunch ready. You two talk a bit — Appa likes talking to engineers.",
       "emotion": "warm",
       "beat": "the strategy is in motion. Anika is being removed from the room.",
       "audio": "/audio/kn/chapters/kn-day-21-amma/amma-warm-d0426ea19e.wav"

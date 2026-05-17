@@ -12,7 +12,7 @@
       "speakerId": "pharmacist",
       "native": "ಸಾರ್? ಏನು ಬೇಕು?",
       "translit": "sār? ēnu bēku?",
-      "en": "Sir? What do you need?",
+      "en": "Boss? What do you need?",
       "emotion": "neutral",
       "beat": "doesn't put the marker down",
       "audio": "/audio/kn/chapters/kn-day-15-pharmacy/pharmacist-neutral-e9a768ff5e.wav"
@@ -24,7 +24,7 @@
         {
           "native": "ಗಂಟಲು ನೋವು ಸಾರ್. ಮೂರು ದಿನ ಆಯ್ತು. ಸಣ್ಣ fever ಕೂಡ ಇದೆ.",
           "translit": "gaṇṭalu nōvu sār. mūru dina āytu. saṇṇa fever kūḍa ide.",
-          "en": "Throat pain, sir. Three days now. Small fever too.",
+          "en": "Throat pain, boss. Three days now. Small fever too.",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -65,7 +65,7 @@
         {
           "native": "ಒಣಗಿದ ಕೆಮ್ಮು ಸಾರ್. ರಾತ್ರಿ ಜಾಸ್ತಿ.",
           "translit": "oṇagida kemmu sār. rātri jāsti.",
-          "en": "Dry cough, sir. Worse at night.",
+          "en": "Dry cough, boss. Worse at night.",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -97,7 +97,7 @@
         {
           "native": "ಧನ್ಯವಾದಗಳು ಸಾರ್. ಮೂರು ದಿನದ ನಂತರ ಸರಿ ಆಗದಿದ್ದರೆ?",
           "translit": "dhanyavādagaḷu sār. mūru dinada nantara sari āgadiddare?",
-          "en": "Thanks sir. What if it's not better after three days?",
+          "en": "Thanks boss. What if it's not better after three days?",
           "effects": {
             "fluency": 3,
             "vibes": 3

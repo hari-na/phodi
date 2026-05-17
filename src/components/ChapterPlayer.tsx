@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import type {
   Chapter,
@@ -30,10 +31,14 @@ import {
   loadRun,
   netFluency,
   recordChapterRun,
+  recordEnding,
+  currentDayFor,
   type ArtStylePreference,
+  type ChoicePickRecord,
   type PlayerProfile,
   type RunState,
 } from "@/lib/player";
+import { resolveEnding, renderEndingBody, type Ending } from "@/lib/endings";
 
 interface Props {
   chapter: Chapter;
@@ -45,6 +50,7 @@ interface Props {
 const HINT_COST = 2;
 
 export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
+  const router = useRouter();
   const [beatIdx, setBeatIdx] = useState(0);
   const [fluency, setFluency] = useState(0);
   const [vibes, setVibes] = useState(0);
@@ -56,17 +62,41 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
   const [runBeforeChapter, setRunBeforeChapter] = useState<RunState | null>(null);
   const [finalRun, setFinalRun] = useState<RunState | null>(null);
   const [artStyle, setArtStyle] = useState<ArtStylePreference>("painterly");
+  /**
+   * Per-choice picks captured during play, used by the end-of-day debrief
+   * to show "what could go better." Keyed by beat index; only choice beats
+   * the player has answered appear here.
+   */
+  const [picks, setPicks] = useState<Record<number, ChoicePickRecord>>({});
+  /**
+   * Per-character affection deltas accrued in this chapter. We pull them
+   * from `choice.effects.affection` (optional new field) — defaults to {}
+   * when no choices in this chapter set affection.
+   */
+  const [affectionDelta, setAffectionDelta] = useState<Record<string, number>>({});
 
   useEffect(() => {
     setProfile(loadProfile());
-    setRunBeforeChapter(loadRun());
+    const r = loadRun();
+    setRunBeforeChapter(r);
     setArtStyle(loadArtStyle());
+
+    // Linear progression guard: if the player navigated to a future day's
+    // URL (bookmark, share link, manual edit), bounce them back to the
+    // chapter they're actually allowed to enter. Replays of past days are
+    // fine — they're reading their own history.
+    const allowedDay = currentDayFor(r);
+    if (chapter.day > allowedDay) {
+      router.replace(`/${langCode}`);
+      return;
+    }
+
     function onStorage(e: StorageEvent) {
       if (e.key === "phodi.artStyle.v1") setArtStyle(loadArtStyle());
     }
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
-  }, []);
+  }, [chapter.day, langCode, router]);
 
   // Compute the next chapter (by day order) so the scorecard can chain.
   const nextChapter = useMemo(() => {
@@ -112,13 +142,21 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
     if (beatIdx < chapter.beats.length - 1) {
       setBeatIdx((i) => i + 1);
     } else {
-      // Persist this run's contribution to localStorage
+      // Persist this run's contribution to localStorage. We pull the picks
+      // map into a sorted array so the debrief shows them in beat order.
+      const picksArr = Object.keys(picks)
+        .map(Number)
+        .sort((a, b) => a - b)
+        .map((idx) => picks[idx]);
       const result = recordChapterRun({
         chapterId: chapter.id,
+        day: chapter.day,
         fluency,
         vibes,
         hintCost,
         flags,
+        picks: picksArr,
+        affectionDelta,
         completedAtISO: new Date().toISOString(),
       });
       setFinalRun(result);
@@ -126,10 +164,46 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
     }
   }
 
-  function applyChoice(c: PlayerChoice) {
+  function applyChoice(c: PlayerChoice, choiceIdx: number) {
     if (c.effects.fluency) setFluency((f) => f + c.effects.fluency!);
     if (c.effects.vibes) setVibes((v) => v + c.effects.vibes!);
     if (c.setFlag) setFlags((fs) => [...fs, c.setFlag!]);
+
+    // Capture the pick + score-vs-best for the end-of-day debrief.
+    if (beat && beat.kind === "choice") {
+      const scoreOf = (ch: PlayerChoice) =>
+        (ch.effects.fluency ?? 0) + (ch.effects.vibes ?? 0);
+      let bestIdx = 0;
+      let bestScore = scoreOf(beat.choices[0]);
+      beat.choices.forEach((ch, i) => {
+        const s = scoreOf(ch);
+        if (s > bestScore) {
+          bestScore = s;
+          bestIdx = i;
+        }
+      });
+      setPicks((p) => ({
+        ...p,
+        [beatIdx]: {
+          beatIdx,
+          pickedIdx: choiceIdx,
+          pickedScore: scoreOf(c),
+          bestIdx,
+          bestScore,
+        },
+      }));
+    }
+
+    // Accumulate per-character affection deltas if the choice declares any.
+    if (c.effects.affection) {
+      setAffectionDelta((a) => {
+        const next = { ...a };
+        for (const [speakerId, delta] of Object.entries(c.effects.affection!)) {
+          next[speakerId] = (next[speakerId] ?? 0) + delta;
+        }
+        return next;
+      });
+    }
     advance();
   }
 
@@ -222,6 +296,7 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
               vibes={vibes}
               hintCost={hintCost}
               flags={flags}
+              picks={Object.values(picks).sort((a, b) => a.beatIdx - b.beatIdx)}
               run={finalRun}
               langCode={langCode}
               playerName={playerName}
@@ -315,7 +390,7 @@ function ChoiceBeatView({
   playerName,
 }: {
   beat: PlayerChoiceBeat;
-  onChoose: (c: PlayerChoice) => void;
+  onChoose: (c: PlayerChoice, choiceIdx: number) => void;
   playerName: string;
 }) {
   return (
@@ -329,7 +404,7 @@ function ChoiceBeatView({
         {beat.choices.map((c, i) => (
           <button
             key={i}
-            onClick={() => onChoose(c)}
+            onClick={() => onChoose(c, i)}
             className="group rounded-md border border-cream/10 bg-ink-soft px-5 py-4 text-left transition hover:border-accent/40 hover:bg-ink-muted"
           >
             {c.native ? (
@@ -367,6 +442,7 @@ function Scorecard({
   vibes,
   hintCost,
   flags,
+  picks,
   run,
   langCode,
   playerName,
@@ -379,6 +455,7 @@ function Scorecard({
   vibes: number;
   hintCost: number;
   flags: string[];
+  picks: ChoicePickRecord[];
   run: RunState;
   langCode: string;
   playerName: string;
@@ -386,14 +463,13 @@ function Scorecard({
   nextChapterTitle: string | null;
   nextChapterDay: number | null;
 }) {
-  // Day 30 gets a special ending screen
+  // Day 30 → named ending screen (no debrief, no next-day link)
   if (chapter.day === 30) {
     return (
       <EndingScreen
         run={run}
         langCode={langCode}
         playerName={playerName}
-        flags={flags}
       />
     );
   }
@@ -407,6 +483,9 @@ function Scorecard({
       : "Bumpy. Tomorrow's another beat.";
 
   const netF = fluency - hintCost;
+  // Only picks where the player didn't take the best-scored option appear
+  // in the debrief — everything else was already a clean read.
+  const suboptimal = picks.filter((p) => p.pickedIdx !== p.bestIdx);
 
   return (
     <div className="flex flex-col items-center gap-6 py-10 text-center">
@@ -428,6 +507,10 @@ function Scorecard({
         </p>
       )}
 
+      {suboptimal.length > 0 && (
+        <Debrief chapter={chapter} picks={suboptimal} playerName={playerName} />
+      )}
+
       <div className="flex flex-col items-center gap-3">
         {nextChapterId && nextChapterTitle && nextChapterDay !== null ? (
           <Link
@@ -441,76 +524,139 @@ function Scorecard({
             href={`/${langCode}`}
             className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-ink transition hover:bg-accent-deep"
           >
-            ← Back to chapters
+            ← Back to course
           </Link>
         )}
-        <Link
-          href={`/${langCode}`}
-          className="text-xs uppercase tracking-[0.2em] text-cream-dim transition hover:text-cream"
-        >
-          Or pick another chapter
-        </Link>
       </div>
     </div>
   );
 }
 
+/**
+ * End-of-day debrief — auto-generated from the chapter's own choice scores.
+ *
+ * For each beat where the player's pick scored below the best available
+ * option, we show: what they said, what would have landed better, and the
+ * point delta. No hand-written gloss yet — that's a Phase 2 content lift
+ * (per-exchange "why this lands / why this stings" notes).
+ */
+function Debrief({
+  chapter,
+  picks,
+  playerName,
+}: {
+  chapter: Chapter;
+  picks: ChoicePickRecord[];
+  playerName: string;
+}) {
+  return (
+    <div className="my-4 w-full rounded-md border border-cream/10 bg-ink-soft/60 p-5 text-left">
+      <p className="text-xs uppercase tracking-[0.2em] text-cream-dim">
+        What could go better
+      </p>
+      <p className="mt-2 text-xs italic text-cream-dim">
+        {picks.length} moment{picks.length === 1 ? "" : "s"} where a different reply would have landed cleaner.
+      </p>
+      <ul className="mt-4 space-y-4">
+        {picks.map((pick) => {
+          const beat = chapter.beats[pick.beatIdx];
+          if (!beat || beat.kind !== "choice") return null;
+          const yours = beat.choices[pick.pickedIdx];
+          const better = beat.choices[pick.bestIdx];
+          if (!yours || !better) return null;
+          const delta = pick.bestScore - pick.pickedScore;
+          return (
+            <li key={pick.beatIdx} className="space-y-2">
+              <p className="text-[10px] uppercase tracking-[0.15em] text-cream-dim">
+                You said
+              </p>
+              {yours.native && (
+                <p className="font-kn text-sm text-cream">
+                  {withName(yours.native, playerName)}
+                </p>
+              )}
+              <p className="text-sm text-cream-muted">
+                {withName(yours.en, playerName)}
+              </p>
+              <p className="mt-3 text-[10px] uppercase tracking-[0.15em] text-accent">
+                Lands better
+              </p>
+              {better.native && (
+                <p className="font-kn text-sm text-cream">
+                  {withName(better.native, playerName)}
+                </p>
+              )}
+              <p className="text-sm text-cream-muted">
+                {withName(better.en, playerName)}
+              </p>
+              <p className="text-[10px] italic text-cream-dim">
+                +{delta} point{delta === 1 ? "" : "s"} on the cleaner read.
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+/**
+ * Day 30 ending screen.
+ *
+ * The ending is computed by `resolveEnding(run)` from lib/endings.ts —
+ * a priority-ordered list of named endings, each with their own qualify
+ * predicate over (Fluency, Vibes, per-character affection, flags). The
+ * first match wins; the catch-all "Just a Tenant" guarantees we always
+ * resolve to something.
+ *
+ * Once an ending is decided, we persist it via `recordEnding(ending.id)`
+ * so the player's "Replay Day 30" CTA on the course page can read which
+ * ending they reached. Re-running the chapter may resolve a different
+ * ending if their choices change — that's intentional, the ending is
+ * always a snapshot of the current run.
+ */
 function EndingScreen({
   run,
   langCode,
   playerName,
-  flags,
 }: {
   run: RunState;
   langCode: string;
   playerName: string;
-  flags: string[];
 }) {
+  const ending: Ending = useMemo(() => resolveEnding(run), [run]);
+  const body = useMemo(
+    () => renderEndingBody(ending.body, playerName),
+    [ending.body, playerName]
+  );
+
+  // Persist the resolved ending on the run record (used by course page CTA).
+  useEffect(() => {
+    if (run.endingId !== ending.id) {
+      recordEnding(ending.id);
+    }
+  }, [ending.id, run.endingId]);
+
   const net = netFluency(run);
   const score = net + run.totalVibes;
 
-  // Did they pick the "stay" branch this chapter?
-  const stayed = run.flags.includes("chose_stay_anika");
-  const unsure = run.flags.includes("chose_unsure");
-  const left = run.flags.includes("chose_leave");
-
-  let title: string;
-  let body: string;
-
-  if (left) {
-    title = "You went home.";
-    body =
-      score >= 60
-        ? `${playerName}. The auto driver who picked you up at KIA airport recognised your face on the way out. He gave you a discount and told you to come back. You will. The bevu and the bella — you'll carry both.`
-        : `${playerName}. The taxi to the airport was quiet. Anika's last voicemail plays. You learned what you needed to know — that this city wasn't yours yet. Maybe next time.`;
-  } else if (unsure) {
-    title = "You'll figure it out.";
-    body =
-      score >= 60
-        ? `${playerName}. You didn't promise her anything. She didn't ask. The lease has eight months left. Lokesh nods at you every morning. Saraswati made bisi bele bath on Friday without being asked. The city is teaching you to stop deciding so fast.`
-        : `${playerName}. You stayed. You're trying. The Kannada is still uneven, the Vibes still wobble, but neither of you has packed a bag yet. Sometimes that's enough.`;
-  } else if (stayed) {
-    if (score >= 70 && run.flags.includes("amma_recovered") && run.flags.includes("anna_regular")) {
-      title = "You belong here now.";
-      body = `${playerName}. Anna saw you from the stall and waved without asking what you wanted. Lokesh's logbook has your full name in it now. Amma calls before she calls Anika. Appa, once, said "good" — and once is enough. You think in Kannada all day without noticing once. ನಮಸ್ಕಾರ ${playerName}. ಸ್ವಾಗತ.`;
-    } else if (score >= 40) {
-      title = "You belong here now.";
-      body = `${playerName}. You stayed. The city accepted you slowly. Some doors are open, some are still closing. There's another hundred days ahead — and you've already learned which ones get easier.`;
-    } else {
-      title = "You stayed.";
-      body = `${playerName}. The flat is yours. The job is yours. The Kannada is shaky and the Vibes wobble, but Anika smiled this morning. The rest, the city will teach you.`;
-    }
-  } else {
-    title = "End of the first hundred days.";
-    body = `${playerName}. The story isn't quite over. Go back and finish Day 30 — pick a path. Stay, pause, or go.`;
-  }
+  const toneAccent =
+    ending.tone === "good"
+      ? "text-accent"
+      : ending.tone === "bad"
+      ? "text-cream-dim"
+      : "text-cream-muted";
 
   return (
     <div className="flex flex-col gap-6 py-10">
       <p className="text-xs uppercase tracking-[0.2em] text-cream-dim">
-        The morning · ending
+        The morning · your ending
       </p>
-      <h2 className="serif text-5xl text-cream">{title}</h2>
+
+      <h2 className={cn("serif text-5xl", toneAccent)}>{ending.name}</h2>
+      <p className="serif text-base italic text-cream-muted">
+        {ending.tagline}
+      </p>
 
       <p className="serif text-xl italic leading-relaxed text-cream-muted">
         {body}
@@ -523,8 +669,8 @@ function EndingScreen({
       </div>
 
       <p className="mt-2 text-xs text-cream-dim">
-        {Object.keys(run.runs).length} chapters played. {run.flags.length} flags
-        set across the run.
+        {Object.keys(run.runs).length} chapters played · {run.flags.length} flags ·{" "}
+        {Object.keys(run.affection ?? {}).length} characters known
       </p>
 
       <div className="mt-6 flex gap-3">
@@ -532,7 +678,7 @@ function EndingScreen({
           href={`/${langCode}`}
           className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-ink transition hover:bg-accent-deep"
         >
-          ← Chapters
+          ← Course
         </Link>
       </div>
     </div>

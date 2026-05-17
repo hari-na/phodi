@@ -12,7 +12,7 @@
       "speakerId": "amma",
       "native": "ಸಾರ್. ಬನ್ನಿ. Coffee ಬರುತ್ತೆ. ಏನು ಮಾತಾಡಬೇಕು — ಮಾತಾಡಿ.",
       "translit": "sār. banni. coffee barutte. ēnu mātāḍabēku — mātāḍi.",
-      "en": "Sir. Sit. Coffee's coming. Whatever you came to say — say it.",
+      "en": "Sit. Coffee's coming. Whatever you came to say — say it.",
       "emotion": "neutral",
       "beat": "no preamble. she knows why you're here.",
       "audio": "/audio/kn/chapters/kn-day-27-apology/amma-neutral-a81321a848.wav"
@@ -76,7 +76,7 @@
         {
           "native": "ಸಾರ್, ಧನ್ಯವಾದಗಳು. ನೀವು ಚೆನ್ನಾಗಿ joke ಮಾಡ್ತೀರಿ — ಯಾರಿಗೂ ಗೊತ್ತಿಲ್ಲ ಅಂತಾ feel ಆಗ್ತಾ ಇದೆ.",
           "translit": "sār, dhanyavādagaḷu. nīvu cennāgi joke māḍtīri — yārigū gottilla antā feel āgtā ide.",
-          "en": "Sir, thank you. You tell jokes well — feels like nobody knows.",
+          "en": "Thank you. You tell jokes well — feels like nobody knows.",
           "effects": {
             "fluency": 4,
             "vibes": 4
@@ -84,7 +84,7 @@
           "setFlag": "appa_thawed"
         },
         {
-          "en": "Thanks, sir. That helps.",
+          "en": "Thanks. That helps.",
           "effects": {
             "fluency": 0,
             "vibes": 2

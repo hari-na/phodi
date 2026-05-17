@@ -12,7 +12,7 @@
       "speakerId": "lokesh",
       "native": "ಸಾರ್? ಯಾವ flat ಸಾರ್?",
       "translit": "sār? yāva flat sār?",
-      "en": "Sir? Which flat, sir?",
+      "en": "Boss? Which flat, boss?",
       "emotion": "neutral",
       "beat": "doesn't get up. just looks up over his glasses.",
       "audio": "/audio/kn/chapters/kn-day-08-moving-in/lokesh-neutral-882788ce24.wav"
@@ -54,7 +54,7 @@
       "speakerId": "lokesh",
       "native": "ಓ, Krishnamurthy uncle ಹೇಳಿದ್ದರು. Welcome ಸಾರ್. ನನ್ನ ಹೆಸರು Lokesh. ಯಾವುದೇ ತೊಂದರೆ ಇದ್ದರೆ, ನನ್ನ ಹತ್ತಿರ ಬರ್ರೀ.",
       "translit": "ō, Krishnamurthy uncle hēḷiddaru. welcome sār. nanna hesaru Lokesh. yāvudē tondare iddare, nanna hattira barrī.",
-      "en": "Oh, Krishnamurthy uncle told me. Welcome, sir. My name is Lokesh. Any trouble, come to me.",
+      "en": "Oh, Krishnamurthy uncle told me. Welcome, boss. My name is Lokesh. Any trouble, come to me.",
       "emotion": "warm",
       "beat": "stands up, smaller than he looked sitting",
       "audio": "/audio/kn/chapters/kn-day-08-moving-in/lokesh-warm-05f7df7939.wav"
@@ -64,7 +64,7 @@
       "speakerId": "lokesh",
       "native": "Two rules ಸಾರ್. ರಾತ್ರಿ ಹನ್ನೊಂದು ಗಂಟೆಗೆ gate close. ಊರಿಂದ ಯಾರಾದರೂ ಬಂದರೆ ನನಗೆ ಹೇಳಿ.",
       "translit": "two rules sār. rātri honnondu gaṇṭege gate close. ūrinda yārādarū bandare nanage hēḷi.",
-      "en": "Two rules, sir. Eleven pm, gate closes. If anyone visits from your home town, tell me.",
+      "en": "Two rules, boss. Eleven pm, gate closes. If anyone visits from your home town, tell me.",
       "emotion": "stern",
       "beat": "taps the notebook — there's a guest log",
       "audio": "/audio/kn/chapters/kn-day-08-moving-in/lokesh-stern-99b98a95c3.wav"
@@ -76,7 +76,7 @@
         {
           "native": "ಆಯ್ತು ಸಾರ್. ತೊಂದರೆ ಆಗಲ್ಲ.",
           "translit": "āytu sār. tondare āgalla.",
-          "en": "Got it, sir. No trouble from me.",
+          "en": "Got it, boss. No trouble from me.",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -96,7 +96,7 @@
       "speakerId": "lokesh",
       "native": "ನೀವು engineer ಅಂದ್ರೆ. ಯಾವ company ಸಾರ್?",
       "translit": "nīvu engineer andre. yāva company sār?",
-      "en": "You're an engineer, I heard. Which company, sir?",
+      "en": "You're an engineer, I heard. Which company, boss?",
       "emotion": "warm",
       "beat": "the rules out of the way, the real interview begins",
       "audio": "/audio/kn/chapters/kn-day-08-moving-in/lokesh-warm-485330eea2.wav"
@@ -108,7 +108,7 @@
         {
           "native": "Indiranagar ನಲ್ಲಿ ಒಂದು startup ಸಾರ್. ಹೊಸದಾಗಿ ಸೇರಿದ್ದೇನೆ.",
           "translit": "Indiranagar-nalli ondu startup sār. hosadāgi sēriddēne.",
-          "en": "A startup in Indiranagar, sir. Just joined.",
+          "en": "A startup in Indiranagar, boss. Just joined.",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -129,7 +129,7 @@
       "speakerId": "lokesh",
       "native": "Startup, ha! Bangalore ತುಂಬಾ engineer ಸಾರ್. ಸರಿ, ನಿಮ್ಮ ಬ್ಯಾಗ್ ಕೊಡಿ — ನಾನು ಮೇಲೆ ತೋರಿಸ್ತೀನಿ.",
       "translit": "startup, ha! Bangalore tumbā engineer sār. sari, nimma bag koḍi — nānu mēle tōristīni.",
-      "en": "Startup, ha! Bangalore has too many engineers, sir. Come, give me a bag — I'll show you up.",
+      "en": "Startup, ha! Bangalore has too many engineers, boss. Come, give me a bag — I'll show you up.",
       "emotion": "warm",
       "beat": "already lifting the heavier suitcase. you didn't ask. he didn't ask.",
       "audio": "/audio/kn/chapters/kn-day-08-moving-in/lokesh-warm-3630c20d36.wav"

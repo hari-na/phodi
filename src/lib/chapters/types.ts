@@ -86,6 +86,15 @@ export interface PlayerChoice {
   effects: {
     fluency?: number;
     vibes?: number;
+    /**
+     * Per-character romantic / relational affection deltas. Keyed by
+     * speakerId. Positive means the player treated this character warmly
+     * (good register, taking interest, generosity); negative means cold
+     * or dismissive. Accumulates into RunState.affection and feeds the
+     * Day 30 ending resolver. Optional — most choices don't move
+     * affection.
+     */
+    affection?: Record<string, number>;
   };
   /** Optional tag the chapter branches on. */
   setFlag?: string;

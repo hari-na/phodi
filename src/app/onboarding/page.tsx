@@ -3,36 +3,29 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import {
-  saveProfile,
-  type KnownLanguage,
-  type LoveInterestPreference,
-} from "@/lib/player";
+import { saveProfile, type KnownLanguage } from "@/lib/player";
 
 const LANG_OPTIONS: Array<{ code: KnownLanguage; label: string; native: string }> = [
   { code: "ta", label: "Tamil", native: "தமிழ்" },
-  { code: "ml", label: "Malayalam", native: "മലയാളം" },
+  { code: "ml", label: "Malayalam", native: "மലയാളം" },
   { code: "hi", label: "Hindi", native: "हिन्दी" },
   { code: "te", label: "Telugu", native: "తెలుగు" },
   { code: "en", label: "Just English", native: "English" },
 ];
 
-const LOVE_OPTIONS: Array<{
-  value: LoveInterestPreference;
-  label: string;
-  hint: string;
-}> = [
-  { value: "anika", label: "Anika", hint: "Architect. Kannadiga. Amused at your accent." },
-  { value: "anik", label: "Anik", hint: "Architect. Kannadiga. Amused at your accent. (Same beats, different pronouns.)" },
-  { value: "skip", label: "Neither — skip the romance", hint: "Day 16 onwards plays as friendship instead." },
-];
-
+/**
+ * Two-step onboarding now: name + languages. The pre-pick "who do you want
+ * to fall for?" step is gone — romance emerges from how the player treats
+ * the people they meet across the 30 days. The named ending at Day 30
+ * reflects whichever character (if any) they invested in.
+ */
 export default function OnboardingPage() {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
   const [languages, setLanguages] = useState<KnownLanguage[]>([]);
-  const [loveInterest, setLoveInterest] = useState<LoveInterestPreference | null>(null);
+
+  const TOTAL_STEPS = 2;
 
   function toggleLanguage(code: KnownLanguage) {
     setLanguages((langs) =>
@@ -44,7 +37,6 @@ export default function OnboardingPage() {
     saveProfile({
       name: name.trim() || "You",
       knownLanguages: languages.length > 0 ? languages : ["en"],
-      loveInterest: loveInterest ?? "anika",
       createdAtISO: new Date().toISOString(),
     });
     router.push("/kn");
@@ -53,7 +45,6 @@ export default function OnboardingPage() {
   const canNext =
     step === 0 ? name.trim().length > 0 :
     step === 1 ? languages.length > 0 :
-    step === 2 ? loveInterest !== null :
     true;
 
   return (
@@ -63,7 +54,7 @@ export default function OnboardingPage() {
       </p>
 
       <div className="mt-3 mb-12 flex items-center gap-1">
-        {[0, 1, 2].map((i) => (
+        {Array.from({ length: TOTAL_STEPS }, (_, i) => i).map((i) => (
           <div
             key={i}
             className={cn(
@@ -78,8 +69,8 @@ export default function OnboardingPage() {
         <section className="flex flex-col gap-6">
           <h1 className="serif text-4xl text-cream">What should the city call you?</h1>
           <p className="text-cream-muted">
-            Auto drivers, watchmen, chai stalls, your future in-laws — they'll
-            all use this. First name is enough.
+            Auto drivers, watchmen, chai stalls, neighbours — they&apos;ll all
+            use this. First name is enough.
           </p>
           <input
             autoFocus
@@ -125,36 +116,11 @@ export default function OnboardingPage() {
               );
             })}
           </div>
-        </section>
-      )}
-
-      {step === 2 && (
-        <section className="flex flex-col gap-6">
-          <h1 className="serif text-4xl text-cream">Who do you want to fall for?</h1>
-          <p className="text-cream-muted">
-            On Day 16 you'll meet someone at a Church Street bookstore. Pick
-            a name — same story either way.
+          <p className="text-xs italic text-cream-dim">
+            Over thirty days in Bangalore you&apos;ll meet flatmates,
+            shopkeepers, a few people who might matter. How that lands is up
+            to you.
           </p>
-          <div className="mt-2 space-y-2">
-            {LOVE_OPTIONS.map((opt) => {
-              const selected = loveInterest === opt.value;
-              return (
-                <button
-                  key={opt.value}
-                  onClick={() => setLoveInterest(opt.value)}
-                  className={cn(
-                    "w-full rounded-md border px-5 py-4 text-left transition",
-                    selected
-                      ? "border-accent/60 bg-accent/10"
-                      : "border-cream/10 bg-ink-soft hover:border-cream/30"
-                  )}
-                >
-                  <p className="text-lg text-cream">{opt.label}</p>
-                  <p className="mt-1 text-sm text-cream-muted">{opt.hint}</p>
-                </button>
-              );
-            })}
-          </div>
         </section>
       )}
 
@@ -170,7 +136,7 @@ export default function OnboardingPage() {
           ← Back
         </button>
 
-        {step < 2 ? (
+        {step < TOTAL_STEPS - 1 ? (
           <button
             disabled={!canNext}
             onClick={() => setStep(step + 1)}

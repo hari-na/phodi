@@ -24,6 +24,12 @@ export interface ScenePalette {
   glowAt: string;
   /** Optional: real image file under /public/scenes/. */
   image?: boolean;
+  /**
+   * Optional atmospheric overlay (rain streaks, drifting mist, ember
+   * sparks, lamp flicker). Layered on top of the still by
+   * <SceneAtmosphere>. Skip for scenes where any motion would distract.
+   */
+  atmosphere?: "rain" | "mist" | "embers" | "lamp-flicker";
   /** Brief description of what the palette evokes (author note, not shown). */
   note: string;
 }
@@ -42,6 +48,7 @@ const SCENES: Record<string, ScenePalette> = {
     bottom: "#1a0f08",
     glow: "rgba(232, 165, 80, 0.32)",
     glowAt: "70% 65%",
+    atmosphere: "rain",
     note: "Kempegowda airport pickup zone Bangalore at 11pm monsoon rain, yellow-green auto rickshaw under concrete awning, sodium-orange streetlamps, wet asphalt reflections, palm trees silhouetted in distance",
   },
   "kn-day-02-hotel": {

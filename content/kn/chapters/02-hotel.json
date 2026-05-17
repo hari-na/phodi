@@ -12,7 +12,7 @@
       "speakerId": "hotel_clerk",
       "native": "ನಮಸ್ಕಾರ ಸಾರ್. ನೀವು ಬುಕ್ ಮಾಡಿದ್ದೀರಾ?",
       "translit": "namaskāra sār. nīvu buk māḍiddīrā?",
-      "en": "Hello sir. Have you booked?",
+      "en": "Hello boss. Have you booked?",
       "emotion": "neutral",
       "beat": "barely glances up from the register",
       "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-neutral-b6f1bd8551.wav"
@@ -52,7 +52,7 @@
       "speakerId": "hotel_clerk",
       "native": "ID ಕೊಡಿ ಸಾರ್.",
       "translit": "ID koḍi sār.",
-      "en": "ID please, sir.",
+      "en": "ID please, boss.",
       "emotion": "neutral",
       "beat": "already turning the page",
       "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-neutral-abf3eea04e.wav"
@@ -62,7 +62,7 @@
       "speakerId": "hotel_clerk",
       "native": "ಕ್ಷಮಿಸಿ ಸಾರ್. ನಿಮ್ಮ booking ರಲ್ಲಿ ಒಂದು ಸಣ್ಣ problem ಇದೆ. Breakfast ಸೇರಿಸಿಲ್ಲ.",
       "translit": "kṣamisi sār. nimma booking-ralli ondu saṇṇa problem ide. breakfast sērisilla.",
-      "en": "Sorry sir. There's a small problem with your booking. Breakfast isn't included.",
+      "en": "Sorry boss. There's a small problem with your booking. Breakfast isn't included.",
       "emotion": "hushed",
       "beat": "as if she's apologising for the receipt printer",
       "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-hushed-9c7be6d0b6.wav"
@@ -104,7 +104,7 @@
       "speakerId": "hotel_clerk",
       "native": "ಒಂದು ನಿಮಿಷ ಸಾರ್. ನಾನು manager ಗೆ ಕೇಳ್ತೀನಿ.",
       "translit": "ondu nimiṣa sār. nānu manager-ge kēḷtīni.",
-      "en": "One minute sir. I'll ask the manager.",
+      "en": "One minute boss. I'll ask the manager.",
       "emotion": "warm",
       "beat": "picks up the desk phone with one hand, still smiling",
       "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-warm-ee594a04c2.wav"
@@ -114,7 +114,7 @@
       "speakerId": "hotel_clerk",
       "native": "ಸಿಕ್ಕಿತು ಸಾರ್. Tomorrow breakfast ಕೊಡ್ತಾರೆ. Room three-oh-four. Wi-Fi password ಇಲ್ಲಿ ಇದೆ.",
       "translit": "sikkitu sār. tomorrow breakfast koḍtāre. room three-oh-four. Wi-Fi password illi ide.",
-      "en": "Sorted, sir. They'll give you breakfast tomorrow. Room three-oh-four. The Wi-Fi password is here.",
+      "en": "Sorted, boss. They'll give you breakfast tomorrow. Room three-oh-four. The Wi-Fi password is here.",
       "emotion": "warm",
       "beat": "slides the key card and a printed slip across the desk",
       "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-warm-279a8cfbcb.wav"
@@ -146,7 +146,7 @@
       "speakerId": "hotel_clerk",
       "native": "ಶುಭ ರಾತ್ರಿ ಸಾರ್. Welcome.",
       "translit": "śubha rātri sār. welcome.",
-      "en": "Good night, sir. Welcome.",
+      "en": "Good night, boss. Welcome.",
       "emotion": "warm",
       "beat": "the smile reaches her eyes this time",
       "audio": "/audio/kn/chapters/kn-day-02-hotel/hotel_clerk-warm-5b45daa203.wav"

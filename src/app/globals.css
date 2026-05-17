@@ -72,3 +72,125 @@ ruby rt {
     animation: none;
   }
 }
+
+/* ============================================================================
+   Scene atmosphere overlays — rain, mist, embers, lamp-flicker.
+
+   Each effect runs as a pure CSS keyframe animation on absolutely-positioned
+   divs created by SceneAtmosphere.tsx. No JS timers, no canvas, no compute.
+   All animations gracefully disable under prefers-reduced-motion so the page
+   stays readable for vestibular sensitivity.
+   ========================================================================== */
+
+/* Rain: vertical streak falls top → bottom with a tiny rightward drift to
+   suggest wind. Linear timing so droplets read as gravity-driven, not eased. */
+@keyframes scene-atmosphere-rain {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(8px, 140vh, 0);
+    opacity: 0;
+  }
+}
+
+.scene-atmosphere-rain {
+  animation-name: scene-atmosphere-rain;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+/* Mist: a wide gauze band drifts sideways across the scene. Two layers
+   running at different speeds and offsets make it feel volumetric. */
+@keyframes scene-atmosphere-mist {
+  0% {
+    transform: translate3d(-15%, 0, 0);
+  }
+  50% {
+    transform: translate3d(15%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-15%, 0, 0);
+  }
+}
+
+.scene-atmosphere-mist {
+  animation-name: scene-atmosphere-mist;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+/* Embers: warm dots rise from below with a gentle horizontal sway,
+   fading in/out so the loop seam is invisible. */
+@keyframes scene-atmosphere-ember {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(12px, -55vh, 0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-6px, -110vh, 0);
+    opacity: 0;
+  }
+}
+
+.scene-atmosphere-ember {
+  animation-name: scene-atmosphere-ember;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+/* Lamp flicker: opacity-only pulse on a radial overlay — suggests a
+   warm bulb breathing without ever changing colour or position. */
+@keyframes scene-atmosphere-flicker {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  20% {
+    opacity: 0.95;
+  }
+  35% {
+    opacity: 0.65;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+}
+
+.scene-atmosphere-flicker {
+  animation-name: scene-atmosphere-flicker;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-atmosphere-rain,
+  .scene-atmosphere-mist,
+  .scene-atmosphere-ember,
+  .scene-atmosphere-flicker {
+    animation: none;
+  }
+}

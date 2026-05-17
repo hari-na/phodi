@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { getScene } from "@/lib/scenes";
 import { loadArtStyle, type ArtStylePreference } from "@/lib/player";
+import { SceneAtmosphere } from "@/components/SceneAtmosphere";
 
 interface Props {
   chapterId: string;
@@ -82,6 +83,10 @@ export function SceneBackground({ chapterId, layout = "full" }: Props) {
       )}
     >
       <div className="scene-plate absolute inset-0" style={styles} />
+      {/* Atmosphere layer sits ABOVE the still but BELOW the vignette —
+          rain streaks / mist / embers / lamp-flicker, per scene. Doesn't
+          render when the scene has no atmosphere tag. */}
+      <SceneAtmosphere mood={scene.atmosphere} />
       {/* Vignette overlay for foreground text legibility. Real images get a
           stronger vignette since they're more detailed and would otherwise
           distract from the dialogue. */}

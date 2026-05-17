@@ -24,7 +24,7 @@
         {
           "native": "ನಮಸ್ಕಾರ ಸಾರ್. Cylinder empty. ಇಂದು ರಾತ್ರಿ delivery ಸಾಧ್ಯವಾ?",
           "translit": "namaskāra sār. cylinder empty. indu rātri delivery sādhyavā?",
-          "en": "Hello sir. The cylinder's empty. Is delivery possible tonight?",
+          "en": "Hello boss. The cylinder's empty. Is delivery possible tonight?",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -54,7 +54,7 @@
       "speakerId": "gas_uncle",
       "native": "ಇಂದು ರಾತ್ರಿ? Depot ಒಂಬತ್ತಕ್ಕೆ close ಆಗುತ್ತೆ ಸಾರ್. ನಿಮ್ಮ address?",
       "translit": "indu rātri? depot ombattakke close āgutte sār. nimma address?",
-      "en": "Tonight? Depot closes at nine, sir. Your address?",
+      "en": "Tonight? Depot closes at nine, boss. Your address?",
       "emotion": "tired",
       "beat": "doesn't say no. doesn't say yes.",
       "audio": "/audio/kn/chapters/kn-day-14-gas-cylinder/gas_uncle-tired-885203f521.wav"
@@ -76,7 +76,7 @@
         {
           "native": "Indiranagar 3rd Cross, ಸಾರ್. ಪ್ಲೀಸ್.",
           "translit": "Indiranagar 3rd cross, sār. please.",
-          "en": "Indiranagar 3rd Cross, sir. Please.",
+          "en": "Indiranagar 3rd Cross, boss. Please.",
           "effects": {
             "fluency": 2,
             "vibes": 2
@@ -96,7 +96,7 @@
       "speakerId": "gas_uncle",
       "native": "Ee number ಚೆನ್ನಾಗಿದೆ ಸಾರ್. ಆಯ್ತು. ಒಬ್ಬ boy ಕಳಿಸ್ತೀನಿ — half-an-hour ನಲ್ಲಿ ಬರ್ತಾನೆ. ನೀವು ಮನೇ ಇರಿ.",
       "translit": "ee number cennāgide sār. āytu. obba boy kaḷistīni — half-an-hour-nalli bartāne. nīvu manē iri.",
-      "en": "Good that you have the number, sir. Okay — I'll send a boy, half-an-hour. Stay home.",
+      "en": "Good that you have the number, boss. Okay — I'll send a boy, half-an-hour. Stay home.",
       "emotion": "warm",
       "beat": "for the first time, a small softening in his voice",
       "audio": "/audio/kn/chapters/kn-day-14-gas-cylinder/gas_uncle-warm-dd6601784d.wav"
@@ -108,7 +108,7 @@
         {
           "native": "ತುಂಬಾ ಧನ್ಯವಾದಗಳು ಸಾರ್. ನೀವು save ಮಾಡಿದ್ರಿ.",
           "translit": "tumbā dhanyavādagaḷu sār. nīvu save māḍidri.",
-          "en": "Thank you so much, sir. You've saved me.",
+          "en": "Thank you so much, boss. You've saved me.",
           "effects": {
             "fluency": 3,
             "vibes": 3
@@ -129,7 +129,7 @@
       "speakerId": "gas_uncle",
       "native": "ಆಯ್ತು ಸಾರ್. ಮುಂದಿನ ಬಾರಿ ಒಂದು ವಾರ ಮುಂಚೆ call ಮಾಡಿ.",
       "translit": "āytu sār. mundina bāri ondu vāra mumce call māḍi.",
-      "en": "Okay sir. Next time, call one week earlier.",
+      "en": "Okay boss. Next time, call one week earlier.",
       "emotion": "tired",
       "beat": "but the smile is in his voice now",
       "audio": "/audio/kn/chapters/kn-day-14-gas-cylinder/gas_uncle-tired-6c313a2d48.wav"
