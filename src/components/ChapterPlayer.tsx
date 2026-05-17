@@ -39,6 +39,7 @@ import {
   type RunState,
 } from "@/lib/player";
 import { resolveEnding, renderEndingBody, type Ending } from "@/lib/endings";
+import { generateReflection } from "@/lib/reflection";
 
 interface Props {
   chapter: Chapter;
@@ -507,6 +508,15 @@ function Scorecard({
         </p>
       )}
 
+      <ReflectionPanel
+        chapter={chapter}
+        picks={picks}
+        flags={flags}
+        fluency={fluency}
+        vibes={vibes}
+        hintCost={hintCost}
+      />
+
       {suboptimal.length > 0 && (
         <Debrief chapter={chapter} picks={suboptimal} playerName={playerName} />
       )}
@@ -528,6 +538,79 @@ function Scorecard({
           </Link>
         )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * End-of-day self-reflection — the player's inner monologue.
+ *
+ * Synthesised by `generateReflection` from the chapter's choice data,
+ * flags set during play, and final scores. Reads like a journal entry:
+ * code-switched Kannada-English (the player's inner voice would be, too
+ * — they're moving through Bangalore picking up the language), regret-
+ * flavoured without being self-flagellating. Sits between the stats and
+ * the debrief so it lands as feeling first, mechanics second.
+ *
+ * Renders nothing if the synthesiser couldn't find anything specific to
+ * reflect on (rare — every chapter has at least an opener line).
+ */
+function ReflectionPanel({
+  chapter,
+  picks,
+  flags,
+  fluency,
+  vibes,
+  hintCost,
+}: {
+  chapter: Chapter;
+  picks: ChoicePickRecord[];
+  flags: string[];
+  fluency: number;
+  vibes: number;
+  hintCost: number;
+}) {
+  const reflection = useMemo(
+    () => generateReflection({ chapter, picks, flags, fluency, vibes, hintCost }),
+    [chapter, picks, flags, fluency, vibes, hintCost]
+  );
+
+  if (reflection.lines.length === 0) return null;
+
+  return (
+    <div className="my-4 w-full rounded-md border border-accent/15 bg-accent/[0.04] p-5 text-left">
+      <p className="text-xs uppercase tracking-[0.2em] text-accent">
+        Looking back
+      </p>
+      <div className="mt-3 space-y-3">
+        {reflection.lines.map((line, i) => (
+          <p
+            key={i}
+            className="serif text-base italic leading-relaxed text-cream"
+          >
+            {line}
+          </p>
+        ))}
+      </div>
+
+      {reflection.phraseToLearn && (
+        <div className="mt-5 border-t border-cream/10 pt-4">
+          <p className="text-[10px] uppercase tracking-[0.18em] text-cream-dim">
+            For next time
+          </p>
+          <p className="font-kn mt-2 text-lg text-cream">
+            {reflection.phraseToLearn.native}
+          </p>
+          {reflection.phraseToLearn.translit && (
+            <p className="mt-0.5 text-xs italic text-cream-dim">
+              {reflection.phraseToLearn.translit}
+            </p>
+          )}
+          <p className="mt-1 text-sm text-cream-muted">
+            {reflection.phraseToLearn.en}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
