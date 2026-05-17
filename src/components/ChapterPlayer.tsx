@@ -10,6 +10,8 @@ import type {
   PlayerChoiceBeat,
   VoiceProfile,
 } from "@/lib/chapters/types";
+import { getAllChapters } from "@/lib/chapters/content";
+import type { LanguageCode } from "@/lib/types";
 import {
   Phonetic,
   PhoneticProvider,
@@ -65,6 +67,15 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
   }, []);
+
+  // Compute the next chapter (by day order) so the scorecard can chain.
+  const nextChapter = useMemo(() => {
+    const allChapters = getAllChapters(langCode as LanguageCode);
+    const sorted = [...allChapters].sort((a, b) => a.day - b.day);
+    const idx = sorted.findIndex((c) => c.id === chapter.id);
+    if (idx === -1 || idx === sorted.length - 1) return null;
+    return sorted[idx + 1];
+  }, [chapter.id, langCode]);
 
   const profilesById = useMemo(() => {
     const m: Record<string, VoiceProfile> = {};
@@ -214,6 +225,9 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
               run={finalRun}
               langCode={langCode}
               playerName={playerName}
+              nextChapterId={nextChapter?.id ?? null}
+              nextChapterTitle={nextChapter?.title ?? null}
+              nextChapterDay={nextChapter?.day ?? null}
             />
           )}
         </div>
@@ -356,6 +370,9 @@ function Scorecard({
   run,
   langCode,
   playerName,
+  nextChapterId,
+  nextChapterTitle,
+  nextChapterDay,
 }: {
   chapter: Chapter;
   fluency: number;
@@ -365,6 +382,9 @@ function Scorecard({
   run: RunState;
   langCode: string;
   playerName: string;
+  nextChapterId: string | null;
+  nextChapterTitle: string | null;
+  nextChapterDay: number | null;
 }) {
   // Day 30 gets a special ending screen
   if (chapter.day === 30) {
@@ -408,12 +428,29 @@ function Scorecard({
         </p>
       )}
 
-      <Link
-        href={`/${langCode}`}
-        className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-ink transition hover:bg-accent-deep"
-      >
-        ← Back to chapters
-      </Link>
+      <div className="flex flex-col items-center gap-3">
+        {nextChapterId && nextChapterTitle && nextChapterDay !== null ? (
+          <Link
+            href={`/${langCode}/chapter/${nextChapterId}`}
+            className="rounded-md bg-accent px-7 py-3 text-sm font-medium text-ink transition hover:bg-accent-deep"
+          >
+            Continue to Day {nextChapterDay} — {nextChapterTitle} →
+          </Link>
+        ) : (
+          <Link
+            href={`/${langCode}`}
+            className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-ink transition hover:bg-accent-deep"
+          >
+            ← Back to chapters
+          </Link>
+        )}
+        <Link
+          href={`/${langCode}`}
+          className="text-xs uppercase tracking-[0.2em] text-cream-dim transition hover:text-cream"
+        >
+          Or pick another chapter
+        </Link>
+      </div>
     </div>
   );
 }

@@ -22,9 +22,9 @@ const LOVE_OPTIONS: Array<{
   label: string;
   hint: string;
 }> = [
-  { value: "anika", label: "A woman", hint: "Anika. Architect. Kannadiga. Amused at your accent." },
-  { value: "anik", label: "A man", hint: "Anik. Architect. Kannadiga. Amused at your accent. (Same beats, different pronouns.)" },
-  { value: "skip", label: "Skip the romance", hint: "Day 16 onwards plays as friendship instead." },
+  { value: "anika", label: "Anika", hint: "Architect. Kannadiga. Amused at your accent." },
+  { value: "anik", label: "Anik", hint: "Architect. Kannadiga. Amused at your accent. (Same beats, different pronouns.)" },
+  { value: "skip", label: "Neither — skip the romance", hint: "Day 16 onwards plays as friendship instead." },
 ];
 
 export default function OnboardingPage() {
@@ -132,8 +132,8 @@ export default function OnboardingPage() {
         <section className="flex flex-col gap-6">
           <h1 className="serif text-4xl text-cream">Who do you want to fall for?</h1>
           <p className="text-cream-muted">
-            On Day 16 you'll meet someone at a Church Street bookstore. Same
-            story either way — pick what feels right.
+            On Day 16 you'll meet someone at a Church Street bookstore. Pick
+            a name — same story either way.
           </p>
           <div className="mt-2 space-y-2">
             {LOVE_OPTIONS.map((opt) => {
