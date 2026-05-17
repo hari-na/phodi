@@ -68,6 +68,17 @@ export interface NpcLine {
   audio?: string;               // populated by the TTS pipeline
   /** Stage direction shown as a tiny italic line under the text. */
   beat?: string;                // e.g. "leaning over the steering wheel"
+  /**
+   * Where to go after this beat when the player clicks Continue.
+   * Same semantics as PlayerChoice.next:
+   *   - "end"          → finish the chapter immediately
+   *   - "<beat-id>"    → jump to the named beat (resolved via
+   *                       chapter.beatIds)
+   *   - "next" / unset → linear advance (default)
+   * Lets a chapter's content branch from an NPC line without needing
+   * a player choice in between.
+   */
+  next?: string | "next" | "end";
 }
 
 /** A player choice — pick one of N reply options. */

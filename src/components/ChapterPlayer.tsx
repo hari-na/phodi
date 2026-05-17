@@ -139,38 +139,84 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
   const progress = ((beatIdx + 1) / chapter.beats.length) * 100;
   const playerName = profile?.name ?? "You";
 
+  /**
+   * Finalise the chapter — record the run, snapshot final state. Takes the
+   * exact totals to record so the caller can pass values it just computed
+   * (the React state setters from this same event haven't flushed yet, so
+   * reading from closure would give stale numbers and lose the last
+   * choice's effects).
+   */
+  function completeChapter(stats: {
+    fluency: number;
+    vibes: number;
+    hintCost: number;
+    flags: string[];
+    picks: Record<number, ChoicePickRecord>;
+    affectionDelta: Record<string, number>;
+  }) {
+    const picksArr = Object.keys(stats.picks)
+      .map(Number)
+      .sort((a, b) => a - b)
+      .map((idx) => stats.picks[idx]);
+    const result = recordChapterRun({
+      chapterId: chapter.id,
+      day: chapter.day,
+      fluency: stats.fluency,
+      vibes: stats.vibes,
+      hintCost: stats.hintCost,
+      flags: stats.flags,
+      picks: picksArr,
+      affectionDelta: stats.affectionDelta,
+      completedAtISO: new Date().toISOString(),
+    });
+    setFinalRun(result);
+    setDone(true);
+  }
+
+  /**
+   * Advance past the current beat. Called by the "Continue" button on NPC
+   * beats. Resolves the destination in this order:
+   *
+   *   1. If the current NPC beat declares `next: "end"` → finish.
+   *   2. If it declares `next: "<beat-id>"` → jump there.
+   *   3. Otherwise → linear advance (or finish if we're on the last beat).
+   *
+   * Safe to read from React state here because no setters were just fired
+   * in the same event (that's only an issue inside applyChoice).
+   */
   function advance() {
+    const cur = chapter.beats[beatIdx];
+    const beatNext = cur && cur.kind === "npc" ? cur.next : undefined;
+
+    if (beatNext === "end") {
+      completeChapter({ fluency, vibes, hintCost, flags, picks, affectionDelta });
+      return;
+    }
+
+    if (typeof beatNext === "string" && beatNext !== "next") {
+      const target = chapter.beatIds?.[beatNext];
+      if (target !== undefined && target < chapter.beats.length) {
+        setBeatIdx(target);
+        return;
+      }
+    }
+
     if (beatIdx < chapter.beats.length - 1) {
       setBeatIdx((i) => i + 1);
     } else {
-      // Persist this run's contribution to localStorage. We pull the picks
-      // map into a sorted array so the debrief shows them in beat order.
-      const picksArr = Object.keys(picks)
-        .map(Number)
-        .sort((a, b) => a - b)
-        .map((idx) => picks[idx]);
-      const result = recordChapterRun({
-        chapterId: chapter.id,
-        day: chapter.day,
-        fluency,
-        vibes,
-        hintCost,
-        flags,
-        picks: picksArr,
-        affectionDelta,
-        completedAtISO: new Date().toISOString(),
-      });
-      setFinalRun(result);
-      setDone(true);
+      completeChapter({ fluency, vibes, hintCost, flags, picks, affectionDelta });
     }
   }
 
   function applyChoice(c: PlayerChoice, choiceIdx: number) {
-    if (c.effects.fluency) setFluency((f) => f + c.effects.fluency!);
-    if (c.effects.vibes) setVibes((v) => v + c.effects.vibes!);
-    if (c.setFlag) setFlags((fs) => [...fs, c.setFlag!]);
+    // Compute every new value LOCALLY before dispatching state setters.
+    // We may need to recordChapterRun in the same event (when c.next ===
+    // "end") and React state hasn't flushed yet.
+    const newFluency = fluency + (c.effects.fluency ?? 0);
+    const newVibes = vibes + (c.effects.vibes ?? 0);
+    const newFlags = c.setFlag ? [...flags, c.setFlag] : flags;
 
-    // Capture the pick + score-vs-best for the end-of-day debrief.
+    let newPicks = picks;
     if (beat && beat.kind === "choice") {
       const scoreOf = (ch: PlayerChoice) =>
         (ch.effects.fluency ?? 0) + (ch.effects.vibes ?? 0);
@@ -183,8 +229,8 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
           bestIdx = i;
         }
       });
-      setPicks((p) => ({
-        ...p,
+      newPicks = {
+        ...picks,
         [beatIdx]: {
           beatIdx,
           pickedIdx: choiceIdx,
@@ -192,19 +238,51 @@ export function ChapterPlayer({ chapter, voiceProfiles, langCode }: Props) {
           bestIdx,
           bestScore,
         },
-      }));
+      };
     }
 
-    // Accumulate per-character affection deltas if the choice declares any.
+    let newAffection = affectionDelta;
     if (c.effects.affection) {
-      setAffectionDelta((a) => {
-        const next = { ...a };
-        for (const [speakerId, delta] of Object.entries(c.effects.affection!)) {
-          next[speakerId] = (next[speakerId] ?? 0) + delta;
-        }
-        return next;
-      });
+      newAffection = { ...affectionDelta };
+      for (const [speakerId, delta] of Object.entries(c.effects.affection)) {
+        newAffection[speakerId] = (newAffection[speakerId] ?? 0) + delta;
+      }
     }
+
+    // Dispatch state updates so the UI reflects them on the next render.
+    setFluency(newFluency);
+    setVibes(newVibes);
+    if (c.setFlag) setFlags(newFlags);
+    setPicks(newPicks);
+    if (c.effects.affection) setAffectionDelta(newAffection);
+
+    // Now decide where to go next. The `next` field on PlayerChoice steers
+    // the conversation — "end" finishes the chapter here, a string beat-id
+    // jumps to that beat (via chapter.beatIds), and missing/"next" falls
+    // through to linear progression.
+    if (c.next === "end") {
+      completeChapter({
+        fluency: newFluency,
+        vibes: newVibes,
+        hintCost,
+        flags: newFlags,
+        picks: newPicks,
+        affectionDelta: newAffection,
+      });
+      return;
+    }
+
+    if (typeof c.next === "string" && c.next !== "next") {
+      const target = chapter.beatIds?.[c.next];
+      if (target !== undefined && target < chapter.beats.length) {
+        setBeatIdx(target);
+        return;
+      }
+      // Unknown beat-id: fall through to linear advance rather than
+      // silently swallowing the choice. Worst case it plays one more beat
+      // than authored, never worse than a hang.
+    }
+
     advance();
   }
 

@@ -6,6 +6,11 @@
   "titleNative": "ವಿಮಾನ ನಿಲ್ದಾಣದ ಆಟೋ",
   "setting": "11pm. Sticky with rain. Outside the terminal. Your bag is heavier than you remembered. The auto pulls up before you've even spotted the queue.",
   "recommendedLesson": "kn-001-greetings",
+  "beatIds": {
+    "pushy-offer": 2,
+    "concede": 4,
+    "fair-offer": 5
+  },
   "beats": [
     {
       "kind": "npc",
@@ -28,7 +33,8 @@
           "effects": {
             "fluency": 2,
             "vibes": 2
-          }
+          },
+          "next": "fair-offer"
         },
         {
           "en": "Indira Nagar.",
@@ -36,7 +42,8 @@
             "fluency": 0,
             "vibes": -1
           },
-          "setFlag": "sounds_like_tourist"
+          "setFlag": "sounds_like_tourist",
+          "next": "pushy-offer"
         },
         {
           "en": "(Silent — just show him the address on your phone)",
@@ -44,19 +51,10 @@
             "fluency": 0,
             "vibes": -2
           },
-          "setFlag": "sounds_like_tourist"
+          "setFlag": "sounds_like_tourist",
+          "next": "pushy-offer"
         }
       ]
-    },
-    {
-      "kind": "npc",
-      "speakerId": "ravi_auto",
-      "native": "ಆಯ್ತು ಸಾರ್. ಮುನ್ನೂರು ರೂಪಾಯಿ.",
-      "translit": "āytu sār. munnūru rūpāyi.",
-      "en": "Alright boss. Three hundred rupees.",
-      "emotion": "neutral",
-      "beat": "the price he'd give a local — for now",
-      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-neutral-5cf97ffd27.wav"
     },
     {
       "kind": "npc",
@@ -79,7 +77,8 @@
           "effects": {
             "fluency": 3,
             "vibes": 3
-          }
+          },
+          "next": "concede"
         },
         {
           "native": "ಸರಿ.",
@@ -88,14 +87,18 @@
           "effects": {
             "fluency": 1,
             "vibes": -2
-          }
+          },
+          "setFlag": "paid_tourist_rate",
+          "next": "end"
         },
         {
           "en": "(Walk away to find another auto)",
           "effects": {
             "fluency": 0,
             "vibes": 1
-          }
+          },
+          "setFlag": "walked_away_airport",
+          "next": "end"
         }
       ]
     },
@@ -107,7 +110,18 @@
       "en": "Okay okay. Three-fifty. Come on.",
       "emotion": "amused",
       "beat": "half-impressed you knew the word for meter",
-      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-amused-7ef77f1211.wav"
+      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-amused-7ef77f1211.wav",
+      "next": "end"
+    },
+    {
+      "kind": "npc",
+      "speakerId": "ravi_auto",
+      "native": "ಆಯ್ತು ಸಾರ್. ಮುನ್ನೂರು ರೂಪಾಯಿ. ಬನ್ನಿ.",
+      "translit": "āytu sār. munnūru rūpāyi. banni.",
+      "en": "Alright boss. Three hundred rupees. Hop in.",
+      "emotion": "neutral",
+      "beat": "the price he'd give a local — fair, because you sounded like one",
+      "audio": "/audio/kn/chapters/kn-day-01-airport/ravi_auto-neutral-5cf97ffd27.wav"
     }
   ]
 }

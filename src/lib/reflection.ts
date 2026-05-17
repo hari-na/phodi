@@ -63,6 +63,10 @@ function worstPick(picks: ChoicePickRecord[]): ChoicePickRecord | null {
  * voice for — others pass silently. Phase 2 could expand this map.
  */
 const FLAG_STINGS: Record<string, string> = {
+  walked_away_airport:
+    "Walked away from the first auto. Twenty minutes in the queue. The next one ran the meter without asking.",
+  paid_tourist_rate:
+    "Paid five hundred for a three-hundred ride. He didn't even pretend to be sorry.",
   sounds_like_tourist:
     "Sounded like a tourist again. Three months in.",
   amma_noticed_ninnu:

@@ -119,10 +119,41 @@ export function AudioButton({
       <audio
         ref={audioRef}
         src={src}
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
-        onError={() => setFailed(true)}
+        // Dispatch a window event on every play/pause/end so the ambient
+        // SFX layer (AmbientPlayer) can duck itself while dialogue plays.
+        // No app-level state, no prop drilling — decoupled by design.
+        onPlay={() => {
+          setPlaying(true);
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(
+              new CustomEvent("phodi:tts", { detail: { playing: true } })
+            );
+          }
+        }}
+        onPause={() => {
+          setPlaying(false);
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(
+              new CustomEvent("phodi:tts", { detail: { playing: false } })
+            );
+          }
+        }}
+        onEnded={() => {
+          setPlaying(false);
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(
+              new CustomEvent("phodi:tts", { detail: { playing: false } })
+            );
+          }
+        }}
+        onError={() => {
+          setFailed(true);
+          if (typeof window !== "undefined") {
+            window.dispatchEvent(
+              new CustomEvent("phodi:tts", { detail: { playing: false } })
+            );
+          }
+        }}
         preload="auto"
       />
     </>

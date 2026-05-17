@@ -8,19 +8,44 @@ interface Props {
 }
 
 /**
- * Plays a chapter's ambient loop on mount, crossfades out on unmount.
+ * Global multiplier applied to every chapter's authored ambient volume.
+ * The per-chapter `volume` values in lib/sfx.ts were tuned in isolation;
+ * once the TTS dialogue is mixed in on top they read as too loud. This
+ * dials the whole ambient bed down without rewriting each entry.
+ */
+const AMBIENT_GAIN = 0.5;
+
+/**
+ * Fraction of the normal ambient volume we drop to while a TTS clip is
+ * playing. 0.25 = quarter loudness during speech; podcast / film-mix
+ * convention. Restores to full ambient when speech ends.
+ */
+const DUCK_FACTOR = 0.25;
+
+/**
+ * Plays a chapter's ambient loop on mount, crossfades out on unmount,
+ * and ducks itself when the dialogue TTS is playing so speech cuts
+ * through. The duck signal comes from AudioButton via a window event
+ * (`phodi:tts`) — keeps the two components decoupled.
  *
- * Browsers block autoplay until the user has interacted with the page —
- * the first click anywhere (the Start button on the chapter intro counts)
- * unlocks it. If autoplay is denied, we silently mute and stay quiet
+ * Browsers block autoplay until the user has interacted with the page.
+ * The first click anywhere (the Start button on the chapter intro
+ * counts) unlocks it. If autoplay is denied, we silently stay quiet
  * rather than nag the user.
  *
- * Renders nothing visible. The audio element is hidden.
+ * Renders the mute toggle (bottom-right). The audio element is hidden.
  */
 export function AmbientPlayer({ chapterId }: Props) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const sfx = getChapterSfx(chapterId);
   const [muted, setMuted] = useState(false);
+  // True while a dialogue TTS clip is playing — drops the ambient volume.
+  const [ducked, setDucked] = useState(false);
+
+  // The "full" volume for this chapter once gain + mute are applied.
+  // Computed each render so changes to muted/sfx propagate cleanly.
+  const baseVol = sfx ? (sfx.volume ?? 0.35) * AMBIENT_GAIN : 0;
+  const targetVol = ducked ? baseVol * DUCK_FACTOR : baseVol;
 
   // Restore mute preference from localStorage (one toggle for the whole game)
   useEffect(() => {
@@ -28,7 +53,7 @@ export function AmbientPlayer({ chapterId }: Props) {
     setMuted(window.localStorage.getItem("phodi.ambient.muted") === "1");
   }, []);
 
-  // Persist mute preference
+  // Persist mute preference + apply to the element
   useEffect(() => {
     if (typeof window === "undefined") return;
     window.localStorage.setItem("phodi.ambient.muted", muted ? "1" : "0");
@@ -36,35 +61,55 @@ export function AmbientPlayer({ chapterId }: Props) {
     if (a) a.muted = muted;
   }, [muted]);
 
-  // Fade in on mount
+  // Listen for TTS playback events from AudioButton so we can duck.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    function onTts(e: Event) {
+      const detail = (e as CustomEvent<{ playing: boolean }>).detail;
+      setDucked(Boolean(detail?.playing));
+    }
+    window.addEventListener("phodi:tts", onTts as EventListener);
+    return () => window.removeEventListener("phodi:tts", onTts as EventListener);
+  }, []);
+
+  // Smooth ramp to the current targetVol whenever it changes (mount, duck
+  // on, duck off). Replaces the old one-shot fade-in.
   useEffect(() => {
     if (!sfx) return;
     const a = audioRef.current;
     if (!a) return;
-    const targetVol = sfx.volume ?? 0.35;
-    a.volume = 0;
     a.loop = true;
     a.play().catch(() => {
       /* autoplay blocked — silent until user interacts */
     });
-    // Smooth fade-in over ~1.5s
-    let raf = 0;
+    const startVol = a.volume;
+    const dur = 600; // ms — fast enough to feel responsive, slow enough to be smooth
     const t0 = performance.now();
+    let raf = 0;
     const step = () => {
-      const dt = (performance.now() - t0) / 1500;
-      a.volume = Math.min(targetVol, targetVol * dt);
-      if (dt < 1) raf = requestAnimationFrame(step);
+      const k = Math.min(1, (performance.now() - t0) / dur);
+      // Ease-out so the ramp settles instead of snapping at the end.
+      const eased = 1 - Math.pow(1 - k, 3);
+      a.volume = startVol + (targetVol - startVol) * eased;
+      if (k < 1) raf = requestAnimationFrame(step);
     };
     raf = requestAnimationFrame(step);
     return () => {
       cancelAnimationFrame(raf);
+    };
+  }, [sfx, targetVol]);
+
+  // Pause the loop when the component unmounts (chapter change / exit).
+  useEffect(() => {
+    return () => {
+      const a = audioRef.current;
       try {
-        a.pause();
+        if (a) a.pause();
       } catch {
-        /* element may be torn down */
+        /* element being torn down */
       }
     };
-  }, [sfx]);
+  }, []);
 
   if (!sfx) return null;
 
