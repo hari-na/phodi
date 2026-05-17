@@ -64,38 +64,33 @@ function worstPick(picks: ChoicePickRecord[]): ChoicePickRecord | null {
  */
 const FLAG_STINGS: Record<string, string> = {
   sounds_like_tourist:
-    "I sounded like a tourist. Three months in and I'm still announcing it.",
+    "Sounded like a tourist again. Three months in.",
   amma_noticed_ninnu:
-    "I called her 'ninnu.' Amma doesn't correct people — she remembers them.",
+    "Called her 'ninnu' at the table. She didn't correct it. That's worse than if she had.",
   rejected_amma_food:
-    "Saying 'I've eaten' to Amma's table. Whatever I save in carbs I'll pay in coldness for a month.",
+    "Said I'd eaten. To Amma. The food was already on the table.",
   chose_leave: "I'm pricing the flight home in my head, aren't I.",
-  chose_stay_anika: "I said yes to staying. The lease and the city, both.",
-  chose_unsure: "I didn't decide. The city respects that more than I expected.",
-  amma_recovered: "Whatever I said in there — she let me back in. That matters.",
+  chose_stay_anika: "Said yes to staying. The lease and the city, both.",
+  chose_unsure: "Didn't decide. Both feet still in.",
+  amma_recovered: "Whatever I said in there, she let me back in. Coffee was already on the table when I walked in.",
   appa_thawed: "Appa laughed. Appa never laughs.",
   anna_regular: "Anna nods at me now. The chai is mine without asking.",
-  brought_gift: "The flowers were a small thing. They opened a big door.",
+  brought_gift: "Took flowers. Amma took them like it cost me something. That bit landed.",
   gave_the_speech:
-    "I gave a speech in Kannada in front of fourteen people. Three months ago I didn't know hello.",
+    "Spoke in Kannada in front of fourteen people. Hands shook the whole time. Appa heard it anyway.",
 };
 
 /* -------------------------------------------------------------------------- */
 /* Openers — overall vibe of the day, picked by score band.                   */
 /* -------------------------------------------------------------------------- */
 
-function openerForScore(score: number, day: number): string {
-  const dayLabel = `Day ${day}.`;
-  if (score >= 12) {
-    return `${dayLabel} Something in me settled today.`;
-  }
-  if (score >= 6) {
-    return `${dayLabel} Not perfect. Not embarrassing.`;
-  }
-  if (score >= 0) {
-    return `${dayLabel} Trying. The city sees it, I think.`;
-  }
-  return `${dayLabel} That stung. I keep replaying it.`;
+function openerForScore(score: number): string {
+  // No "Day N" label — the scorecard header above already says that.
+  // Starting cold with the feeling lands harder.
+  if (score >= 12) return "Walked back lighter than I came.";
+  if (score >= 6) return "Not great. Not embarrassing.";
+  if (score >= 0) return "Trying. I think they see it.";
+  return "I keep replaying it.";
 }
 
 /* -------------------------------------------------------------------------- */
@@ -113,9 +108,8 @@ function regretLine(chapter: Chapter, pick: ChoicePickRecord): {
   const better = cb.choices[pick.bestIdx];
   if (!yours || !better) return null;
 
-  // The phrase to learn is the better choice's Kannada — when present.
-  // If the better choice is also English-only (rare), skip phrase, give
-  // a plain regret line.
+  // The phrase to learn is the better choice's Kannada when present.
+  // If the better choice is English-only (rare), give a plain regret.
   if (better.native) {
     const phrase: PhraseToLearn = {
       native: better.native,
@@ -123,7 +117,7 @@ function regretLine(chapter: Chapter, pick: ChoicePickRecord): {
       en: better.en,
     };
     return {
-      line: `Damn it. Should've said ${better.native}. Instead I gave them "${yours.en}". They heard the difference even if they didn't say it.`,
+      line: `I keep going back to it. Should've said ${better.native}. What came out was "${yours.en}". Fine. Forgettable.`,
       phrase,
     };
   }
@@ -155,7 +149,7 @@ export function generateReflection({
   const lines: string[] = [];
   const score = fluency + vibes - hintCost;
 
-  lines.push(openerForScore(score, chapter.day));
+  lines.push(openerForScore(score));
 
   let phraseToLearn: PhraseToLearn | undefined;
   const worst = worstPick(picks);
@@ -166,8 +160,8 @@ export function generateReflection({
       phraseToLearn = regret.phrase;
     }
   } else if (picks.length > 0) {
-    // Player picked optimally everywhere — let them feel it.
-    lines.push("Every choice landed where I wanted it to. That's new.");
+    // Player picked optimally everywhere. Let them feel it.
+    lines.push("Every choice landed where I wanted it. That's new.");
   }
 
   // Add the most evocative flag sting if one fired.

@@ -50,7 +50,7 @@ export const ENDINGS: Ending[] = [
     id: "bangalore-belongs-to-you",
     name: "Bangalore Belongs to You",
     tagline: "The city stopped checking your accent.",
-    body: "{name}. Anna at the chai stall poured your glass without asking what you wanted. Lokesh wrote your full name in the logbook months ago. Amma calls you before she calls her own daughter. Appa, once, said \"good\" — and once is enough. You think in Kannada all day without noticing. ನಮಸ್ಕಾರ, {name}. ಸ್ವಾಗತ.",
+    body: "{name}. Anna pours your chai without asking. Lokesh wrote your full name in the logbook months ago. Amma calls you before she calls her own daughter. Appa said \"good\" exactly once. That was enough. You think in Kannada now and forget you weren't always doing that. ನಮಸ್ಕಾರ, {name}. ಸ್ವಾಗತ.",
     tone: "good",
     qualifies: (run) =>
       totalScore(run) >= 90 &&
@@ -62,7 +62,7 @@ export const ENDINGS: Ending[] = [
     id: "quiet-integration",
     name: "Quiet Integration",
     tagline: "Not in love. Not lonely. Home.",
-    body: "{name}. No grand romance to write about — but Padma waves from 2B every morning, Saraswati's bisi bele bath is in your fridge, and Lokesh saves you the good auto. You stopped translating from English in your head somewhere around Day 22. The Kannada is uneven but real. A city this big lets you become its quiet citizen.",
+    body: "{name}. No big romance to report. Padma waves from 2B every morning. Saraswati's bisi bele bath is in your fridge. Lokesh saves you the good auto. Somewhere around Day 22 you stopped translating from English in your head. The Kannada is uneven. The life is yours.",
     tone: "good",
     qualifies: (run) =>
       run.totalVibes >= 35 &&
@@ -73,15 +73,15 @@ export const ENDINGS: Ending[] = [
     id: "fluent-but-distant",
     name: "Fluent, but Distant",
     tagline: "You learned the language. Not the people.",
-    body: "{name}. Your Kannada is sharp now — auto drivers no longer try to overcharge you, brokers know not to bluff. But Lokesh stopped chatting at the gate. Padma's stopped knocking. You're proficient and alone. The city doesn't ask anything of efficient strangers. It just lets them pass through.",
+    body: "{name}. Auto drivers don't try to overcharge you. Brokers don't bluff. Your Kannada is sharp. Lokesh stopped chatting at the gate. Padma stopped knocking. You move through the city now and the city lets you.",
     tone: "bittersweet",
     qualifies: (run) => netFluency(run) >= 30 && run.totalVibes <= 10,
   },
   {
     id: "loved-but-lost",
     name: "Loved, but Lost",
-    tagline: "Anika stayed. The city didn't stick.",
-    body: "{name}. Anika is the warmest thing you have in Bangalore — and the only one. You butchered the language enough times that people learned to switch to English around you. The lease has eight months left. Anika's family still calls you \"engineer\" instead of your name. Love is not the same as belonging. You'll figure out which one you need.",
+    tagline: "Anika stayed. The city didn't.",
+    body: "{name}. Anika is the warmest thing you have in Bangalore. She is also the only thing. You butchered the language enough times that people learned to switch to English around you. The lease has eight months left. Anika's family still calls you \"engineer\" instead of your name. You'll figure out what that means.",
     tone: "bittersweet",
     qualifies: (run) =>
       affectionFor(run, "anika") >= 8 &&
@@ -91,16 +91,16 @@ export const ENDINGS: Ending[] = [
     id: "outsider-still",
     name: "Outsider Still",
     tagline: "Thirty days. Still a guest.",
-    body: "{name}. The job pays. The flat is yours on paper. But Lokesh logs your every visitor, the cook left after the gas cylinder incident, and Anika hasn't replied since Day 26. You can navigate the city — you just can't relax inside it. Some cities take a hundred days. Some take a thousand. Yours is still counting.",
+    body: "{name}. The job pays. The flat is yours on paper. Lokesh logs every visitor. The cook left after the gas cylinder thing. Anika hasn't replied since Day 26. You can read the auto's meter now. That isn't the same as being from here.",
     tone: "bad",
     qualifies: (run) => totalScore(run) < 25,
   },
-  /* Catch-all — middle-of-the-road run with no standout strengths. */
+  /* Catch-all. A middle-of-the-road run with no standout strengths. */
   {
     id: "just-tenant",
     name: "Just a Tenant",
     tagline: "Bangalore. Day thirty. Neutral.",
-    body: "{name}. You stayed. The Kannada is functional. Anika smiles when she sees you, but neither of you has said anything big. Lokesh knows your name. Padma doesn't. The city hasn't claimed you and you haven't claimed it back. There's a hundred more days ahead — and now you know which ones get easier.",
+    body: "{name}. You stayed. The Kannada is functional. Anika smiles when she sees you. Neither of you has said anything big. Lokesh knows your name. Padma doesn't. There are a hundred more days ahead. You know which ones will be easier now.",
     tone: "bittersweet",
     qualifies: () => true,
   },

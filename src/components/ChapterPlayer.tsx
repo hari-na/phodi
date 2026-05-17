@@ -478,10 +478,10 @@ function Scorecard({
   const score = fluency - hintCost + vibes;
   const verdict =
     score >= 12
-      ? "Cleanly done. They'll remember the right things."
+      ? "Clean. They'll remember the right things about you."
       : score >= 6
-      ? "You stayed in. The city kept watching."
-      : "Bumpy. Tomorrow's another beat.";
+      ? "You stayed in it."
+      : "Rough day. Tomorrow's a new one.";
 
   const netF = fluency - hintCost;
   // Only picks where the player didn't take the best-scored option appear
@@ -635,10 +635,12 @@ function Debrief({
   return (
     <div className="my-4 w-full rounded-md border border-cream/10 bg-ink-soft/60 p-5 text-left">
       <p className="text-xs uppercase tracking-[0.2em] text-cream-dim">
-        What could go better
+        Where it went sideways
       </p>
       <p className="mt-2 text-xs italic text-cream-dim">
-        {picks.length} moment{picks.length === 1 ? "" : "s"} where a different reply would have landed cleaner.
+        {picks.length === 1
+          ? "One moment that could've gone differently."
+          : `${picks.length} moments that could've gone differently.`}
       </p>
       <ul className="mt-4 space-y-4">
         {picks.map((pick) => {
@@ -662,7 +664,7 @@ function Debrief({
                 {withName(yours.en, playerName)}
               </p>
               <p className="mt-3 text-[10px] uppercase tracking-[0.15em] text-accent">
-                Lands better
+                Would've worked
               </p>
               {better.native && (
                 <p className="font-kn text-sm text-cream">
@@ -673,7 +675,7 @@ function Debrief({
                 {withName(better.en, playerName)}
               </p>
               <p className="text-[10px] italic text-cream-dim">
-                +{delta} point{delta === 1 ? "" : "s"} on the cleaner read.
+                +{delta} {delta === 1 ? "point" : "points"} if you'd said it that way.
               </p>
             </li>
           );

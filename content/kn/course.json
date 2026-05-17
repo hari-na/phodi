@@ -2,7 +2,7 @@
   "language": "kn",
   "name": "Kannada",
   "nameNative": "ಕನ್ನಡ",
-  "description": "Conversational Kannada, built for people who already speak an Indian language. Every concept is bridged from Tamil and Malayalam where the grammar carries over.",
+  "description": "Conversational Kannada for people who already speak one Indian language. Where the grammar carries over from Tamil or Malayalam, we say so and use it.",
   "units": [
     {
       "id": "kn-foundations",

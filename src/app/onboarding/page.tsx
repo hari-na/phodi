@@ -69,8 +69,7 @@ export default function OnboardingPage() {
         <section className="flex flex-col gap-6">
           <h1 className="serif text-4xl text-cream">What should the city call you?</h1>
           <p className="text-cream-muted">
-            Auto drivers, watchmen, chai stalls, neighbours — they&apos;ll all
-            use this. First name is enough.
+            Auto drivers, watchmen, chai stalls, neighbours. First name works.
           </p>
           <input
             autoFocus
@@ -89,8 +88,8 @@ export default function OnboardingPage() {
         <section className="flex flex-col gap-6">
           <h1 className="serif text-4xl text-cream">What do you already speak?</h1>
           <p className="text-cream-muted">
-            If you know Tamil or Malayalam, your Kannada lessons will bridge
-            from there. Pick all that apply.
+            Tamil or Malayalam helps. The lessons bridge from there. Pick
+            whatever applies.
           </p>
           <div className="mt-2 space-y-2">
             {LANG_OPTIONS.map((opt) => {
@@ -117,9 +116,8 @@ export default function OnboardingPage() {
             })}
           </div>
           <p className="text-xs italic text-cream-dim">
-            Over thirty days in Bangalore you&apos;ll meet flatmates,
-            shopkeepers, a few people who might matter. How that lands is up
-            to you.
+            Thirty days in Bangalore. You&apos;ll meet shopkeepers,
+            flatmates, a few people who might matter. The rest is up to you.
           </p>
         </section>
       )}

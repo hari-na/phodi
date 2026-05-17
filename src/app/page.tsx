@@ -16,9 +16,9 @@ export default function Home() {
           <span className="italic text-accent">broken down.</span>
         </h1>
         <p className="mt-6 max-w-md text-cream-muted">
-          Conversational lessons built for people who already speak an Indian
-          language. If you know Tamil or Malayalam, your Kannada lessons bridge
-          from what you already know.
+          Phodi is for people who already speak one Indian language and are
+          trying to learn another. If Tamil or Malayalam is your first
+          language, Kannada bridges from there.
         </p>
       </div>
 
@@ -49,7 +49,8 @@ export default function Home() {
       </div>
 
       <footer className="mt-24 text-xs text-cream-dim">
-        AI-built lesson content. Pedagogy by a human who lives in Bangalore.
+        Lessons drafted with AI. Pedagogy by someone who lives in Bangalore
+        and is also learning.
       </footer>
     </main>
   );

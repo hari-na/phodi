@@ -115,8 +115,8 @@ export function CourseClient({ course, chapters }: Props) {
               Replay Day 30
             </p>
             <p className="mt-4 text-sm italic leading-relaxed text-cream-muted">
-              Your ending is named. Re-enter the last day to see it again, or
-              start fresh from settings.
+              You finished it. Walk back into Day 30 if you want to see how
+              it lands again.
             </p>
           </Link>
         )}
